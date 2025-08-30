@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2025-08-30T00:53:37.127Z",
-  "count": 1302,
+  "generatedAt": "2025-08-30T01:05:54.933Z",
+  "count": 1296,
   "names": [
     "abomasnow",
     "abomasnow-mega",
@@ -568,10 +568,6 @@
     "kommo-o",
     "kommo-o-totem",
     "koraidon",
-    "koraidon-gliding-build",
-    "koraidon-limited-build",
-    "koraidon-sprinting-build",
-    "koraidon-swimming-build",
     "krabby",
     "kricketot",
     "kricketune",
@@ -728,9 +724,7 @@
     "minun",
     "miraidon",
     "miraidon-aquatic-mode",
-    "miraidon-drive-mode",
     "miraidon-glide-mode",
-    "miraidon-low-power-mode",
     "misdreavus",
     "mismagius",
     "moltres",
@@ -21900,108 +21894,6 @@
         "Ghost"
       ],
       "abilityTag": null
-    },
-    {
-      "name": "koraidon-limited-build",
-      "apiSlug": "koraidon-limited-build",
-      "id": 10264,
-      "types": [
-        "Fighting",
-        "Dragon"
-      ],
-      "power": 191,
-      "restricted": true,
-      "isMega": false,
-      "strong": [
-        "Dragon",
-        "Fighting"
-      ],
-      "abilityTag": "orichalcum-pulse"
-    },
-    {
-      "name": "koraidon-sprinting-build",
-      "apiSlug": "koraidon-sprinting-build",
-      "id": 10265,
-      "types": [
-        "Fighting",
-        "Dragon"
-      ],
-      "power": 191,
-      "restricted": true,
-      "isMega": false,
-      "strong": [
-        "Dragon",
-        "Fighting"
-      ],
-      "abilityTag": "orichalcum-pulse"
-    },
-    {
-      "name": "koraidon-swimming-build",
-      "apiSlug": "koraidon-swimming-build",
-      "id": 10266,
-      "types": [
-        "Fighting",
-        "Dragon"
-      ],
-      "power": 191,
-      "restricted": true,
-      "isMega": false,
-      "strong": [
-        "Dragon",
-        "Fighting"
-      ],
-      "abilityTag": "orichalcum-pulse"
-    },
-    {
-      "name": "koraidon-gliding-build",
-      "apiSlug": "koraidon-gliding-build",
-      "id": 10267,
-      "types": [
-        "Fighting",
-        "Dragon"
-      ],
-      "power": 191,
-      "restricted": true,
-      "isMega": false,
-      "strong": [
-        "Dragon",
-        "Fighting"
-      ],
-      "abilityTag": "orichalcum-pulse"
-    },
-    {
-      "name": "miraidon-low-power-mode",
-      "apiSlug": "miraidon-low-power-mode",
-      "id": 10268,
-      "types": [
-        "Electric",
-        "Dragon"
-      ],
-      "power": 191,
-      "restricted": true,
-      "isMega": false,
-      "strong": [
-        "Electric",
-        "Dragon"
-      ],
-      "abilityTag": "hadron-engine"
-    },
-    {
-      "name": "miraidon-drive-mode",
-      "apiSlug": "miraidon-drive-mode",
-      "id": 10269,
-      "types": [
-        "Electric",
-        "Dragon"
-      ],
-      "power": 191,
-      "restricted": true,
-      "isMega": false,
-      "strong": [
-        "Electric",
-        "Dragon"
-      ],
-      "abilityTag": "hadron-engine"
     },
     {
       "name": "miraidon-aquatic-mode",
