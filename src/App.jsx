@@ -39,6 +39,88 @@ function weaknessesOf(defTypes) {
   return result;
 }
 
+// --- Ability heuristics (lightweight) --- //
+// We use a short list of high-impact abilities. Values are heuristic but feel right in practice.
+const ABILITY_EFFECTS = {
+  "drizzle": {
+    weather: "rain",
+    atkByType: { Water: 1.5 },
+    riskModsAgainst: { Fire: 0.8 }
+  },
+  "drought": {
+    weather: "sun",
+    atkByType: { Fire: 1.5 },
+    riskModsAgainst: { Water: 0.8 }
+  },
+  "primordial-sea": {
+    weather: "rain",
+    atkByType: { Water: 1.6 },
+    negateTypes: ["Fire"]
+  },
+  "desolate-land": {
+    weather: "sun",
+    atkByType: { Fire: 1.6 },
+    negateTypes: ["Water"]
+  },
+  "sand-stream": {
+    weather: "sand",
+    bulkBonus: 0.1
+  },
+  "snow-warning": {
+    weather: "snow",
+    bulkBonus: 0.05
+  },
+  "orichalcum-pulse": {
+    weather: "sun",
+    flatOffense: 1.3,
+    signatureSE: { type: "Fighting", mult: 1.33 } // Collision Course
+  },
+  "hadron-engine": {
+    terrain: "electric",
+    flatOffense: 1.3,
+    atkByType: { Electric: 1.3 },
+    signatureSE: { type: "Electric", mult: 1.33 } // Electro Drift
+  },
+  "huge-power": { flatOffense: 1.5 },
+  "adaptability": { stabBoost: 1.33 }
+};
+
+function applyAbilityToOffense(offense, hitType, mult, attackerTag) {
+  const eff = ABILITY_EFFECTS[attackerTag];
+  if (!eff) return offense;
+  let o = offense;
+  if (eff.flatOffense) o *= eff.flatOffense;
+  if (eff.atkByType && eff.atkByType[hitType]) o *= eff.atkByType[hitType];
+  if (eff.stabBoost) o *= eff.stabBoost; // rough STAB bump where relevant
+  if (eff.signatureSE && eff.signatureSE.type === hitType && mult >= 2) {
+    o *= eff.signatureSE.mult;
+  }
+  return o;
+}
+
+function applyAbilityToRisk(riskValue, targetTypes, attackerTag) {
+  const eff = ABILITY_EFFECTS[attackerTag];
+  if (!eff?.riskModsAgainst) return riskValue;
+  let r = riskValue;
+  for (const t of targetTypes) {
+    if (eff.riskModsAgainst[t]) r = Math.round(r * eff.riskModsAgainst[t]);
+  }
+  return r;
+}
+
+function cancelIfOpposingWeathers(attackerTag, targetTag, hitType) {
+  const a = ABILITY_EFFECTS[attackerTag]?.weather;
+  const b = ABILITY_EFFECTS[targetTag]?.weather;
+  if (!a || !b) return 1;
+  // Sun vs Rain clash — cancel boost for the clashing element
+  if ((a === "rain" && b === "sun" && hitType === "Water") ||
+      (a === "sun"  && b === "rain" && hitType === "Fire")) {
+    const atkBoost = ABILITY_EFFECTS[attackerTag].atkByType?.[hitType] || 1;
+    return 1 / atkBoost;
+  }
+  return 1;
+}
+
 // --- Attacker pool for demo scoring --- //
 // Goal: cover ALL attacking types with at least one strong STAB user
 // (so any target weakness at x2 or x4 can surface a relevant counter).
@@ -61,8 +143,8 @@ const POKEDEX = [
   { name: "Garchomp", types: ["Dragon","Ground"], power: 91, strong: ["Ground","Dragon"], gen: 4, restricted: false },
 
   // ROCK (x4 vs Fire/Flying, Ice/Bug, etc.)
-  { name: "Tyranitar", types: ["Rock","Dark"], power: 92, strong: ["Rock","Dark"], gen: 2, restricted: false },
-  { name: "Tyranitar (Mega)", apiSlug: "tyranitar-mega", isMega: true, types: ["Rock","Dark"], power: 99, strong: ["Rock","Dark"], gen: 6, restricted: false },
+  { name: "Tyranitar", types: ["Rock","Dark"], power: 92, strong: ["Rock","Dark"], gen: 2, restricted: false, abilityTag: "sand-stream" },
+  { name: "Tyranitar (Mega)", apiSlug: "tyranitar-mega", isMega: true, types: ["Rock","Dark"], power: 99, strong: ["Rock","Dark"], gen: 6, restricted: false, abilityTag: "sand-stream" },
   { name: "Rhyperior", types: ["Ground","Rock"], power: 90, strong: ["Rock","Ground"], gen: 4, restricted: false },
   { name: "Rampardos", types: ["Rock"], power: 96, strong: ["Rock"], gen: 4, restricted: false },
   { name: "Terrakion", types: ["Rock","Fighting"], power: 92, strong: ["Rock","Fighting"], gen: 5, restricted: false },
@@ -109,7 +191,7 @@ const POKEDEX = [
   { name: "Heatran", types: ["Fire","Steel"], power: 92, strong: ["Fire","Steel"], gen: 4, restricted: false },
   { name: "Charizard", types: ["Fire","Flying"], power: 89, strong: ["Fire","Flying"], gen: 1, restricted: false },
   { name: "Charizard (Mega X)", apiSlug: "charizard-mega-x", isMega: true, types: ["Fire","Dragon"], power: 97, strong: ["Fire","Dragon"], gen: 6, restricted: false },
-  { name: "Charizard (Mega Y)", apiSlug: "charizard-mega-y", isMega: true, types: ["Fire","Flying"], power: 98, strong: ["Fire","Flying"], gen: 6, restricted: false },
+  { name: "Charizard (Mega Y)", apiSlug: "charizard-mega-y", isMega: true, types: ["Fire","Flying"], power: 98, strong: ["Fire","Flying"], gen: 6, restricted: false, abilityTag: "drought" },
   { name: "Blaziken", types: ["Fire","Fighting"], power: 90, strong: ["Fire","Fighting"], gen: 3, restricted: false },
 
   // DRAGON/FLYING Megas
@@ -155,23 +237,48 @@ function Card({ title, children, right, dark = true }) {
   );
 }
 
-function rankCounters(targetTypes, { allowRestricted = true, showMega = true } = {}, dexPool = POKEDEX) {
+function rankCounters(targetTypes, { allowRestricted = true, showMega = true, useAbilities = false, targetAbilityTag = null } = {}, dexPool = POKEDEX) {
   if (!targetTypes?.length) return { weaknesses: {}, picks: [] };
   const weaknesses = weaknessesOf(targetTypes);
   const weakTypes = Object.entries(weaknesses).filter(([, m]) => m >= 2).sort((a,b)=> b[1]-a[1]);
   const pool = dexPool.filter(p => (allowRestricted || !p.restricted) && (showMega || !p.isMega));
 
   const picks = pool.map(attacker => {
-    const strongMatch = attacker.strong.find(t => (weaknesses[t] ?? 1) >= 2);
+    const strongMatch = attacker.strong?.find(t => (weaknesses[t] ?? 1) >= 2);
     if (!strongMatch) return null;
     const mult = weaknesses[strongMatch];
+
     const incoming = targetTypes.map(stab => attacker.types.reduce((m, def) => m * ((chart[stab]?.[def] ?? 1)), 1));
     const worstIncoming = Math.max(...incoming);
-    const offense = mult * (attacker.power/100);
+
+    // Baseline offense/risk
+    let offense = mult * (attacker.power/100);
+    let riskVal = worstIncoming >= 4 ? 100 : worstIncoming >= 2 ? 75 : worstIncoming <= 0.5 ? 25 : 50;
+
+    if (useAbilities) {
+      const tag = attacker.abilityTag; // from fullDex or POKEDEX fallback
+      if (tag) {
+        // Offense boost from attacker's ability
+        offense = applyAbilityToOffense(offense, strongMatch, mult, tag);
+        // Clash handling with target weather setter (sun/rain)
+        if (targetAbilityTag) {
+          offense *= cancelIfOpposingWeathers(tag, targetAbilityTag, strongMatch);
+          const negate = ABILITY_EFFECTS[targetAbilityTag]?.negateTypes || [];
+          if (negate.includes(strongMatch)) {
+            offense *= 0.6; // your attack is heavily dampened
+            riskVal *= 1.2;  // slightly riskier to stay in
+          }
+        }
+        // Risk reduction (e.g., rain vs Fire target)
+        riskVal = applyAbilityToRisk(riskVal, targetTypes, tag);
+      }
+    }
+
     const survBonus = worstIncoming <= 0.5 ? 0.15 : worstIncoming === 1 ? 0.05 : 0;
     const score = Number((offense + survBonus).toFixed(3));
     const damagePotential = Math.min(100, Math.round(offense * 50));
-    const risk = worstIncoming >= 4 ? 100 : worstIncoming >= 2 ? 75 : worstIncoming <= 0.5 ? 25 : 50;
+    const risk = Math.max(0, Math.min(100, Math.round(riskVal)));
+
     return { attacker, hitType: strongMatch, mult, score, damagePotential, risk };
   }).filter(Boolean).sort((a,b)=> b.score - a.score);
 
@@ -193,11 +300,11 @@ export default function App() {
   const [fullDex, setFullDex] = useState(null);
   const [allowRestricted, setAllowRestricted] = useState(true);
   const [showMega, setShowMega] = useState(true);
-  const [dark, setDark] = useState(true);
   const [mode, setMode] = useState('pokemon');
   const [pickedTypes, setPickedTypes] = useState([]);
   const [showNeutral, setShowNeutral] = useState(false);
   const [showResists, setShowResists] = useState(false);
+  const [useAbilities, setUseAbilities] = useState(true); // NEW: default on
 
   // Target from PokeAPI
   const [target, setTarget] = useState({ name: "", types: [], sprite: null });
@@ -239,7 +346,7 @@ export default function App() {
     return res;
   }, [nameList, query]);
 
-  // Fetch target info (debounced + latest-request-wins to avoid race conditions)
+  // Fetch target info (debounced + latest-request-wins)
   const fetchIdRef = useRef(0);
   useEffect(() => {
     if (mode !== 'pokemon') return; // only fetch when in Pokémon mode
@@ -252,14 +359,14 @@ export default function App() {
       fetch(`https://pokeapi.co/api/v2/pokemon/${slug}`, { signal: controller.signal })
         .then(r => r.ok ? r.json() : Promise.reject(new Error("not found")))
         .then(d => {
-          if (id !== fetchIdRef.current) return; // an even newer request exists
+          if (id !== fetchIdRef.current) return; // newer request exists
           const sprite = d?.sprites?.other?.["official-artwork"]?.front_default || d?.sprites?.front_default || null;
           const types = (d?.types || []).map(x => x.type.name).map(t => t.charAt(0).toUpperCase() + t.slice(1));
           setTarget({ name: d?.name || slug, types, sprite });
         })
         .catch((err) => {
           if (id !== fetchIdRef.current) return; // outdated
-          if (err?.name === 'AbortError') return; // aborted by cleanup
+          if (err?.name === 'AbortError') return; // aborted
           setTarget({ name: query, types: [], sprite: null });
         });
     }, 150);
@@ -270,11 +377,19 @@ export default function App() {
     };
   }, [query, mode]);
 
+  // Lookup target ability tag from compiled dex (if available)
+  const targetAbilityTag = useMemo(() => {
+    if (!fullDex || !target?.name) return null;
+    const t = (target.name || '').toLowerCase();
+    const hit = fullDex.find(p => (p.name || '').toLowerCase() === t);
+    return hit?.abilityTag || null;
+  }, [fullDex, target?.name]);
+
   const pool = fullDex ?? POKEDEX;
   const activeTypes = mode==='pokemon' ? target.types : pickedTypes;
   const { weaknesses, picks } = useMemo(
-    () => rankCounters(activeTypes, { allowRestricted, showMega }, pool),
-    [activeTypes, allowRestricted, showMega, fullDex]
+    () => rankCounters(activeTypes, { allowRestricted, showMega, useAbilities: useAbilities && mode==='pokemon', targetAbilityTag }, pool),
+    [activeTypes, allowRestricted, showMega, fullDex, useAbilities, mode, targetAbilityTag]
   );
   const fullMap = useMemo(() => weaknessesOf(activeTypes), [activeTypes]);
   const [w4, w2, w1, r05, r0] = useMemo(() => {
@@ -291,7 +406,7 @@ export default function App() {
 
   // Show-more control for counters
   const [visibleCount, setVisibleCount] = useState(10);
-  useEffect(() => { setVisibleCount(10); }, [query, allowRestricted, showMega, mode, pickedTypes]);
+  useEffect(() => { setVisibleCount(10); }, [query, allowRestricted, showMega, mode, pickedTypes, useAbilities]);
 
   // Counter sprites cache
   const [sprites, setSprites] = useState({});
@@ -318,25 +433,25 @@ export default function App() {
   };
 
   return (
-    <div className={`${dark ? 'bg-slate-900 text-slate-200' : 'bg-white text-slate-900'} min-h-screen p-6`}>
+    <div className={`bg-slate-900 text-slate-200 min-h-screen p-6`}>
       <div className="max-w-5xl mx-auto grid gap-4">
         <header className="flex items-baseline justify-between">
           <h1 className="text-2xl font-extrabold text-white">Pokémon Counter Finder (Alpha)</h1>
         </header>
 
         {/* Input with autocomplete */}
-        <Card title="Enter a Pokémon" dark={dark}>
+        <Card title="Enter a Pokémon">
           <div className="mb-3">
-            <div className={`inline-flex rounded-lg border ${dark ? 'border-white/10 bg-slate-900/40' : 'border-slate-300 bg-slate-100'}`}>
-              <button onClick={()=>setMode('pokemon')} className={`px-3 py-1.5 text-sm rounded-l-lg ${mode==='pokemon' ? (dark?'bg-slate-700 text-white':'bg-white text-slate-900') : 'opacity-80'}`}>Pokémon</button>
-              <button onClick={()=>setMode('types')} className={`px-3 py-1.5 text-sm rounded-r-lg ${mode==='types' ? (dark?'bg-slate-700 text-white':'bg-white text-slate-900') : 'opacity-80'}`}>Types</button>
+            <div className={`inline-flex rounded-lg border border-white/10 bg-slate-900/40`}>
+              <button onClick={()=>setMode('pokemon')} className={`px-3 py-1.5 text-sm rounded-l-lg ${mode==='pokemon' ? 'bg-slate-700 text-white' : 'opacity-80'}`}>Pokémon</button>
+              <button onClick={()=>setMode('types')} className={`px-3 py-1.5 text-sm rounded-r-lg ${mode==='types' ? 'bg-slate-700 text-white' : 'opacity-80'}`}>Types</button>
             </div>
           </div>
 
           {mode==='pokemon' ? (
             <div className="relative">
               <input
-                className={`w-full p-3 rounded-xl ${dark?'bg-slate-800 text-white border-white/10':'bg-white text-slate-900 border-slate-300'} border focus:outline-none focus:ring focus:ring-indigo-500`}
+                className={`w-full p-3 rounded-xl bg-slate-800 text-white border border-white/10 focus:outline-none focus:ring focus:ring-indigo-500`}
                 value={query}
                 placeholder="e.g., Garchomp"
                 onChange={e=>{ setQuery(e.target.value); setShowSug(true); setHi(0); }}
@@ -353,11 +468,11 @@ export default function App() {
                 onBlur={()=> setTimeout(()=> setShowSug(false), 150)}
               />
               {showSug && suggestions.length>0 && (
-                <ul className={`absolute left-0 right-0 mt-2 ${dark?'bg-slate-800':'bg-white'} border ${dark?'border-white/10':'border-slate-300'} rounded-xl shadow-xl max-h-60 overflow-auto z-10`}>
+                <ul className={`absolute left-0 right-0 mt-2 bg-slate-800 border border-white/10 rounded-xl shadow-xl max-h-60 overflow-auto z-10`}>
                   {suggestions.map((n, i)=> (
                     <li
                       key={n}
-                      className={`px-3 py-2 cursor-pointer ${i===hi ? (dark?'bg-slate-700':'bg-slate-100') : (dark?'hover:bg-slate-700/60':'hover:bg-slate-100')} `}
+                      className={`px-3 py-2 cursor-pointer ${i===hi ? 'bg-slate-700' : 'hover:bg-slate-700/60'} `}
                       onMouseDown={()=>{ commitSuggestion(n); }}
                     >
                       {n}
@@ -375,7 +490,7 @@ export default function App() {
                     <button key={t} onClick={()=>{
                         setPickedTypes(prev=> prev.includes(t) ? prev.filter(x=>x!==t) : (prev.length>=2 ? [prev[1], t] : [...prev, t]) );
                       }}
-                      className={`flex items-center justify-center gap-2 px-2 py-2 rounded-xl border ${dark?'bg-slate-800/60 border-white/10':'bg-white border-slate-300'} ${selected ? 'ring-2 ring-indigo-500' : ''}`}
+                      className={`flex items-center justify-center gap-2 px-2 py-2 rounded-xl border bg-slate-800/60 border-white/10 ${selected ? 'ring-2 ring-indigo-500' : ''}`}
                     >
                       <TypeBadge t={t} />
                     </button>
@@ -473,7 +588,7 @@ export default function App() {
         </Card>
 
         {/* Counters */}
-        <Card title="Suggested counters" dark={dark}
+        <Card title="Suggested counters"
           right={(
             <div className="flex items-center gap-6">
               <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
@@ -483,6 +598,10 @@ export default function App() {
               <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
                 <input type="checkbox" className="accent-indigo-500" checked={allowRestricted} onChange={e=>setAllowRestricted(e.target.checked)} />
                 Allow restricted legendaries
+              </label>
+              <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
+                <input type="checkbox" className="accent-indigo-500" checked={useAbilities} onChange={e=>setUseAbilities(e.target.checked)} />
+                Use ability heuristics (beta)
               </label>
             </div>
           )}
@@ -543,13 +662,14 @@ export default function App() {
           )}
         </Card>
 
-        <Card title="Assumptions (simple mode)" dark={dark}>
+        <Card title="Assumptions (simple mode)">
           <ul className="list-disc ml-5 text-sm leading-6 opacity-90">
-            <li>Ignores abilities and Tera types.</li>
-            <li>Candidate must have a strong move (≥70 BP) matching a target weakness (simplified via demo flag).</li>
+            <li>Ability heuristics are available as a toggle (beta): major weather/engine/pulse effects only.</li>
+            <li>Still ignores precise items, EVs, move-by-move nuances, and Tera types.</li>
+            <li>Candidate must have a strong move (≥70 BP) matching a target weakness (simplified flag).</li>
             <li>Scoring favors super-effective STAB + higher attack power; small bonus for resisting target STAB.</li>
             <li>Damage/Risk bars are quick heuristics for a lightweight feel, not a full calc.</li>
-            <li>Filter available: allow/hide restricted legendaries.</li>
+            <li>Filters: show/hide Megas and restricted legendaries.</li>
           </ul>
         </Card>
       </div>
