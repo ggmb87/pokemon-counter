@@ -1,127 +1,181 @@
-// ==========================
-// FILE: scripts/build-index.mjs
-// ==========================
-/* Build a compact dex for the app: types, id, power, strong STABs,
- * and ability tags (normal + hidden when supported).
- * Node 18+ recommended.
- */
+// scripts/build-index.mjs
+import fs from "node:fs/promises";
+import path from "node:path";
+import os from "node:os";
 
-const POKE_LIMIT = 20000;
-const MOVE_LIMIT = 20000;
-const CONCURRENCY = 12;
-const STRONG_BP = 70;
-const OUT_FILE = 'public/data/index.json';
+// ---------------------------
+// Config
+// ---------------------------
+const OUT = path.resolve("public/data/index.json");
+const POKEAPI = "https://pokeapi.co/api/v2";
 
-// Battle-ineligible/ride-mode forms to exclude
-const EXCLUDE_SLUGS = new Set([
-  // Koraidon ride builds
-  'koraidon-limited-build',
-  'koraidon-sprinting-build',
-  'koraidon-swimming-build',
-  'koraidon-gliding-build',
-  // Miraidon ride/utility modes
-  'miraidon-low-power-mode',
-  'miraidon-drive-mode',
-  'miraidon-aquatic-mode',
-  'miraidon-glide-mode'
-]);
+const EXCLUDE_CONTAINS = [
+  "-limited-build",
+  "-sprinting-build",
+  "-swimming-build",
+  "-gliding-build",
+  "-aquatic-mode",
+  "-glide-mode",
+  "-gmax",              // raid-only gigantamax
+  "-starter",           // ride/overworld variants show up on some endpoints
+];
 
-// Abilities we model in the UI scoring — keep in sync with ABILITY_EFFECTS in App.jsx
-const SUPPORTED_ABILITIES = new Set([
-  'drizzle','drought','primordial-sea','desolate-land',
-  'sand-stream','snow-warning','orichalcum-pulse','hadron-engine',
-  'huge-power','adaptability',
-  'levitate','flash-fire','water-absorb','storm-drain','volt-absorb','lightning-rod'
-]);
+const FORM_LABEL = {
+  mega: "Mega",
+  primal: "Primal",
+  alola: "Alolan",
+  hisui: "Hisuian",
+  galar: "Galarian",
+  paldea: "Paldean",
+};
 
-// Certain signature moves sometimes lack BP in older data — force them
-const FORCE_STRONG = { 'collision-course': 100, 'electro-drift': 100 };
+// abilities we model in scoring (same tags used in App)
+const ABILITY_TAGS = {
+  drizzle: "drizzle",
+  drought: "drought",
+  "primordial-sea": "primordial-sea",
+  "desolate-land": "desolate-land",
+  "sand-stream": "sand-stream",
+  "snow-warning": "snow-warning",
+  "orichalcum-pulse": "orichalcum-pulse",
+  "hadron-engine": "hadron-engine",
+  "huge-power": "huge-power",
+  adaptability: "adaptability",
+};
 
+// ---------------------------
+// Helpers
+// ---------------------------
 const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-async function getJson(url, tries = 4) {
-  let last; for (let i=0;i<tries;i++){ try{ const r = await fetch(url); if(!r.ok) throw new Error(`${r.status}`); return await r.json(); } catch(e){ last=e; await sleep(250*(i+1)); } } throw last; }
 
-function pickAbilityTags(abilities){
-  if(!Array.isArray(abilities)) return { normal:null, hidden:null };
-  let normal=null, hidden=null;
-  for (const a of abilities){
-    const name = a?.ability?.name?.toLowerCase();
-    if(!name) continue;
-    if(a.is_hidden){ if(!hidden && SUPPORTED_ABILITIES.has(name)) hidden = name; }
-    else { if(!normal && SUPPORTED_ABILITIES.has(name)) normal = name; }
-  }
-  // Fallback: if only one total ability and it's supported, use it as normal
-  if(!normal && !hidden){
-    const only = abilities.length===1 ? abilities[0]?.ability?.name?.toLowerCase() : null;
-    if (only && SUPPORTED_ABILITIES.has(only)) normal = only;
-  }
-  return { normal: normal||null, hidden: hidden||null };
+function titleCase(s) {
+  return s.replace(/(^|[\s-])([a-z])/g, (_, sp, c) => sp + c.toUpperCase());
 }
 
-function calcPower(stats){
-  if(!Array.isArray(stats)) return 80;
-  let atk=80, spa=80, sum=0; for(const s of stats){ const n=s?.stat?.name; const b=s?.base_stat??80; sum+=b; if(n==='attack') atk=b; if(n==='special-attack') spa=b; }
-  return Math.round(Math.max(atk,spa) + (sum/12));
-}
-function toTypeName(t){ if(!t) return null; const n=t.toLowerCase(); return n[0].toUpperCase()+n.slice(1); }
+function baseAndFormFromSlug(slug) {
+  // ex: "garchomp-mega" -> ["garchomp","mega"]
+  //     "raichu-alola"  -> ["raichu","alola"]
+  const parts = slug.split("-");
+  if (parts.length === 1) return { base: slug, form: null };
 
-async function buildMoveIndex(){
-  const list = await getJson(`https://pokeapi.co/api/v2/move?limit=${MOVE_LIMIT}`);
-  const out = {}; const all=list.results||[]; let done=0;
-  for(let i=0;i<all.length;i+=CONCURRENCY){
-    await Promise.all(all.slice(i,i+CONCURRENCY).map(async(m)=>{ try{ const d=await getJson(m.url); const name=d.name.toLowerCase(); const bp=FORCE_STRONG[name] ?? d.power ?? null; out[name]={ type:d.type?.name||null, power:bp }; } catch{} }));
-    done+=Math.min(CONCURRENCY, all.length-i); process.stdout.write(`\r • ${done}/${all.length} moves…`);
+  // Try matching a known form token at the end
+  const tail = parts[parts.length - 1];
+  if (FORM_LABEL[tail]) {
+    return { base: parts.slice(0, -1).join("-"), form: tail };
   }
-  process.stdout.write('\n'); return out;
+  return { base: slug, form: null };
 }
 
-function isStrong(mi, want){ if(!mi) return false; if(!mi.type) return false; if(mi.type.toLowerCase()!==want.toLowerCase()) return false; const p=mi.power??0; return (p && p>=STRONG_BP); }
+function prettyNameFromSlug(slug) {
+  const { base, form } = baseAndFormFromSlug(slug);
+  const basePretty = titleCase(base.replace(/-/g, " "));
+  if (!form) return basePretty;
+  const label = FORM_LABEL[form];
+  if (!label) return basePretty;
+  return `${basePretty} (${label})`;
+}
 
-async function buildDex(moveIndex){
-  const list = await getJson(`https://pokeapi.co/api/v2/pokemon?limit=${POKE_LIMIT}`);
-  const all = list.results || [];
-  const out = []; const names=[];
+function shouldExclude(slug) {
+  const s = slug.toLowerCase();
+  return EXCLUDE_CONTAINS.some(x => s.includes(x));
+}
 
-  for(let i=0;i<all.length;i+=CONCURRENCY){
-    const batch = await Promise.all(all.slice(i,i+CONCURRENCY).map(async(p)=>{
-      try{
-        const d = await getJson(p.url); // /pokemon/{slug}
-        const species = await getJson(d.species.url);
-        const apiSlug = d.name.toLowerCase(); if(EXCLUDE_SLUGS.has(apiSlug)) return null;
+async function getJson(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`${r.status} ${url}`);
+  return r.json();
+}
+
+// ---------------------------
+// Build
+// ---------------------------
+async function main() {
+  console.log("Building move index…");
+  // not used directly here any more, but we keep the log for continuity
+  console.log("Loading Pokémon details…");
+
+  // Fetch the full list of Pokémon endpoints
+  const list = await getJson(`${POKEAPI}/pokemon?limit=20000`);
+  const all = list.results.map(x => x.name);
+
+  // Filter out clearly unwanted forms
+  const wanted = all.filter(name => !shouldExclude(name));
+
+  // Concurrency to be nice to the API
+  const CONC = Math.max(4, Math.min(16, os.cpus()?.length || 8));
+  let i = 0;
+  const out = [];
+  const errors = [];
+
+  async function worker() {
+    while (i < wanted.length) {
+      const idx = i++;
+      const slug = wanted[idx];
+      try {
+        const d = await getJson(`${POKEAPI}/pokemon/${slug}`);
+        const types = (d.types || [])
+          .sort((a,b)=>a.slot - b.slot)
+          .map(t => t.type.name)
+          .map(t => t[0].toUpperCase() + t.slice(1));
         const id = d.id;
-        const types=(d.types||[]).sort((a,b)=>a.slot-b.slot).map(t=>toTypeName(t.type.name)).filter(Boolean);
 
-        // Strong STAB types from learnset
-        const stabTypes=new Set((types||[]).map(t=>t.toLowerCase()));
-        const strong=new Set();
-        for(const mv of d.moves||[]){ const mname=(mv.move?.name||'').toLowerCase(); const mi=moveIndex[mname]; if(!mi) continue; if(stabTypes.has(mi.type?.toLowerCase()) && isStrong(mi, mi.type)){ strong.add(toTypeName(mi.type)); } }
+        // map abilities
+        const abl = (d.abilities || [])
+          .filter(a => !a.is_hidden) // prefer regular ability for “default ability” use-case
+          .map(a => a.ability.name);
+        let abilityTag = null;
+        if (abl.length === 1 && ABILITY_TAGS[abl[0]]) {
+          abilityTag = ABILITY_TAGS[abl[0]];
+        } else {
+          // If every ability is the same impactful one (rare), still capture it
+          const uniq = [...new Set(abl)];
+          if (uniq.length === 1 && ABILITY_TAGS[uniq[0]]) abilityTag = ABILITY_TAGS[uniq[0]];
+        }
 
-        const { normal, hidden } = pickAbilityTags(d.abilities);
-        const restricted = !!(species.is_legendary || species.is_mythical);
-        const power = calcPower(d.stats);
-        const isMega = /-mega/.test(apiSlug) || /-primal/.test(apiSlug);
+        const pretty = prettyNameFromSlug(slug);
+        const entry = {
+          name: pretty,     // display name (Garchomp (Mega))
+          slug,             // api slug (garchomp-mega)
+          id,               // pokeapi numeric id (for artwork url)
+          types,            // ["Dragon","Ground"]
+          abilityTag,       // optional (null if none of our modelled abilities)
+          aliases: [
+            pretty.toLowerCase(),
+            slug.toLowerCase(),
+            titleCase(slug.replace(/-/g, " ")).toLowerCase(), // “Garchomp Mega”
+          ],
+        };
 
-        return { name: apiSlug, apiSlug, id, types, power, restricted, isMega, strong: Array.from(strong), abilityTag: normal||hidden||null, abilityTags: { normal: normal||null, hidden: hidden||null } };
-      } catch { return null; }
-    }));
-
-    for(const x of batch){ if(!x) continue; out.push(x); names.push(x.name); }
-    process.stdout.write(`\rFetched ${out.length} Pokémon…`);
+        out.push(entry);
+      } catch (e) {
+        errors.push({ slug, e: String(e) });
+      }
+      // gentle throttle
+      await sleep(10);
+    }
   }
-  process.stdout.write('\n');
 
-  const filtered = out.filter(p => p.types && p.types.length);
-  return { pokemon: filtered, names: Array.from(new Set(names)).sort() };
+  await Promise.all(Array.from({ length: CONC }, () => worker()));
+
+  // De-duplicate by slug (keeps one canonical entry)
+  const seen = new Map();
+  for (const p of out) {
+    if (!seen.has(p.slug)) seen.set(p.slug, p);
+  }
+  const pokemon = Array.from(seen.values()).sort((a,b)=> a.name.localeCompare(b.name));
+
+  const names = pokemon.map(p => p.name); // pretty names used by autocomplete
+
+  await fs.mkdir(path.dirname(OUT), { recursive: true });
+  await fs.writeFile(OUT, JSON.stringify({ pokemon, names }, null, 2), "utf8");
+  console.log(`Wrote ${OUT} with ${pokemon.length} entries`);
+
+  if (errors.length) {
+    console.log(`(Skipped ${errors.length} entries with errors)`);
+  }
 }
 
-(async () => {
-  console.log('Building move index…');
-  const moveIndex = await buildMoveIndex();
-  console.log('Loading Pokémon details…');
-  const { pokemon, names } = await buildDex(moveIndex);
-  const payload = { version: 2, generatedAt: new Date().toISOString(), count: pokemon.length, names, pokemon };
-  const fs = await import('node:fs/promises');
-  await fs.mkdir('public/data', { recursive: true });
-  await fs.writeFile(OUT_FILE, JSON.stringify(payload, null, 2), 'utf8');
-  console.log(`Wrote ${OUT_FILE} with ${pokemon.length} entries`);
-})().catch(err => { console.error(err); process.exit(1); });
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});
