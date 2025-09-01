@@ -1,180 +1,127 @@
-// scripts/build-index.mjs
-// Requires Node 18+ (global fetch). You have Node 22 — perfect.
-import fs from "fs/promises";
+// ==========================
+// FILE: scripts/build-index.mjs
+// ==========================
+/* Build a compact dex for the app: types, id, power, strong STABs,
+ * and ability tags (normal + hidden when supported).
+ * Node 18+ recommended.
+ */
 
-const API = "https://pokeapi.co/api/v2";
-const UA = "pokemon-counter/1.0 (contact: you@example.com)";
+const POKE_LIMIT = 20000;
+const MOVE_LIMIT = 20000;
+const CONCURRENCY = 12;
+const STRONG_BP = 70;
+const OUT_FILE = 'public/data/index.json';
 
-// ---------- helpers ----------
-const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// Battle-ineligible/ride-mode forms to exclude
+const EXCLUDE_SLUGS = new Set([
+  // Koraidon ride builds
+  'koraidon-limited-build',
+  'koraidon-sprinting-build',
+  'koraidon-swimming-build',
+  'koraidon-gliding-build',
+  // Miraidon ride/utility modes
+  'miraidon-low-power-mode',
+  'miraidon-drive-mode',
+  'miraidon-aquatic-mode',
+  'miraidon-glide-mode'
+]);
 
-// Robust fetch: retries on network errors + 429/5xx with backoff
-async function getJson(url, tries = 0) {
-  const MAX = 8;
-  try {
-    const res = await fetch(url, { headers: { "User-Agent": UA } });
-    if (res.ok) return res.json();
+// Abilities we model in the UI scoring — keep in sync with ABILITY_EFFECTS in App.jsx
+const SUPPORTED_ABILITIES = new Set([
+  'drizzle','drought','primordial-sea','desolate-land',
+  'sand-stream','snow-warning','orichalcum-pulse','hadron-engine',
+  'huge-power','adaptability',
+  'levitate','flash-fire','water-absorb','storm-drain','volt-absorb','lightning-rod'
+]);
 
-    if (res.status === 429 || (res.status >= 500 && res.status < 600)) {
-      const wait = Math.min(500 * 2 ** tries, 8000);
-      await sleep(wait);
-      return getJson(url, tries + 1);
-    }
-    throw new Error(`HTTP ${res.status} on ${url}`);
-  } catch (err) {
-    if (tries < MAX) {
-      const wait = Math.min(500 * 2 ** tries, 8000);
-      await sleep(wait);
-      return getJson(url, tries + 1);
-    }
-    console.error("getJson failed after retries:", url, err?.code || err?.message);
-    throw err;
+// Certain signature moves sometimes lack BP in older data — force them
+const FORCE_STRONG = { 'collision-course': 100, 'electro-drift': 100 };
+
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+async function getJson(url, tries = 4) {
+  let last; for (let i=0;i<tries;i++){ try{ const r = await fetch(url); if(!r.ok) throw new Error(`${r.status}`); return await r.json(); } catch(e){ last=e; await sleep(250*(i+1)); } } throw last; }
+
+function pickAbilityTags(abilities){
+  if(!Array.isArray(abilities)) return { normal:null, hidden:null };
+  let normal=null, hidden=null;
+  for (const a of abilities){
+    const name = a?.ability?.name?.toLowerCase();
+    if(!name) continue;
+    if(a.is_hidden){ if(!hidden && SUPPORTED_ABILITIES.has(name)) hidden = name; }
+    else { if(!normal && SUPPORTED_ABILITIES.has(name)) normal = name; }
   }
-}
-
-function Cap(s) { return s ? s[0].toUpperCase() + s.slice(1) : s; }
-function capType(s) { return Cap(s); }
-function capWordsHyphen(s) { return (s || "").split("-").map(Cap).join(" "); }
-function displayName(slug) {
-  if (slug.includes("-mega")) {
-    const form = slug.includes("-mega-x") ? "Mega X" : slug.includes("-mega-y") ? "Mega Y" : "Mega";
-    const base = slug.replace(/-mega(-[a-z])?/, "");
-    return `${capWordsHyphen(base)} (${form})`;
+  // Fallback: if only one total ability and it's supported, use it as normal
+  if(!normal && !hidden){
+    const only = abilities.length===1 ? abilities[0]?.ability?.name?.toLowerCase() : null;
+    if (only && SUPPORTED_ABILITIES.has(only)) normal = only;
   }
-  return capWordsHyphen(slug);
+  return { normal: normal||null, hidden: hidden||null };
 }
 
-async function queue(items, fn, concurrency = 3, label = "jobs") {
-  let i = 0, active = 0, done = 0;
-  return new Promise((resolve, reject) => {
-    const next = () => {
-      if (i >= items.length && active === 0) return resolve();
-      while (active < concurrency && i < items.length) {
-        const item = items[i++];
-        active++;
-        fn(item)
-          .then(() => {
-            active--; done++;
-            if (done % 100 === 0) console.log(` • ${done}/${items.length} ${label}…`);
-            next();
-          })
-          .catch(reject);
-      }
-    };
-    next();
-  });
+function calcPower(stats){
+  if(!Array.isArray(stats)) return 80;
+  let atk=80, spa=80, sum=0; for(const s of stats){ const n=s?.stat?.name; const b=s?.base_stat??80; sum+=b; if(n==='attack') atk=b; if(n==='special-attack') spa=b; }
+  return Math.round(Math.max(atk,spa) + (sum/12));
 }
+function toTypeName(t){ if(!t) return null; const n=t.toLowerCase(); return n[0].toUpperCase()+n.slice(1); }
 
-// ---------- 1) species (for restricted flags) ----------
-console.log("Loading species list…");
-const speciesList = await getJson(`${API}/pokemon-species?limit=20000`);
-const speciesFlags = new Map(); // species-slug -> {legendary,mythical}
-
-await queue(
-  speciesList.results,
-  async (s) => {
-    const js = await getJson(s.url);
-    speciesFlags.set(js.name, { legendary: !!js.is_legendary, mythical: !!js.is_mythical });
-  },
-  6,
-  "species"
-);
-
-// ---------- 2) pokemon forms ----------
-console.log("Loading Pokémon index…");
-const all = await getJson(`${API}/pokemon?limit=20000`);
-
-// keep default forms + megas; skip gmax/totem which skew movesets
-const keep = all.results.filter((p) => {
-  const n = p.name;
-  if (n.includes("-gmax") || n.includes("-totem")) return false;
-  return true; // allow regional/alt forms; megas included
-});
-
-const out = [];
-const moveNames = new Set();
-
-async function loadMon(entry) {
-  const d = await getJson(entry.url);
-  const id = d.id;
-  const slug = d.name;                     // e.g., "tyranitar-mega"
-  const isMega = slug.includes("-mega");
-  const types = d.types.sort((a, b) => a.slot - b.slot).map((t) => capType(t.type.name));
-  const stats = Object.fromEntries(d.stats.map((s) => [s.stat.name, s.base_stat]));
-  const atk = stats.attack || 0, spa = stats["special-attack"] || 0;
-
-  // Scale to ~70–100 for our simple scoring (peaks near high ATK/SPA)
-  const power = Math.max(70, Math.min(100, Math.round(Math.max(atk, spa) * 0.6)));
-
-  // moves (names only for now)
-  const monsMoves = d.moves.map((m) => m.move.name);
-  monsMoves.forEach((n) => moveNames.add(n));
-
-  // Restricted = legendary or mythical (by species)
-  const sf = speciesFlags.get(d.species.name) || { legendary: false, mythical: false };
-  const restricted = !!(sf.legendary || sf.mythical);
-
-  out.push({
-    name: displayName(slug),
-    apiSlug: slug,
-    id,
-    types,
-    power,
-    _moveNames: monsMoves, // temp: used to compute 'strong'
-    restricted,
-    isMega
-  });
-}
-
-console.log("Loading Pokémon details (this can take a bit) …");
-await queue(keep, loadMon, 3, "pokemon");
-
-// ---------- 3) unique moves ----------
-console.log("Loading unique moves…");
-const moveArr = Array.from(moveNames);
-const moveMap = new Map();
-
-await queue(
-  moveArr,
-  async (name) => {
-    const m = await getJson(`${API}/move/${name}`);
-    moveMap.set(name, {
-      type: capType(m.type.name),
-      power: m.power,                  // may be null
-      cls: m.damage_class?.name || "status" // 'physical'|'special'|'status'
-    });
-  },
-  4,
-  "moves"
-);
-
-// ---------- 4) compute 'strong' types (≥70 BP, damaging, STAB) ----------
-for (const p of out) {
-  const typeSet = new Set(p.types);
-  const strong = new Set();
-  for (const mn of p._moveNames) {
-    const mv = moveMap.get(mn);
-    if (!mv) continue;
-    if (!mv.power || mv.power < 70) continue;
-    if (mv.cls === "status") continue;
-    if (!typeSet.has(mv.type)) continue; // require STAB
-    strong.add(mv.type);
+async function buildMoveIndex(){
+  const list = await getJson(`https://pokeapi.co/api/v2/move?limit=${MOVE_LIMIT}`);
+  const out = {}; const all=list.results||[]; let done=0;
+  for(let i=0;i<all.length;i+=CONCURRENCY){
+    await Promise.all(all.slice(i,i+CONCURRENCY).map(async(m)=>{ try{ const d=await getJson(m.url); const name=d.name.toLowerCase(); const bp=FORCE_STRONG[name] ?? d.power ?? null; out[name]={ type:d.type?.name||null, power:bp }; } catch{} }));
+    done+=Math.min(CONCURRENCY, all.length-i); process.stdout.write(`\r • ${done}/${all.length} moves…`);
   }
-  p.strong = Array.from(strong);
-  delete p._moveNames;
+  process.stdout.write('\n'); return out;
 }
 
-// ---------- 5) names list for autocomplete ----------
-const names = speciesList.results.map((r) => r.name);
+function isStrong(mi, want){ if(!mi) return false; if(!mi.type) return false; if(mi.type.toLowerCase()!==want.toLowerCase()) return false; const p=mi.power??0; return (p && p>=STRONG_BP); }
 
-// ---------- 6) write file ----------
-await fs.mkdir("public/data", { recursive: true });
-const payload = {
-  version: 1,
-  generatedAt: new Date().toISOString(),
-  count: out.length,
-  names,
-  pokemon: out
-};
-await fs.writeFile("public/data/index.json", JSON.stringify(payload));
-console.log(`Wrote public/data/index.json with ${out.length} entries`);
+async function buildDex(moveIndex){
+  const list = await getJson(`https://pokeapi.co/api/v2/pokemon?limit=${POKE_LIMIT}`);
+  const all = list.results || [];
+  const out = []; const names=[];
+
+  for(let i=0;i<all.length;i+=CONCURRENCY){
+    const batch = await Promise.all(all.slice(i,i+CONCURRENCY).map(async(p)=>{
+      try{
+        const d = await getJson(p.url); // /pokemon/{slug}
+        const species = await getJson(d.species.url);
+        const apiSlug = d.name.toLowerCase(); if(EXCLUDE_SLUGS.has(apiSlug)) return null;
+        const id = d.id;
+        const types=(d.types||[]).sort((a,b)=>a.slot-b.slot).map(t=>toTypeName(t.type.name)).filter(Boolean);
+
+        // Strong STAB types from learnset
+        const stabTypes=new Set((types||[]).map(t=>t.toLowerCase()));
+        const strong=new Set();
+        for(const mv of d.moves||[]){ const mname=(mv.move?.name||'').toLowerCase(); const mi=moveIndex[mname]; if(!mi) continue; if(stabTypes.has(mi.type?.toLowerCase()) && isStrong(mi, mi.type)){ strong.add(toTypeName(mi.type)); } }
+
+        const { normal, hidden } = pickAbilityTags(d.abilities);
+        const restricted = !!(species.is_legendary || species.is_mythical);
+        const power = calcPower(d.stats);
+        const isMega = /-mega/.test(apiSlug) || /-primal/.test(apiSlug);
+
+        return { name: apiSlug, apiSlug, id, types, power, restricted, isMega, strong: Array.from(strong), abilityTag: normal||hidden||null, abilityTags: { normal: normal||null, hidden: hidden||null } };
+      } catch { return null; }
+    }));
+
+    for(const x of batch){ if(!x) continue; out.push(x); names.push(x.name); }
+    process.stdout.write(`\rFetched ${out.length} Pokémon…`);
+  }
+  process.stdout.write('\n');
+
+  const filtered = out.filter(p => p.types && p.types.length);
+  return { pokemon: filtered, names: Array.from(new Set(names)).sort() };
+}
+
+(async () => {
+  console.log('Building move index…');
+  const moveIndex = await buildMoveIndex();
+  console.log('Loading Pokémon details…');
+  const { pokemon, names } = await buildDex(moveIndex);
+  const payload = { version: 2, generatedAt: new Date().toISOString(), count: pokemon.length, names, pokemon };
+  const fs = await import('node:fs/promises');
+  await fs.mkdir('public/data', { recursive: true });
+  await fs.writeFile(OUT_FILE, JSON.stringify(payload, null, 2), 'utf8');
+  console.log(`Wrote ${OUT_FILE} with ${pokemon.length} entries`);
+})().catch(err => { console.error(err); process.exit(1); });
