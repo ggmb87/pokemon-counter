@@ -1,10 +1,10 @@
-// src/App.jsx
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
-/* ---------- Types and effectiveness (unchanged) ---------- */
+/* ---------- Types and effectiveness ---------- */
 const TYPES = [
   "Normal","Fire","Water","Electric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Rock","Ghost","Dragon","Dark","Steel","Fairy"
 ];
+
 const chart = {
   Normal:{Rock:.5,Ghost:0,Steel:.5},
   Fire:{Fire:.5,Water:.5,Grass:2,Ice:2,Bug:2,Rock:.5,Dragon:.5,Steel:2},
@@ -25,6 +25,7 @@ const chart = {
   Steel:{Fire:.5,Water:.5,Electric:.5,Ice:2,Rock:2,Fairy:2,Steel:.5},
   Fairy:{Fire:.5,Poison:.5,Steel:.5,Fighting:2,Dragon:2,Dark:2},
 };
+
 function weaknessesOf(defTypes) {
   const res = Object.fromEntries(TYPES.map(t => [t,1]));
   for (const atk of TYPES) {
@@ -35,19 +36,20 @@ function weaknessesOf(defTypes) {
   return res;
 }
 
-/* ---------- Ability heuristics (same tags as before) ---------- */
+/* ---------- Ability heuristics (lightweight) ---------- */
 const ABILITY_EFFECTS = {
   "drizzle": { weather:"rain", atkByType:{Water:1.5}, riskModsAgainst:{Fire:0.8} },
-  "drought": { weather:"sun", atkByType:{Fire:1.5}, riskModsAgainst:{Water:0.8} },
+  "drought": { weather:"sun",  atkByType:{Fire:1.5},  riskModsAgainst:{Water:0.8} },
   "primordial-sea": { weather:"rain", atkByType:{Water:1.6}, negateTypes:["Fire"] },
-  "desolate-land": { weather:"sun", atkByType:{Fire:1.6}, negateTypes:["Water"] },
+  "desolate-land":  { weather:"sun",  atkByType:{Fire:1.6},  negateTypes:["Water"] },
   "sand-stream": { weather:"sand", bulkBonus:0.1 },
   "snow-warning": { weather:"snow", bulkBonus:0.05 },
   "orichalcum-pulse": { weather:"sun", flatOffense:1.3, signatureSE:{type:"Fighting", mult:1.33} },
-  "hadron-engine": { terrain:"electric", flatOffense:1.3, atkByType:{Electric:1.3}, signatureSE:{type:"Electric", mult:1.33} },
+  "hadron-engine":   { terrain:"electric", flatOffense:1.3, atkByType:{Electric:1.3}, signatureSE:{type:"Electric", mult:1.33} },
   "huge-power": { flatOffense:1.5 },
   "adaptability": { stabBoost:1.33 },
 };
+
 function applyAbilityToOffense(o, hitType, mult, tag){
   const eff = ABILITY_EFFECTS[tag]; if(!eff) return o;
   let v=o;
@@ -72,10 +74,41 @@ function cancelIfOpposingWeathers(attTag, tgtTag, hitType){
   return 1;
 }
 
-/* ---------- Minimal attacker pool left as-is (not shown here for brevity) ---------- */
+/* ---------- Curated attacker pool (keeps `strong` flags) ---------- */
 const POKEDEX = [
-  { name:"Garchomp (Mega)", apiSlug:"garchomp-mega", types:["Dragon","Ground"], power:97, strong:["Dragon","Ground"] },
-  // … keep your existing curated attacker pool here …
+  { name:"Regieleki", types:["Electric"], power:95, strong:["Electric"] },
+  { name:"Zapdos", types:["Electric","Flying"], power:90, strong:["Electric","Flying"] },
+  { name:"Iron Hands", types:["Fighting","Electric"], power:88, strong:["Fighting","Electric"] },
+
+  { name:"Zacian", types:["Fairy","Steel"], power:98, strong:["Fairy","Steel"], restricted:true },
+  { name:"Flutter Mane", types:["Ghost","Fairy"], power:94, strong:["Ghost","Fairy"] },
+  { name:"Mewtwo", types:["Psychic"], power:96, strong:["Psychic"], restricted:true },
+
+  { name:"Chien-Pao", types:["Dark","Ice"], power:93, strong:["Dark","Ice"] },
+  { name:"Baxcalibur", types:["Dragon","Ice"], power:92, strong:["Ice","Dragon"] },
+  { name:"Dragonite", types:["Dragon","Flying"], power:90, strong:["Dragon","Flying"] },
+
+  { name:"Rampardos", types:["Rock"], power:96, strong:["Rock"] },
+  { name:"Tyranitar (Mega)", apiSlug:"tyranitar-mega", isMega:true, types:["Rock","Dark"], power:99, strong:["Rock","Dark"], abilityTag:"sand-stream" },
+  { name:"Aerodactyl (Mega)", apiSlug:"aerodactyl-mega", isMega:true, types:["Rock","Flying"], power:95, strong:["Rock","Flying"] },
+
+  { name:"Heatran", types:["Fire","Steel"], power:92, strong:["Fire","Steel"] },
+  { name:"Charizard (Mega X)", apiSlug:"charizard-mega-x", isMega:true, types:["Fire","Dragon"], power:97, strong:["Fire","Dragon"] },
+  { name:"Charizard (Mega Y)", apiSlug:"charizard-mega-y", isMega:true, types:["Fire","Flying"], power:98, strong:["Fire","Flying"], abilityTag:"drought" },
+
+  { name:"Garchomp", types:["Dragon","Ground"], power:91, strong:["Ground","Dragon"] },
+  { name:"Garchomp (Mega)", apiSlug:"garchomp-mega", isMega:true, types:["Dragon","Ground"], power:97, strong:["Dragon","Ground"] },
+  { name:"Excadrill", types:["Ground","Steel"], power:90, strong:["Ground","Steel"] },
+
+  { name:"Metagross (Mega)", apiSlug:"metagross-mega", isMega:true, types:["Steel","Psychic"], power:98, strong:["Steel","Psychic"] },
+  { name:"Scizor (Mega)", apiSlug:"scizor-mega", isMega:true, types:["Bug","Steel"], power:95, strong:["Bug","Steel"] },
+  { name:"Heracross (Mega)", apiSlug:"heracross-mega", isMega:true, types:["Bug","Fighting"], power:94, strong:["Bug","Fighting"] },
+
+  { name:"Greninja", types:["Water","Dark"], power:90, strong:["Water","Dark"] },
+  { name:"Kingdra", types:["Water","Dragon"], power:88, strong:["Water","Dragon"] },
+  { name:"Rillaboom", types:["Grass"], power:90, strong:["Grass"] },
+
+  { name:"Mamoswine", types:["Ice","Ground"], power:90, strong:["Ice","Ground"] },
 ];
 
 /* ---------- UI helpers ---------- */
@@ -111,31 +144,39 @@ function Card({ title, right, children }) {
 }
 
 /* ---------- Scoring ---------- */
-function rankCounters(targetTypes, { allowRestricted=true, showMega=true, useAbilities=true, targetAbilityTag=null }={}, dexPool=POKEDEX){
+function rankCounters(targetTypes, { allowRestricted=true, showMega=true, targetAbilityTag=null }={}, dexPool=POKEDEX){
   if(!targetTypes?.length) return { weaknesses:{}, picks:[] };
   const weaknesses = weaknessesOf(targetTypes);
   const weak = Object.entries(weaknesses).filter(([,m])=>m>=2).sort((a,b)=>b[1]-a[1]);
   const pool = dexPool.filter(p => (allowRestricted||!p.restricted) && (showMega||!p.isMega));
+
   const picks = pool.map(att=>{
     const hitType = att.strong?.find(t => (weaknesses[t]??1)>=2);
     if(!hitType) return null;
     const mult = weaknesses[hitType];
+
+    // incoming risk from target STABs
     const incoming = targetTypes.map(stab => att.types.reduce((m,def)=>m*(chart[stab]?.[def]??1),1));
     const worstIncoming = Math.max(...incoming);
+
+    // baseline offense/risk
     let offense = mult * (att.power/100);
     let riskVal = worstIncoming>=4?100: worstIncoming>=2?75: worstIncoming<=.5?25:50;
 
-    if(useAbilities && att.abilityTag){
+    // always-on ability heuristics (attacker + simple clash with target weather)
+    if (att.abilityTag) {
       offense = applyAbilityToOffense(offense, hitType, mult, att.abilityTag);
-      if(targetAbilityTag){
+      if (targetAbilityTag) {
         offense *= cancelIfOpposingWeathers(att.abilityTag, targetAbilityTag, hitType);
         const neg = ABILITY_EFFECTS[targetAbilityTag]?.negateTypes||[];
         if(neg.includes(hitType)){ offense*=0.6; riskVal*=1.2; }
       }
       riskVal = applyAbilityToRisk(riskVal, targetTypes, att.abilityTag);
     }
+
     const survBonus = worstIncoming<=.5 ? .15 : worstIncoming===1 ? .05 : 0;
     const score = Number((offense + survBonus).toFixed(3));
+
     return {
       attacker: att,
       hitType, mult, score,
@@ -156,21 +197,19 @@ export default function App() {
   const [showMega, setShowMega] = useState(true);
   const [showNeutral, setShowNeutral] = useState(false);
   const [showResists, setShowResists] = useState(false);
-  const [useAbilities] = useState(true); // always on now
 
-  // compiled index
+  // compiled index for names/aliases + target ability
   const [dex, setDex] = useState(null);
   const [nameList, setNameList] = useState([]);
 
-  // target state
   const [target, setTarget] = useState(null); // {name, slug, id, types, abilityTag}
 
   useEffect(() => {
     fetch("/data/index.json")
       .then(r => r.json())
       .then(j => {
-        setDex(j.pokemon);
-        setNameList(j.names); // pretty only
+        setDex(j.pokemon || []);
+        setNameList(j.names || []);
       })
       .catch(()=>{});
   }, []);
@@ -187,10 +226,9 @@ export default function App() {
 
   const suggestions = useMemo(() => {
     const q = (query||"").toLowerCase();
-    const arr = (nameList||[])
+    return (nameList||[])
       .filter(n => !q || n.toLowerCase().startsWith(q) || n.toLowerCase().includes(q))
       .slice(0, 12);
-    return arr;
   }, [query, nameList]);
 
   // resolve a query string to a dex entry (prefer local, else network)
@@ -200,7 +238,6 @@ export default function App() {
     const local = slug ? (dex||[]).find(p => p.slug === slug) : null;
     if (local) return local;
 
-    // fallback network fetch by "raw" key (already slug-like)
     try {
       const r = await fetch(`https://pokeapi.co/api/v2/pokemon/${key}`);
       if (!r.ok) throw new Error("not found");
@@ -212,7 +249,7 @@ export default function App() {
     }
   };
 
-  // on commit from autocomplete
+  // autocomplete commit
   const [showSug, setShowSug] = useState(false);
   const [hi, setHi] = useState(0);
   const commitSuggestion = async (s) => {
@@ -223,17 +260,14 @@ export default function App() {
     setTarget(t);
   };
 
-  // update target when user stops typing and hits Enter/Tab/click
-  // (we keep typing free-form; the commitSuggestion does the lookup)
-
-  // ability tag of target (for weather clash etc.)
   const targetAbilityTag = target?.abilityTag || null;
   const activeTypes = mode === "pokemon" ? (target?.types || []) : pickedTypes;
 
-  const pool = useMemo(() => dex ?? POKEDEX, [dex]);
+  // IMPORTANT: keep curated pool; index.json is NOT used for counter pool
+  const pool = POKEDEX;
   const { weaknesses, picks } = useMemo(
-    () => rankCounters(activeTypes, { allowRestricted, showMega, useAbilities: true, targetAbilityTag }, pool),
-    [activeTypes, allowRestricted, showMega, pool, targetAbilityTag]
+    () => rankCounters(activeTypes, { allowRestricted, showMega, targetAbilityTag }, pool),
+    [activeTypes, allowRestricted, showMega, targetAbilityTag]
   );
 
   const fullMap = useMemo(() => weaknessesOf(activeTypes), [activeTypes]);
@@ -259,7 +293,7 @@ export default function App() {
           <div className="mb-3">
             <div className="inline-flex rounded-lg border border-white/10 bg-slate-900/40">
               <button onClick={()=>setMode('pokemon')} className={`px-3 py-1.5 text-sm rounded-l-lg ${mode==='pokemon'?'bg-slate-700 text-white':'opacity-80'}`}>Pokémon</button>
-              <button onClick={()=>setMode('types')} className={`px-3 py-1.5 text-sm rounded-r-lg ${mode==='types'?'bg-slate-700 text-white':'opacity-80'}`}>Types</button>
+              <button onClick={()=>setMode('types')}    className={`px-3 py-1.5 text-sm rounded-r-lg ${mode==='types'   ?'bg-slate-700 text-white':'opacity-80'}`}>Types</button>
             </div>
           </div>
 
