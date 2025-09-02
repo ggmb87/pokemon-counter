@@ -1,181 +1,197 @@
-// scripts/build-index.mjs
-import fs from "node:fs/promises";
-import path from "node:path";
-import os from "node:os";
+// node scripts/build-index.mjs
+// Builds public/data/index.json with:
+// - every Pokémon form (clean display names)
+// - types, id, isMega, restricted
+// - offense (max Atk/SpA), stage + isFinal
+// - learnedStrong: array of types where the mon learns ≥70 BP STAB
+// - abilityTagNormal / abilityTagHidden (for small set of impactful abilities)
+// - names[] for autocomplete (pretty names)
+// Excludes ride/mission-only forms (koraidon/miraidon modes, etc.)
 
-// ---------------------------
-// Config
-// ---------------------------
-const OUT = path.resolve("public/data/index.json");
-const POKEAPI = "https://pokeapi.co/api/v2";
+import fs from 'node:fs/promises';
 
-const EXCLUDE_CONTAINS = [
-  "-limited-build",
-  "-sprinting-build",
-  "-swimming-build",
-  "-gliding-build",
-  "-aquatic-mode",
-  "-glide-mode",
-  "-gmax",              // raid-only gigantamax
-  "-starter",           // ride/overworld variants show up on some endpoints
-];
+const API = 'https://pokeapi.co/api/v2';
 
-const FORM_LABEL = {
-  mega: "Mega",
-  primal: "Primal",
-  alola: "Alolan",
-  hisui: "Hisuian",
-  galar: "Galarian",
-  paldea: "Paldean",
-};
-
-// abilities we model in scoring (same tags used in App)
-const ABILITY_TAGS = {
-  drizzle: "drizzle",
-  drought: "drought",
-  "primordial-sea": "primordial-sea",
-  "desolate-land": "desolate-land",
-  "sand-stream": "sand-stream",
-  "snow-warning": "snow-warning",
-  "orichalcum-pulse": "orichalcum-pulse",
-  "hadron-engine": "hadron-engine",
-  "huge-power": "huge-power",
-  adaptability: "adaptability",
-};
-
-// ---------------------------
-// Helpers
-// ---------------------------
-const sleep = (ms) => new Promise(r => setTimeout(r, ms));
-
-function titleCase(s) {
-  return s.replace(/(^|[\s-])([a-z])/g, (_, sp, c) => sp + c.toUpperCase());
-}
-
-function baseAndFormFromSlug(slug) {
-  // ex: "garchomp-mega" -> ["garchomp","mega"]
-  //     "raichu-alola"  -> ["raichu","alola"]
-  const parts = slug.split("-");
-  if (parts.length === 1) return { base: slug, form: null };
-
-  // Try matching a known form token at the end
-  const tail = parts[parts.length - 1];
-  if (FORM_LABEL[tail]) {
-    return { base: parts.slice(0, -1).join("-"), form: tail };
-  }
-  return { base: slug, form: null };
-}
-
-function prettyNameFromSlug(slug) {
-  const { base, form } = baseAndFormFromSlug(slug);
-  const basePretty = titleCase(base.replace(/-/g, " "));
-  if (!form) return basePretty;
-  const label = FORM_LABEL[form];
-  if (!label) return basePretty;
-  return `${basePretty} (${label})`;
-}
-
-function shouldExclude(slug) {
-  const s = slug.toLowerCase();
-  return EXCLUDE_CONTAINS.some(x => s.includes(x));
-}
-
-async function getJson(url) {
-  const r = await fetch(url);
-  if (!r.ok) throw new Error(`${r.status} ${url}`);
-  return r.json();
-}
-
-// ---------------------------
-// Build
-// ---------------------------
-async function main() {
-  console.log("Building move index…");
-  // not used directly here any more, but we keep the log for continuity
-  console.log("Loading Pokémon details…");
-
-  // Fetch the full list of Pokémon endpoints
-  const list = await getJson(`${POKEAPI}/pokemon?limit=20000`);
-  const all = list.results.map(x => x.name);
-
-  // Filter out clearly unwanted forms
-  const wanted = all.filter(name => !shouldExclude(name));
-
-  // Concurrency to be nice to the API
-  const CONC = Math.max(4, Math.min(16, os.cpus()?.length || 8));
-  let i = 0;
-  const out = [];
-  const errors = [];
-
-  async function worker() {
-    while (i < wanted.length) {
-      const idx = i++;
-      const slug = wanted[idx];
-      try {
-        const d = await getJson(`${POKEAPI}/pokemon/${slug}`);
-        const types = (d.types || [])
-          .sort((a,b)=>a.slot - b.slot)
-          .map(t => t.type.name)
-          .map(t => t[0].toUpperCase() + t.slice(1));
-        const id = d.id;
-
-        // map abilities
-        const abl = (d.abilities || [])
-          .filter(a => !a.is_hidden) // prefer regular ability for “default ability” use-case
-          .map(a => a.ability.name);
-        let abilityTag = null;
-        if (abl.length === 1 && ABILITY_TAGS[abl[0]]) {
-          abilityTag = ABILITY_TAGS[abl[0]];
-        } else {
-          // If every ability is the same impactful one (rare), still capture it
-          const uniq = [...new Set(abl)];
-          if (uniq.length === 1 && ABILITY_TAGS[uniq[0]]) abilityTag = ABILITY_TAGS[uniq[0]];
-        }
-
-        const pretty = prettyNameFromSlug(slug);
-        const entry = {
-          name: pretty,     // display name (Garchomp (Mega))
-          slug,             // api slug (garchomp-mega)
-          id,               // pokeapi numeric id (for artwork url)
-          types,            // ["Dragon","Ground"]
-          abilityTag,       // optional (null if none of our modelled abilities)
-          aliases: [
-            pretty.toLowerCase(),
-            slug.toLowerCase(),
-            titleCase(slug.replace(/-/g, " ")).toLowerCase(), // “Garchomp Mega”
-          ],
-        };
-
-        out.push(entry);
-      } catch (e) {
-        errors.push({ slug, e: String(e) });
-      }
-      // gentle throttle
-      await sleep(10);
+// --- helpers ---
+const sleep = (ms)=> new Promise(r=>setTimeout(r,ms));
+const getJson = async (url) => {
+  for (let i=0;i<3;i++){
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(`${r.status} ${url}`);
+      return await r.json();
+    } catch(e){
+      if (i===2) throw e;
+      await sleep(200+i*250);
     }
   }
+};
 
-  await Promise.all(Array.from({ length: CONC }, () => worker()));
+const typeCap = s => s[0].toUpperCase()+s.slice(1);
+const toSlug = s => (s||'').toLowerCase().replace(/[^a-z0-9- ]/g,'').trim().replace(/ +/g,'-');
 
-  // De-duplicate by slug (keeps one canonical entry)
-  const seen = new Map();
-  for (const p of out) {
-    if (!seen.has(p.slug)) seen.set(p.slug, p);
-  }
-  const pokemon = Array.from(seen.values()).sort((a,b)=> a.name.localeCompare(b.name));
+const ABILITY_MAP = new Map(
+  [
+    'drizzle','drought','primordial-sea','desolate-land','sand-stream','snow-warning',
+    'orichalcum-pulse','hadron-engine','huge-power','pure-power','adaptability'
+  ].map(x=>[x,x])
+);
 
-  const names = pokemon.map(p => p.name); // pretty names used by autocomplete
+// quick restricted definition (mythical/legendary/paradox/box/primals, etc.)
+const isRestricted = (species) =>
+  !!(species.is_legendary || species.is_mythical || /paradox|ultra beast/i.test(species.generation?.name||'')); // simple heuristic
 
-  await fs.mkdir(path.dirname(OUT), { recursive: true });
-  await fs.writeFile(OUT, JSON.stringify({ pokemon, names }, null, 2), "utf8");
-  console.log(`Wrote ${OUT} with ${pokemon.length} entries`);
+// forms we do NOT want in the index
+const EXCLUDE_NAME_PARTS = [
+  'aquatic-mode','glide-mode','sprinting-build','swimming-build','limited-build','gliding-build'
+];
 
-  if (errors.length) {
-    console.log(`(Skipped ${errors.length} entries with errors)`);
-  }
+// pretty “Name (Form)” builder
+function prettyNameFromPokemon(p) {
+  const base = p.species.name;
+  const raw = p.name;
+  let form = raw.replace(base, '').replace(/^-/, '');
+  if (!form) return cap(base);
+
+  // normalize popular forms
+  form = form
+    .replace(/-mega-x$/,' (Mega X)')
+    .replace(/-mega-y$/,' (Mega Y)')
+    .replace(/-mega$/,' (Mega)')
+    .replace(/-primal$/,' (Primal)')
+    .replace(/-alola$/,' (Alolan)')
+    .replace(/-hisui$/,' (Hisuian)')
+    .replace(/-galar$/,' (Galarian)')
+    .replace(/-paldea$/,' (Paldean)');
+
+  if (!/[()]/.test(form)) form = ` (${capWords(form.replace(/-/g,' '))})`;
+  return `${cap(base)}${form}`;
+}
+const cap = s => s ? s[0].toUpperCase()+s.slice(1) : s;
+const capWords = s => s.split(' ').map(cap).join(' ');
+
+// evolution stage (0/1/2…) and isFinal
+async function getStageInfo(species) {
+  const chain = await getJson(species.evolution_chain.url);
+  // walk chain and locate this species, then see if it has evolves_to
+  const findNode = (node, depth=0) => {
+    if (node.species.name === species.name) {
+      return { depth, isFinal: (node.evolves_to||[]).length===0 };
+    }
+    for (const child of node.evolves_to || []) {
+      const f = findNode(child, depth+1);
+      if (f) return f;
+    }
+    return null;
+  };
+  const res = findNode(chain.chain, 0);
+  return res || { depth: species.evolves_from_species ? 1 : 0, isFinal: true };
 }
 
-main().catch(err => {
-  console.error(err);
+// --- move index (type + power) ---
+async function buildMoveIndex() {
+  // 900+ moves; get all pages
+  let url = `${API}/move?limit=2000`;
+  const idx = new Map();
+  while (url) {
+    const page = await getJson(url);
+    for (const m of page.results) {
+      const d = await getJson(m.url);
+      const pow = d.power ?? 0;
+      const t = typeCap(d.type.name);
+      idx.set(d.name, { type: t, power: pow });
+    }
+    url = page.next;
+  }
+  return idx;
+}
+
+const TYPES = ["normal","fire","water","electric","grass","ice","fighting","poison","ground","flying","psychic","bug","rock","ghost","dragon","dark","steel","fairy"];
+
+// --- MAIN ---
+(async () => {
+  console.log('Building move index…');
+  const MOVE_INDEX = await buildMoveIndex();
+
+  console.log('Loading Pokémon details…');
+  // grab all pokemon?limit big enough
+  const list = await getJson(`${API}/pokemon?limit=20000`);
+  const out = [];
+  const names = [];
+
+  for (const row of list.results) {
+    const poke = await getJson(row.url);
+
+    // skip weird ride forms etc
+    if (EXCLUDE_NAME_PARTS.some(k => poke.name.includes(k))) continue;
+
+    // types
+    const types = poke.types.map(t => typeCap(t.type.name));
+
+    // species (for names/restricted/evo info)
+    const species = await getJson(poke.species.url);
+    const restricted = isRestricted(species);
+
+    // stage info
+    let stage = 0, isFinal = true;
+    try {
+      const si = await getStageInfo(species);
+      stage = si.depth;
+      isFinal = si.isFinal;
+    } catch { /* fallback ok */ }
+
+    // abilities (normal vs hidden)
+    let abilityTagNormal = null, abilityTagHidden = null;
+    for (const a of poke.abilities) {
+      const key = a.ability.name.toLowerCase();
+      if (ABILITY_MAP.has(key)) {
+        if (a.is_hidden) abilityTagHidden = ABILITY_MAP.get(key);
+        else abilityTagNormal = ABILITY_MAP.get(key);
+      }
+    }
+
+    // learnedStrong types (≥70 power & STAB)
+    const learned = new Set();
+    for (const mv of poke.moves) {
+      const rec = MOVE_INDEX.get(mv.move.name);
+      if (!rec) continue;
+      const t = rec.type;
+      if (rec.power >= 70 && types.includes(t)) learned.add(t);
+    }
+    const learnedStrong = Array.from(learned);
+
+    const offense = Math.max(
+      poke.stats.find(s=>s.stat.name==='attack')?.base_stat ?? 0,
+      poke.stats.find(s=>s.stat.name==='special-attack')?.base_stat ?? 0
+    );
+
+    const display = prettyNameFromPokemon(poke);
+    const record = {
+      name: display,           // pretty
+      slug: poke.name,         // exact slug for PokeAPI calls / sprites
+      id: poke.id,
+      types,
+      offense,
+      stage,                   // 0/1/2…
+      isFinal,
+      isMega: /-mega/.test(poke.name),
+      restricted,
+      abilityTagNormal,
+      abilityTagHidden,
+      learnedStrong
+    };
+
+    out.push(record);
+    names.push(display);
+    // polite pacing
+    if (out.length % 50 === 0) await sleep(40);
+  }
+
+  const payload = { pokemon: out, names };
+  await fs.mkdir('public/data', { recursive: true });
+  await fs.writeFile('public/data/index.json', JSON.stringify(payload));
+  console.log(`Wrote public/data/index.json with ${out.length} entries`);
+})().catch(e=>{
+  console.error(e);
   process.exit(1);
 });
