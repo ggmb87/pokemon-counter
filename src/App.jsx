@@ -123,7 +123,7 @@ function cancelIfOpposingWeathers(attackerTag, targetTag, hitType) {
 
 // --- Attacker pool for demo scoring --- //
 // Goal: cover ALL attacking types with at least one strong STAB user
-// (so any target weakness at x2 or x4 can surface a relevant counter).
+// (so any target weakness at x2 || x4 can surface a relevant counter).
 const POKEDEX = [
   // Electric / Flying / Fairy / Psychic / Ghost / Dark / Ice / Dragon / Fire / Normal / Ground
   { name: "Regieleki", types: ["Electric"], power: 95, strong: ["Electric"], gen: 8, restricted: false },
@@ -256,7 +256,7 @@ function rankCounters(targetTypes, { allowRestricted = true, showMega = true, us
     let riskVal = worstIncoming >= 4 ? 100 : worstIncoming >= 2 ? 75 : worstIncoming <= 0.5 ? 25 : 50;
 
     if (useAbilities) {
-      const tag = attacker.abilityTag; // from fullDex or POKEDEX fallback
+      const tag = attacker.abilityTag; // from fullDex || POKEDEX fallback
       if (tag) {
         // Offense boost from attacker's ability
         offense = applyAbilityToOffense(offense, strongMatch, mult, tag);
