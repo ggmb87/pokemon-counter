@@ -1,5 +1,8 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
 
+// Tunable: how much incoming damage reduces score (0 = ignore risk)
+const RISK_WEIGHT = 0.28;
+
 // --- Types & effectiveness chart (main-series) --- //
 const TYPES = [
   "Normal","Fire","Water","Electric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Rock","Ghost","Dragon","Dark","Steel","Fairy"
@@ -25,6 +28,10 @@ const chart = {
   Steel:       { Fire:.5, Water:.5, Electric:.5, Ice:2, Rock:2, Fairy:2, Steel:.5 },
   Fairy:       { Fire:.5, Poison:.5, Steel:.5, Fighting:2, Dragon:2, Dark:2 }
 };
+
+
+const PHYSICAL_TYPES = new Set(["Normal","Fighting","Poison","Ground","Flying","Bug","Rock","Ghost","Dragon","Dark","Steel"]);
+function isPhysicalType(t){ return PHYSICAL_TYPES.has(t); }
 
 function weaknessesOf(defTypes) {
   const result = Object.fromEntries(TYPES.map(t => [t, 1]));
@@ -82,7 +89,53 @@ const ABILITY_EFFECTS = {
     signatureSE: { type: "Electric", mult: 1.33 } // Electro Drift
   },
   "huge-power": { flatOffense: 1.5 },
-  "adaptability": { stabBoost: 1.33 }
+  "adaptability": { stabBoost: 1.33 },
+
+"sheer-force": { flatOffense: 1.3 },
+"tough-claws": { flatOffense: 1.3 },
+"sharpness":   { flatOffense: 1.5 },
+"supreme-overlord": { flatOffense: 1.2 },
+"gorilla-tactics":  { flatOffense: 1.4 },
+
+// Type/flag-biased offense boosters (heuristic by type)
+"strong-jaw":   { atkByType: { Dark: 1.5, Ice: 1.5, Electric: 1.5, Fire: 1.5, Poison: 1.5 } },
+"mega-launcher":{ atkByType: { Water: 1.5, Dark: 1.5, Dragon: 1.5 } },
+"iron-fist":    { atkByType: { Fighting: 1.2, Fire: 1.2, Ice: 1.2, Electric: 1.2 } },
+"aerilate":     { atkByType: { Flying: 1.2 } },
+"pixilate":     { atkByType: { Fairy: 1.2 } },
+"refrigerate":  { atkByType: { Ice: 1.2 } },
+"galvanize":    { atkByType: { Electric: 1.2 } },
+
+// Terrain setters
+"electric-surge": { terrain: "electric", atkByType: { Electric: 1.3 } },
+"grassy-surge":   { terrain: "grassy",   atkByType: { Grass: 1.3 } },
+"psychic-surge":  { terrain: "psychic",  atkByType: { Psychic: 1.3 } },
+"misty-surge":    { terrain: "misty",    atkByType: { Fairy: 1.3 } },
+
+// Engines (conservative flat bump when their field is active)
+"quark-drive":     { flatOffense: 1.2 },
+"protosynthesis":  { flatOffense: 1.2 },
+
+// Defensive dampeners / immunities (target side)
+"filter":        { reduceSE: 0.75 },
+"solid-rock":    { reduceSE: 0.75 },
+"thick-fat":     { typeDampen: { Fire: 0.5, Ice: 0.5 } },
+"fur-coat":      { furCoat: true },
+"water-absorb":  { immuneTypes: ["Water"] },
+"storm-drain":   { immuneTypes: ["Water"] },
+"volt-absorb":   { immuneTypes: ["Electric"] },
+"lightning-rod": { immuneTypes: ["Electric"] },
+"motor-drive":   { immuneTypes: ["Electric"] },
+"flash-fire":    { immuneTypes: ["Fire"] },
+"sap-sipper":    { immuneTypes: ["Grass"] },
+"levitate":      { immuneTypes: ["Ground"] },
+
+// Ruin quartet (target side heuristics)
+"sword-of-ruin":  { vsPhysicalBoost: 1.15 },
+"beads-of-ruin":  { vsSpecialBoost:  1.15 },
+"tablets-of-ruin":{ vsPhysicalDampen: 0.9 },
+"vessel-of-ruin": { vsSpecialDampen:  0.9 },
+
 };
 
 function applyAbilityToOffense(offense, hitType, mult, attackerTag) {
@@ -237,7 +290,7 @@ function Card({ title, children, right, dark = true }) {
   );
 }
 
-function rankCounters(targetTypes, { allowRestricted = true, showMega = true, useAbilities = false, targetAbilityTag = null } = {}, dexPool = POKEDEX) {
+function rankCounters(targetTypes, { allowRestricted = true, showMega = true, targetAbilityTag = null, useAbilities = true } = {}, dexPool = POKEDEX) {
   if (!targetTypes?.length) return { weaknesses: {}, picks: [] };
   const weaknesses = weaknessesOf(targetTypes);
   const weakTypes = Object.entries(weaknesses).filter(([, m]) => m >= 2).sort((a,b)=> b[1]-a[1]);
@@ -262,11 +315,34 @@ function rankCounters(targetTypes, { allowRestricted = true, showMega = true, us
         offense = applyAbilityToOffense(offense, strongMatch, mult, tag);
         // Clash handling with target weather setter (sun/rain)
         if (targetAbilityTag) {
+          const defEff = ABILITY_EFFECTS[targetAbilityTag] || {};
           offense *= cancelIfOpposingWeathers(tag, targetAbilityTag, strongMatch);
           const negate = ABILITY_EFFECTS[targetAbilityTag]?.negateTypes || [];
-          if (negate.includes(strongMatch)) {
+          if (defEff.immuneTypes && defEff.immuneTypes.includes(strongMatch)) {
+            offense = 0;
+            riskVal = Math.round(riskVal * 0.8);
+          } else if (negate.includes(strongMatch)) {
             offense *= 0.6; // your attack is heavily dampened
             riskVal *= 1.2;  // slightly riskier to stay in
+
+if (mult >= 2 && defEff.reduceSE) {
+  offense *= defEff.reduceSE;
+}
+if (defEff.typeDampen && defEff.typeDampen[strongMatch]) {
+  offense *= defEff.typeDampen[strongMatch];
+}
+if (defEff.furCoat && isPhysicalType(strongMatch)) {
+  offense *= 0.5;
+}
+// Ruin quartet (target side): boosts help attacker, dampens hurt attacker
+if (isPhysicalType(strongMatch)) {
+  if (defEff.vsPhysicalDampen) offense *= defEff.vsPhysicalDampen;
+  if (defEff.vsPhysicalBoost)  offense *= defEff.vsPhysicalBoost;
+} else {
+  if (defEff.vsSpecialDampen) offense *= defEff.vsSpecialDampen;
+  if (defEff.vsSpecialBoost)  offense *= defEff.vsSpecialBoost;
+}
+
           }
         }
         // Risk reduction (e.g., rain vs Fire target)
@@ -275,14 +351,26 @@ function rankCounters(targetTypes, { allowRestricted = true, showMega = true, us
     }
 
     const survBonus = worstIncoming <= 0.5 ? 0.15 : worstIncoming === 1 ? 0.05 : 0;
-    const score = Number((offense + survBonus).toFixed(3));
-    const damagePotential = Math.min(100, Math.round(offense * 50));
+    const riskNorm = Math.min(1, Math.max(0, riskVal/100));
+    const adjOffense = offense * (1 - RISK_WEIGHT * riskNorm);
+    const score = Number((adjOffense + survBonus).toFixed(3));
+    const rawOffense = offense; // for relative damage bar
     const risk = Math.max(0, Math.min(100, Math.round(riskVal)));
 
-    return { attacker, hitType: strongMatch, mult, score, damagePotential, risk };
-  }).filter(Boolean).sort((a,b)=> b.score - a.score);
+    return { attacker, hitType: strongMatch, mult, score, rawOffense, risk };
+  }).filter(Boolean);
 
-  return { weaknesses: Object.fromEntries(weakTypes), picks };
+  // Normalize damagePotential so the top raw-damage pick shows ~100%
+  const maxOffense = Math.max(1, ...picks.map(p => p.rawOffense || 0));
+  const picksWithDP = picks.map(p => ({
+    ...p,
+    damagePotential: Math.round(100 * (p.rawOffense || 0) / maxOffense)
+  }));
+
+  // Sort by score (default)
+  const sorted = picksWithDP.sort((a,b)=> b.score - a.score);
+
+  return { weaknesses: Object.fromEntries(weakTypes), picks: sorted };
 }
 
 // Helpers
@@ -304,7 +392,7 @@ export default function App() {
   const [pickedTypes, setPickedTypes] = useState([]);
   const [showNeutral, setShowNeutral] = useState(false);
   const [showResists, setShowResists] = useState(false);
-  const [useAbilities, setUseAbilities] = useState(true); // NEW: default on
+  const useAbilities = true; // NEW: default on
 
   // Target from PokeAPI
   const [target, setTarget] = useState({ name: "", types: [], sprite: null });
@@ -599,11 +687,7 @@ export default function App() {
                 <input type="checkbox" className="accent-indigo-500" checked={allowRestricted} onChange={e=>setAllowRestricted(e.target.checked)} />
                 Allow restricted legendaries
               </label>
-              <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
-                <input type="checkbox" className="accent-indigo-500" checked={useAbilities} onChange={e=>setUseAbilities(e.target.checked)} />
-                Use ability heuristics (beta)
-              </label>
-            </div>
+                          </div>
           )}
         >
           {picks.length ? (
@@ -664,7 +748,7 @@ export default function App() {
 
         <Card title="Assumptions (simple mode)">
           <ul className="list-disc ml-5 text-sm leading-6 opacity-90">
-            <li>Ability heuristics are available as a toggle (beta): major weather/engine/pulse effects only.</li>
+            <li>Ability heuristics are applied automatically (beta): major weather/engine/pulse effects only.</li>
             <li>Still ignores precise items, EVs, move-by-move nuances, and Tera types.</li>
             <li>Candidate must have a strong move (≥70 BP) matching a target weakness (simplified flag).</li>
             <li>Scoring favors super-effective STAB + higher attack power; small bonus for resisting target STAB.</li>

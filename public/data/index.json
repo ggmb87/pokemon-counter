@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generatedAt": "2025-09-05T19:17:14.623Z",
-  "count": 1296,
+  "generatedAt": "2025-09-05T21:40:16.098Z",
+  "count": 1294,
   "names": [
     "abomasnow",
     "abomasnow-mega",
@@ -723,8 +723,6 @@
     "minior-yellow-meteor",
     "minun",
     "miraidon",
-    "miraidon-aquatic-mode",
-    "miraidon-glide-mode",
     "misdreavus",
     "mismagius",
     "moltres",
@@ -21894,40 +21892,6 @@
         "Ghost"
       ],
       "abilityTag": null
-    },
-    {
-      "name": "miraidon-aquatic-mode",
-      "apiSlug": "miraidon-aquatic-mode",
-      "id": 10270,
-      "types": [
-        "Electric",
-        "Dragon"
-      ],
-      "power": 191,
-      "restricted": true,
-      "isMega": false,
-      "strong": [
-        "Electric",
-        "Dragon"
-      ],
-      "abilityTag": "hadron-engine"
-    },
-    {
-      "name": "miraidon-glide-mode",
-      "apiSlug": "miraidon-glide-mode",
-      "id": 10271,
-      "types": [
-        "Electric",
-        "Dragon"
-      ],
-      "power": 191,
-      "restricted": true,
-      "isMega": false,
-      "strong": [
-        "Electric",
-        "Dragon"
-      ],
-      "abilityTag": "hadron-engine"
     },
     {
       "name": "ursaluna-bloodmoon",

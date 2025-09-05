@@ -11,6 +11,8 @@ const OUT_FILE = 'public/data/index.json';
 
 // Forms that are not battle-eligible (ride modes, etc.)
 const EXCLUDE_SLUGS = new Set([
+  'miraidon-aquatic-mode',
+  'miraidon-glide-mode',
   'koraidon-limited-build',
   'koraidon-sprinting-build',
   'koraidon-swimming-build',
