@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
+import { Analytics } from "@vercel/analytics/next"
 
 // Tunable: how much incoming damage reduces score (0 = ignore risk)
 const RISK_WEIGHT = 0.28;
