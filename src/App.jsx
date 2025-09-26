@@ -165,7 +165,7 @@ function cancelIfOpposingWeathers(attackerTag, targetTag, hitType) {
   const a = ABILITY_EFFECTS[attackerTag]?.weather;
   const b = ABILITY_EFFECTS[targetTag]?.weather;
   if (!a || !b) return 1;
-  // Sun vs Rain clash  cancel boost for the clashing element
+  // Sun vs Rain clash — cancel boost for the clashing element
   if ((a === "rain" && b === "sun" && hitType === "Water") ||
       (a === "sun"  && b === "rain" && hitType === "Fire")) {
     const atkBoost = ABILITY_EFFECTS[attackerTag].atkByType?.[hitType] || 1;
@@ -392,34 +392,10 @@ export default function App() {
   const [pickedTypes, setPickedTypes] = useState([]);
   const [showNeutral, setShowNeutral] = useState(false);
   const [showResists, setShowResists] = useState(false);
-  const [showAbility, setShowAbility] = useState(false);
-  const [abilityInfo, setAbilityInfo] = useState({});
   const useAbilities = true; // NEW: default on
 
-  
-// Cache of ability effect text (short) keyed by ability name
-useEffect(() => {
-  const list = target?.abilities || [];
-  if (!list.length) return;
-  const toFetch = list.filter(a => a.url && !abilityInfo[a.name]);
-  if (!toFetch.length) return;
-  let cancelled = false;
-  Promise.allSettled(toFetch.map(a => fetch(a.url).then(r=>r.ok?r.json():Promise.reject()).then(j=>({name:a.name, data:j})))).then(res => {
-    if (cancelled) return;
-    const next = { ...abilityInfo };
-    for (const r of res) {
-      if (r.status !== 'fulfilled') continue;
-      const j = r.value.data || {};
-      const entry = (j.effect_entries || []).find(e => (e.language?.name||'') === 'en');
-      const short = entry?.short_effect || entry?.effect || '';
-      next[r.value.name] = { short };
-    }
-    setAbilityInfo(next);
-  }).catch(()=>{});
-  return ()=>{ cancelled = true };
-}, [target?.abilities]);
-// Target from PokeAPI
-  const [target, setTarget] = useState({ name: "", types: [], sprite: null, abilities: [] });
+  // Target from PokeAPI
+  const [target, setTarget] = useState({ name: "", types: [], sprite: null });
   const displayName = mode==='pokemon' ? (target.name ? prettyName(target.name) : query) : (pickedTypes.length ? pickedTypes.join(' / ') : '');
 
   // Autocomplete
@@ -461,7 +437,7 @@ useEffect(() => {
   // Fetch target info (debounced + latest-request-wins)
   const fetchIdRef = useRef(0);
   useEffect(() => {
-    if (mode !== 'pokemon') return; // only fetch when in Pokmon mode
+    if (mode !== 'pokemon') return; // only fetch when in Pokémon mode
     const slug = nameToSlug(query);
     if (!slug) return;
 
@@ -474,13 +450,12 @@ useEffect(() => {
           if (id !== fetchIdRef.current) return; // newer request exists
           const sprite = d?.sprites?.other?.["official-artwork"]?.front_default || d?.sprites?.front_default || null;
           const types = (d?.types || []).map(x => x.type.name).map(t => t.charAt(0).toUpperCase() + t.slice(1));
-          const abilities = (d?.abilities || []).map(a => ({ name: (a?.ability?.name||"").toLowerCase(), url: a?.ability?.url||"", hidden: !!a?.is_hidden })).filter(a=>a.name);
-          setTarget({ name: d?.name || slug, types, sprite, abilities });
+          setTarget({ name: d?.name || slug, types, sprite });
         })
         .catch((err) => {
           if (id !== fetchIdRef.current) return; // outdated
           if (err?.name === 'AbortError') return; // aborted
-          setTarget({ name: query, types: [], sprite: null, abilities: [] });
+          setTarget({ name: query, types: [], sprite: null });
         });
     }, 150);
 
@@ -490,31 +465,7 @@ useEffect(() => {
     };
   }, [query, mode]);
 
-  
-// Fetch short effect text for target abilities (on demand)
-useEffect(() => {
-  const list = target?.abilities || {};
-  const arr = Array.isArray(list) ? list : [];
-  if (!arr.length) return;
-  const toFetch = arr.filter(a => a.url && !abilityInfo[a.name]);
-  if (!toFetch.length) return;
-  let cancelled = false;
-  Promise.allSettled(toFetch.map(a => fetch(a.url).then(r=> r.ok ? r.json() : Promise.reject()).then(j => ({ name: a.name, data: j }))))
-    .then(res => {
-      if (cancelled) return;
-      const next = { ...abilityInfo };
-      for (const r of res) {
-        if (r.status !== "fulfilled") continue;
-        const entry = (r.value.data?.effect_entries || []).find(e => (e.language?.name||"") === "en");
-        const short = entry?.short_effect || entry?.effect || "";
-        next[r.value.name] = { short };
-      }
-      setAbilityInfo(next);
-    })
-    .catch(() => {});
-  return () => { cancelled = true; };
-}, [target?.abilities]);
-// Lookup target ability tag from compiled dex (if available)
+  // Lookup target ability tag from compiled dex (if available)
   const targetAbilityTag = useMemo(() => {
     if (!fullDex || !target?.name) return null;
     const t = (target.name || '').toLowerCase();
@@ -573,14 +524,14 @@ useEffect(() => {
     <div className={`bg-slate-900 text-slate-200 min-h-screen p-6`}>
       <div className="max-w-5xl mx-auto grid gap-4">
         <header className="flex items-baseline justify-between">
-          <h1 className="text-2xl font-extrabold text-white">Pokmon Counter Finder (Alpha)</h1>
+          <h1 className="text-2xl font-extrabold text-white">Pokémon Counter Finder (Alpha)</h1>
         </header>
 
         {/* Input with autocomplete */}
-        <Card title="Enter a Pokmon">
+        <Card title="Enter a Pokémon">
           <div className="mb-3">
             <div className={`inline-flex rounded-lg border border-white/10 bg-slate-900/40`}>
-              <button onClick={()=>setMode('pokemon')} className={`px-3 py-1.5 text-sm rounded-l-lg ${mode==='pokemon' ? 'bg-slate-700 text-white' : 'opacity-80'}`}>Pokmon</button>
+              <button onClick={()=>setMode('pokemon')} className={`px-3 py-1.5 text-sm rounded-l-lg ${mode==='pokemon' ? 'bg-slate-700 text-white' : 'opacity-80'}`}>Pokémon</button>
               <button onClick={()=>setMode('types')} className={`px-3 py-1.5 text-sm rounded-r-lg ${mode==='types' ? 'bg-slate-700 text-white' : 'opacity-80'}`}>Types</button>
             </div>
           </div>
@@ -659,11 +610,6 @@ useEffect(() => {
             </div>
             <div className="flex items-center gap-4 mt-2">
               <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
-                <input type="checkbox" className="accent-indigo-500" checked={showAbility} onChange={e=>setShowAbility(e.target.checked)} />
-                Show Ability
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer select-none text-sm"><input type="checkbox" className="accent-indigo-500" checked={showAbility} onChange={e=>setShowAbility(e.target.checked)} />Show Ability</label>
-              <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
                 <input type="checkbox" className="accent-indigo-500" checked={showNeutral} onChange={e=>setShowNeutral(e.target.checked)} />
                 Show Neutral
               </label>
@@ -684,14 +630,14 @@ useEffect(() => {
                     <div key={`w-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
                       <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
                     </div>
-                  ))) : (<em className="opacity-60"></em>)}
+                  ))) : (<em className="opacity-60">—</em>)}
                 </>
               ) : (
-                <em className="opacity-60"></em>
+                <em className="opacity-60">—</em>
               )}
             </div>
 
-            {/* Neutral x1  only when enabled */}
+            {/* Neutral x1 — only when enabled */}
             {showNeutral && (
               <div className="relative flex items-start gap-2 flex-wrap pl-28">
                 <div className="absolute left-0 top-0 font-semibold text-white text-base">Neutral:</div>
@@ -701,61 +647,7 @@ useEffect(() => {
                       <div key={`n-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
                         <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
                       </div>
-                    ))) : (<em className="opacity-60"></em>)}
-                  </>
-                ) : (
-                  <em className="opacity-60"></em>
-                )}
-              </div>
-            )}
-
-            {/* Resists  only when enabled */}
-            {showResists && (
-              <div className="relative flex items-start gap-2 flex-wrap pl-28">
-                <div className="absolute left-0 top-0 font-semibold text-white text-base">Resists:</div>
-                {activeTypes?.length ? (
-                  <>
-                    {[...r05, ...r0].length ? (
-                      [...r05, ...r0].map(([t, m]) => (
-                        <div key={`r-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
-                          <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
-                        </div>
-                      ))
-                    ) : (
-                      <em className="opacity-60"></em>
-                    )}
-                  </>
-                ) : (
-                  <em className="opacity-60"></em>
-                )}
-              </div>
-            )}
-
-            {/* Ability — only when enabled */}
-            {showAbility && (
-              <div className="relative flex items-start gap-2 flex-wrap pl-28">
-                <div className="absolute left-0 top-0 font-semibold text-white text-base">Ability:</div>
-                {target?.abilities?.length ? (
-                  <>
-                    {target.abilities.map((a) => {
-                      const title = (abilityInfo[a.name]?.short || "").replace(/\s+/g, " ").trim();
-                      const label = a.name.split("-").map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(" ");
-                      return (
-                        <div
-                          key={a.name}
-                          className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800"
-                          title={title || undefined}
-                        >
-                          <span
-                            className="px-2 py-0.5 rounded-md text-xs font-semibold border border-white/10 shadow-sm text-slate-900"
-                            style={{ backgroundColor: "#fde047", color: "#0f172a" }}
-                          >
-                            {label}
-                            {a.hidden ? " (Hidden)" : ""}
-                          </span>
-                        </div>
-                      );
-                    })}
+                    ))) : (<em className="opacity-60">—</em>)}
                   </>
                 ) : (
                   <em className="opacity-60">—</em>
@@ -763,6 +655,23 @@ useEffect(() => {
               </div>
             )}
 
+            {/* Resists — only when enabled */}
+            {showResists && (
+              <div className="relative flex items-start gap-2 flex-wrap pl-28">
+                <div className="absolute left-0 top-0 font-semibold text-white text-base">Resists:</div>
+                {activeTypes?.length ? (
+                  <>
+                    {[...r05, ...r0].length ? ([...r05, ...r0].map(([t,m]) => (
+                      <div key={`r-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
+                        <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
+                      </div>
+                    ))) : (<em className="opacity-60">—</em>)}
+                  </>
+                ) : (
+                  <em className="opacity-60">—</em>
+                )}
+              </div>
+            )}
           </div>
         </Card>
 
@@ -777,10 +686,6 @@ useEffect(() => {
               <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
                 <input type="checkbox" className="accent-indigo-500" checked={allowRestricted} onChange={e=>setAllowRestricted(e.target.checked)} />
                 Allow restricted legendaries
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
-                <input type="checkbox" className="accent-indigo-500" checked={showAbility} onChange={(e) => setShowAbility(e.target.checked)} />
-                Show Ability
               </label>
                           </div>
           )}
@@ -810,7 +715,7 @@ useEffect(() => {
                       <div className="text-right text-sm">
                         <div className="flex items-center gap-2 justify-end">
                           <span className="opacity-80">Hits with</span> <TypeBadge t={hitType} />
-                          <span className="opacity-80"> x{mult}</span>
+                          <span className="opacity-80">• x{mult}</span>
                         </div>
                         <div className="mt-2 grid grid-cols-2 gap-3 text-xs">
                           <div>
@@ -843,8 +748,9 @@ useEffect(() => {
 
         <Card title="Assumptions (simple mode)">
           <ul className="list-disc ml-5 text-sm leading-6 opacity-90">
+            <li>Ability heuristics are applied automatically (beta): major weather/engine/pulse effects only.</li>
             <li>Still ignores precise items, EVs, move-by-move nuances, and Tera types.</li>
-            <li>Candidate must have a strong move (70 BP) matching a target weakness (simplified flag).</li>
+            <li>Candidate must have a strong move (≥70 BP) matching a target weakness (simplified flag).</li>
             <li>Scoring favors super-effective STAB + higher attack power; small bonus for resisting target STAB.</li>
             <li>Damage/Risk bars are quick heuristics for a lightweight feel, not a full calc.</li>
             <li>Filters: show/hide Megas and restricted legendaries.</li>
