@@ -454,7 +454,8 @@ export default function App() {
           const sprite = d?.sprites?.other?.["official-artwork"]?.front_default || d?.sprites?.front_default || null;
           const types = (d?.types || []).map(x => x.type.name).map(t => t.charAt(0).toUpperCase() + t.slice(1));
           const abilities = (d?.abilities || []).map(a => ({ name: (a?.ability?.name||"").toLowerCase(), url: a?.ability?.url||"", hidden: !!a?.is_hidden })).filter(a=>a.name);
-          setTarget({ name: d?.name || slug, types, sprite, abilities });
+          const stats = Object.fromEntries((d?.stats||[]).map(s => [s?.stat?.name||"", s?.base_stat ?? 0]));
+          setTarget({ name: d?.name || slug, types, sprite, abilities, stats });
         })
         .catch((err) => {
           if (id !== fetchIdRef.current) return; // outdated
@@ -621,7 +622,7 @@ useEffect(() => {
         {/* Target card */}
         <Card title={null}>
           {/* Top row: sprite + name/types and controls */}
-          <div className="flex items-start justify-between gap-4">
+          <div className="relative flex items-start justify-between gap-4">
             <div className="flex items-center gap-4">
               {(mode==='pokemon' && target.sprite) ? (
                 <img src={target.sprite} alt={displayName} className="w-20 h-20 object-contain drop-shadow" />
@@ -650,6 +651,32 @@ useEffect(() => {
                 Show Resists
               </label>
             </div>
+
+{/* Stats (L100, IV31, EV0) */}
+<div className="hidden md:block absolute right-0 top-12 w-[260px] text-xs text-slate-300">
+  <div className="uppercase tracking-wide text-[11px] opacity-70 mb-1">Stats (L100, IV31, EV0)</div>
+  {(() => {
+    const s = computeLevel100StatsFromBase(target?.stats);
+    if (!s) return null;
+    const Row = ({ label, value }) => (
+      <div className="flex items-center justify-between">
+        <span className="opacity-75">{label}</span>
+        <span className="font-semibold text-white">{value}</span>
+      </div>
+    );
+    return (
+      <div className="grid grid-cols-2 gap-x-5 gap-y-1">
+        <Row label="HP" value={s.hp} />
+        <Row label="Atk" value={s.attack} />
+        <Row label="Def" value={s.defense} />
+        <Row label="SpAtk" value={s['special-attack']} />
+        <Row label="SpDef" value={s['special-defense']} />
+        <Row label="Speed" value={s.speed} />
+      </div>
+    );
+  })()}
+</div>
+
           </div>
           {/* Bottom row: weaknesses */}
           <div className="mt-3 text-sm flex flex-col gap-2">
