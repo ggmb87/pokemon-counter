@@ -33,33 +33,6 @@ const chart = {
 const PHYSICAL_TYPES = new Set(["Normal","Fighting","Poison","Ground","Flying","Bug","Rock","Ghost","Dragon","Dark","Steel"]);
 function isPhysicalType(t){ return PHYSICAL_TYPES.has(t); }
 
-
-
-// Compute level-100 stats (IV31, EV0, neutral nature) from base stats
-function computeLevel100StatsFromBase(baseStats) {
-  if (!baseStats) return null;
-  const get = (k) => (typeof baseStats[k] === 'number' ? baseStats[k] : null);
-  const hpB  = get('hp');
-  const atkB = get('attack');
-  const defB = get('defense');
-  const spaB = get('special-attack');
-  const spdB = get('special-defense');
-  const speB = get('speed');
-  if ([hpB, atkB, defB, spaB, spdB, speB].some(v => v == null)) return null;
-
-  // L100, IV31, EV0, neutral
-  const hp   = 2 * hpB + 141;     // HP
-  const calc = (b) => 2 * b + 36; // Others
-
-  return {
-    hp,
-    attack:            calc(atkB),
-    defense:           calc(defB),
-    'special-attack':  calc(spaB),
-    'special-defense': calc(spdB),
-    speed:             calc(speB),
-  };
-}
 function weaknessesOf(defTypes) {
   const result = Object.fromEntries(TYPES.map(t => [t, 1]));
   for (const atk of TYPES) {
@@ -420,31 +393,10 @@ export default function App() {
   const [showNeutral, setShowNeutral] = useState(false);
   const [showResists, setShowResists] = useState(false);
   const [showAbility, setShowAbility] = useState(false);
+  const [abilityInfo, setAbilityInfo] = useState({});
   const useAbilities = true; // NEW: default on
 
   
-// Cache of ability effect text (short) keyed by ability name
-const [abilityInfo, setAbilityInfo] = useState({});
-useEffect(() => {
-  const list = target?.abilities || [];
-  if (!list.length) return;
-  const toFetch = list.filter(a => a.url && !abilityInfo[a.name]);
-  if (!toFetch.length) return;
-  let cancelled = false;
-  Promise.allSettled(toFetch.map(a => fetch(a.url).then(r=>r.ok?r.json():Promise.reject()).then(j=>({name:a.name, data:j})))).then(res => {
-    if (cancelled) return;
-    const next = { ...abilityInfo };
-    for (const r of res) {
-      if (r.status !== 'fulfilled') continue;
-      const j = r.value.data || {};
-      const entry = (j.effect_entries || []).find(e => (e.language?.name||'') === 'en');
-      const short = entry?.short_effect || entry?.effect || '';
-      next[r.value.name] = { short };
-    }
-    setAbilityInfo(next);
-  }).catch(()=>{});
-  return ()=>{ cancelled = true };
-}, [target?.abilities]);
 // Target from PokeAPI
   const [target, setTarget] = useState({ name: "", types: [], sprite: null, abilities: [], stats: {} });
   const displayName = mode==='pokemon' ? (target.name ? prettyName(target.name) : query) : (pickedTypes.length ? pickedTypes.join(' / ') : '');
@@ -488,7 +440,7 @@ useEffect(() => {
   // Fetch target info (debounced + latest-request-wins)
   const fetchIdRef = useRef(0);
   useEffect(() => {
-    if (mode !== 'pokemon') return; // only fetch when in Pokmon mode
+    if (mode !== 'pokemon') return; // only fetch when in Pokemon mode
     const slug = nameToSlug(query);
     if (!slug) return;
 
@@ -502,8 +454,7 @@ useEffect(() => {
           const sprite = d?.sprites?.other?.["official-artwork"]?.front_default || d?.sprites?.front_default || null;
           const types = (d?.types || []).map(x => x.type.name).map(t => t.charAt(0).toUpperCase() + t.slice(1));
           const abilities = (d?.abilities || []).map(a => ({ name: (a?.ability?.name||"").toLowerCase(), url: a?.ability?.url||"", hidden: !!a?.is_hidden })).filter(a=>a.name);
-          const stats = Object.fromEntries((d?.stats||[]).map(s => [s?.stat?.name||"", s?.base_stat||0]));
-          setTarget({ name: d?.name || slug, types, sprite, abilities, stats });
+          setTarget({ name: d?.name || slug, types, sprite, abilities });
         })
         .catch((err) => {
           if (id !== fetchIdRef.current) return; // outdated
@@ -518,7 +469,31 @@ useEffect(() => {
     };
   }, [query, mode]);
 
-  // Lookup target ability tag from compiled dex (if available)
+  
+// Fetch short effect text for target abilities (on demand)
+useEffect(() => {
+  const list = target?.abilities || {};
+  const arr = Array.isArray(list) ? list : [];
+  if (!arr.length) return;
+  const toFetch = arr.filter(a => a.url && !abilityInfo[a.name]);
+  if (!toFetch.length) return;
+  let cancelled = false;
+  Promise.allSettled(toFetch.map(a => fetch(a.url).then(r=> r.ok ? r.json() : Promise.reject()).then(j => ({ name: a.name, data: j }))))
+    .then(res => {
+      if (cancelled) return;
+      const next = { ...abilityInfo };
+      for (const r of res) {
+        if (r.status !== "fulfilled") continue;
+        const entry = (r.value.data?.effect_entries || []).find(e => (e.language?.name||"") === "en");
+        const short = entry?.short_effect || entry?.effect || "";
+        next[r.value.name] = { short };
+      }
+      setAbilityInfo(next);
+    })
+    .catch(() => {});
+  return () => { cancelled = true; };
+}, [target?.abilities]);
+// Lookup target ability tag from compiled dex (if available)
   const targetAbilityTag = useMemo(() => {
     if (!fullDex || !target?.name) return null;
     const t = (target.name || '').toLowerCase();
@@ -577,14 +552,14 @@ useEffect(() => {
     <div className={`bg-slate-900 text-slate-200 min-h-screen p-6`}>
       <div className="max-w-5xl mx-auto grid gap-4">
         <header className="flex items-baseline justify-between">
-          <h1 className="text-2xl font-extrabold text-white">Pokmon Counter Finder (Alpha)</h1>
+          <h1 className="text-2xl font-extrabold text-white">Pokemon Counter Finder (Alpha)</h1>
         </header>
 
         {/* Input with autocomplete */}
-        <Card title="Enter a Pokmon">
+        <Card title="Enter a Pokemon">
           <div className="mb-3">
             <div className={`inline-flex rounded-lg border border-white/10 bg-slate-900/40`}>
-              <button onClick={()=>setMode('pokemon')} className={`px-3 py-1.5 text-sm rounded-l-lg ${mode==='pokemon' ? 'bg-slate-700 text-white' : 'opacity-80'}`}>Pokmon</button>
+              <button onClick={()=>setMode('pokemon')} className={`px-3 py-1.5 text-sm rounded-l-lg ${mode==='pokemon' ? 'bg-slate-700 text-white' : 'opacity-80'}`}>Pokemon</button>
               <button onClick={()=>setMode('types')} className={`px-3 py-1.5 text-sm rounded-r-lg ${mode==='types' ? 'bg-slate-700 text-white' : 'opacity-80'}`}>Types</button>
             </div>
           </div>
@@ -662,7 +637,10 @@ useEffect(() => {
               </div>
             </div>
             <div className="flex items-center gap-4 mt-2">
-              <label className="flex items-center gap-2 cursor-pointer select-none text-sm"><input type="checkbox" className="accent-indigo-500" checked={showAbility} onChange={e=>setShowAbility(e.target.checked)} />Show Ability</label>
+              <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
+                <input type="checkbox" className="accent-indigo-500" checked={showAbility} onChange={e=>setShowAbility(e.target.checked)} />
+                Show Ability
+              </label>
               <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
                 <input type="checkbox" className="accent-indigo-500" checked={showNeutral} onChange={e=>setShowNeutral(e.target.checked)} />
                 Show Neutral
@@ -674,14 +652,14 @@ useEffect(() => {
             </div>
           </div>
           {/* Bottom row: weaknesses */}
-          <div className="relative mt-3 text-sm flex flex-col gap-2">
+          <div className="mt-3 text-sm flex flex-col gap-2">
             {/* Weaknesses: only x4 and x2 by default */}
             <div className="relative flex items-start gap-2 flex-wrap pl-28">
               <div className="absolute left-0 top-0 font-semibold text-white text-base">Weaknesses:</div>
               {activeTypes?.length ? (
                 <>
                   {[...w4, ...w2].length ? ([...w4, ...w2].map(([t,m]) => (
-                    <div key={`w-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
+                    <div key={`w-${t}`} className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200">
                       <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
                     </div>
                   ))) : (<em className="opacity-60"></em>)}
@@ -698,7 +676,7 @@ useEffect(() => {
                 {activeTypes?.length ? (
                   <>
                     {w1.length ? (w1.map(([t,m]) => (
-                      <div key={`n-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
+                      <div key={`n-${t}`} className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200">
                         <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
                       </div>
                     ))) : (<em className="opacity-60"></em>)}
@@ -717,7 +695,7 @@ useEffect(() => {
                   <>
                     {[...r05, ...r0].length ? (
                       [...r05, ...r0].map(([t, m]) => (
-                        <div key={`r-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
+                        <div key={`r-${t}`} className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200">
                           <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
                         </div>
                       ))
@@ -743,16 +721,13 @@ useEffect(() => {
                       return (
                         <div
                           key={a.name}
-                          className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800"
-                          title={title || undefined}
+                          className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200"
+                         
                         >
-                          <span
-                            className="px-2 py-0.5 rounded-md text-xs font-semibold border border-white/10 shadow-sm text-slate-900"
-                            style={{ backgroundColor: "#fde047", color: "#0f172a" }}
-                          >
-                            {label}
-                            {a.hidden ? " (Hidden)" : ""}
-                          </span>
+                          <span className="text-xs font-medium">{label}{a.hidden ? " (Hidden)" : ""}</span>
+                          <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 hidden w-72 -translate-x-1/2 rounded-md bg-slate-900/95 px-3 py-2 text-xs leading-snug text-slate-100 shadow-xl ring-1 ring-white/10 group-hover:block">
+                            {title || "No effect text available."}
+                          </div>
                         </div>
                       );
                     })}
@@ -778,11 +753,7 @@ useEffect(() => {
                 <input type="checkbox" className="accent-indigo-500" checked={allowRestricted} onChange={e=>setAllowRestricted(e.target.checked)} />
                 Allow restricted legendaries
               </label>
-              <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
-                <input type="checkbox" className="accent-indigo-500" checked={showAbility} onChange={(e) => setShowAbility(e.target.checked)} />
-                Show Ability
-              </label>
-                          </div>
+              </div>
           )}
         >
           {picks.length ? (
@@ -843,7 +814,6 @@ useEffect(() => {
 
         <Card title="Assumptions (simple mode)">
           <ul className="list-disc ml-5 text-sm leading-6 opacity-90">
-            <li>Ability heuristics are applied automatically (beta): major weather/engine/pulse effects only.</li>
             <li>Still ignores precise items, EVs, move-by-move nuances, and Tera types.</li>
             <li>Candidate must have a strong move (70 BP) matching a target weakness (simplified flag).</li>
             <li>Scoring favors super-effective STAB + higher attack power; small bonus for resisting target STAB.</li>
@@ -855,3 +825,25 @@ useEffect(() => {
     </div>
   );
 }
+function computeLevel100StatsFromBase(baseStats) {
+  if (!baseStats) return null;
+  const get = (k) => (typeof baseStats[k] === 'number' ? baseStats[k] : null);
+  const hpB = get('hp');
+  const atkB = get('attack');
+  const defB = get('defense');
+  const spaB = get('special-attack');
+  const spdB = get('special-defense');
+  const speB = get('speed');
+  if ([hpB, atkB, defB, spaB, spdB, speB].some(v => v == null)) return null;
+  const hp = 2 * hpB + 141;   // L100, IV31, EV0
+  const calc = (b) => 2 * b + 36; // L100, IV31, EV0, neutral
+  return {
+    hp,
+    attack: calc(atkB),
+    defense: calc(defB),
+    'special-attack': calc(spaB),
+    'special-defense': calc(spdB),
+    speed: calc(speB),
+  };
+}
+
