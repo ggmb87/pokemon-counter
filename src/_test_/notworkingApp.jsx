@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
-import { Analytics } from "@vercel/analytics/next"
 
 // Tunable: how much incoming damage reduces score (0 = ignore risk)
 const RISK_WEIGHT = 0.28;
@@ -282,7 +281,9 @@ function Card({ title, children, right, dark = true }) {
     <div className={`rounded-2xl shadow-lg p-4 ring-1 ${dark ? 'bg-slate-800/60 ring-white/10' : 'bg-white ring-slate-900/10'}`}>
       {(title || right) && (
         <div className="flex items-center justify-between mb-2">
-          {title ? <h3 className="text-lg font-bold ${dark ? 'text-white' : 'text-slate-900'}">{title}</h3> : <div />}
+          {title ? (
+        <h3 className={`text-lg font-bold ${dark ? 'text-white' : 'text-slate-900'}`}>{title}</h3>
+      ) : <div />}
           {right}
         </div>
       )}
@@ -394,11 +395,11 @@ export default function App() {
   const [showNeutral, setShowNeutral] = useState(false);
   const [showResists, setShowResists] = useState(false);
   const [showAbility, setShowAbility] = useState(false);
-  const [abilityInfo, setAbilityInfo] = useState({});
   const useAbilities = true; // NEW: default on
 
   
 // Cache of ability effect text (short) keyed by ability name
+const [abilityInfo, setAbilityInfo] = useState({});
 useEffect(() => {
   const list = target?.abilities || [];
   if (!list.length) return;
@@ -491,31 +492,7 @@ useEffect(() => {
     };
   }, [query, mode]);
 
-  
-// Fetch short effect text for target abilities (on demand)
-useEffect(() => {
-  const list = target?.abilities || {};
-  const arr = Array.isArray(list) ? list : [];
-  if (!arr.length) return;
-  const toFetch = arr.filter(a => a.url && !abilityInfo[a.name]);
-  if (!toFetch.length) return;
-  let cancelled = false;
-  Promise.allSettled(toFetch.map(a => fetch(a.url).then(r=> r.ok ? r.json() : Promise.reject()).then(j => ({ name: a.name, data: j }))))
-    .then(res => {
-      if (cancelled) return;
-      const next = { ...abilityInfo };
-      for (const r of res) {
-        if (r.status !== "fulfilled") continue;
-        const entry = (r.value.data?.effect_entries || []).find(e => (e.language?.name||"") === "en");
-        const short = entry?.short_effect || entry?.effect || "";
-        next[r.value.name] = { short };
-      }
-      setAbilityInfo(next);
-    })
-    .catch(() => {});
-  return () => { cancelled = true; };
-}, [target?.abilities]);
-// Lookup target ability tag from compiled dex (if available)
+  // Lookup target ability tag from compiled dex (if available)
   const targetAbilityTag = useMemo(() => {
     if (!fullDex || !target?.name) return null;
     const t = (target.name || '').toLowerCase();
@@ -659,10 +636,6 @@ useEffect(() => {
               </div>
             </div>
             <div className="flex items-center gap-4 mt-2">
-              <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
-                <input type="checkbox" className="accent-indigo-500" checked={showAbility} onChange={e=>setShowAbility(e.target.checked)} />
-                Show Ability
-              </label>
               <label className="flex items-center gap-2 cursor-pointer select-none text-sm"><input type="checkbox" className="accent-indigo-500" checked={showAbility} onChange={e=>setShowAbility(e.target.checked)} />Show Ability</label>
               <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
                 <input type="checkbox" className="accent-indigo-500" checked={showNeutral} onChange={e=>setShowNeutral(e.target.checked)} />
