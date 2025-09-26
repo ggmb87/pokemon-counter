@@ -659,7 +659,7 @@ useEffect(() => {
               {activeTypes?.length ? (
                 <>
                   {[...w4, ...w2].length ? ([...w4, ...w2].map(([t,m]) => (
-                    <div key={`w-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
+                    <div key={`w-${t}`} className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200">
                       <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
                     </div>
                   ))) : (<em className="opacity-60"></em>)}
@@ -676,7 +676,7 @@ useEffect(() => {
                 {activeTypes?.length ? (
                   <>
                     {w1.length ? (w1.map(([t,m]) => (
-                      <div key={`n-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
+                      <div key={`n-${t}`} className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200">
                         <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
                       </div>
                     ))) : (<em className="opacity-60"></em>)}
@@ -695,7 +695,7 @@ useEffect(() => {
                   <>
                     {[...r05, ...r0].length ? (
                       [...r05, ...r0].map(([t, m]) => (
-                        <div key={`r-${t}`} className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800">
+                        <div key={`r-${t}`} className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200">
                           <TypeBadge t={t} /> <span className="text-xs opacity-80">x{m}</span>
                         </div>
                       ))
@@ -721,16 +721,13 @@ useEffect(() => {
                       return (
                         <div
                           key={a.name}
-                          className="flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800"
+                          className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200"
                           title={title || undefined}
                         >
-                          <span
-                            className="px-2 py-0.5 rounded-md text-xs font-semibold border border-white/10 shadow-sm text-slate-900"
-                            style={{ backgroundColor: "#fde047", color: "#0f172a" }}
-                          >
-                            {label}
-                            {a.hidden ? " (Hidden)" : ""}
-                          </span>
+                          <span className="text-xs font-medium">{label}{a.hidden ? " (Hidden)" : ""}</span>
+                          <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 hidden w-72 -translate-x-1/2 rounded-md bg-slate-900/95 px-3 py-2 text-xs leading-snug text-slate-100 shadow-xl ring-1 ring-white/10 group-hover:block">
+                            {title || "No effect text available."}
+                          </div>
                         </div>
                       );
                     })}
