@@ -398,7 +398,7 @@ export default function App() {
 
   
 // Target from PokeAPI
-  const [target, setTarget] = useState({ name: "", types: [], sprite: null, abilities: [] });
+  const [target, setTarget] = useState({ name: "", types: [], sprite: null, abilities: [], stats: {} });
   const displayName = mode==='pokemon' ? (target.name ? prettyName(target.name) : query) : (pickedTypes.length ? pickedTypes.join(' / ') : '');
 
   // Autocomplete
@@ -459,7 +459,7 @@ export default function App() {
         .catch((err) => {
           if (id !== fetchIdRef.current) return; // outdated
           if (err?.name === 'AbortError') return; // aborted
-          setTarget({ name: query, types: [], sprite: null, abilities: [] });
+          setTarget({ name: query, types: [], sprite: null, abilities: [], stats: {} });
         });
     }, 150);
 
@@ -825,3 +825,25 @@ useEffect(() => {
     </div>
   );
 }
+function computeLevel100StatsFromBase(baseStats) {
+  if (!baseStats) return null;
+  const get = (k) => (typeof baseStats[k] === 'number' ? baseStats[k] : null);
+  const hpB = get('hp');
+  const atkB = get('attack');
+  const defB = get('defense');
+  const spaB = get('special-attack');
+  const spdB = get('special-defense');
+  const speB = get('speed');
+  if ([hpB, atkB, defB, spaB, spdB, speB].some(v => v == null)) return null;
+  const hp = 2 * hpB + 141;   // L100, IV31, EV0
+  const calc = (b) => 2 * b + 36; // L100, IV31, EV0, neutral
+  return {
+    hp,
+    attack: calc(atkB),
+    defense: calc(defB),
+    'special-attack': calc(spaB),
+    'special-defense': calc(spdB),
+    speed: calc(speB),
+  };
+}
+
