@@ -722,7 +722,7 @@ useEffect(() => {
                         <div
                           key={a.name}
                           className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200"
-                          title={title || undefined}
+                         
                         >
                           <span className="text-xs font-medium">{label}{a.hidden ? " (Hidden)" : ""}</span>
                           <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 hidden w-72 -translate-x-1/2 rounded-md bg-slate-900/95 px-3 py-2 text-xs leading-snug text-slate-100 shadow-xl ring-1 ring-white/10 group-hover:block">
