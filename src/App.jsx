@@ -844,7 +844,6 @@ useEffect(() => {
 
         <Card title="Assumptions (simple mode)">
           <ul className="list-disc ml-5 text-sm leading-6 opacity-90">
-            <li>Ability heuristics are applied automatically (beta): major weather/engine/pulse effects only.</li>
             <li>Still ignores precise items, EVs, move-by-move nuances, and Tera types.</li>
             <li>Candidate must have a strong move (70 BP) matching a target weakness (simplified flag).</li>
             <li>Scoring favors super-effective STAB + higher attack power; small bonus for resisting target STAB.</li>
