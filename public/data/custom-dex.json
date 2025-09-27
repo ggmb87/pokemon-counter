@@ -1,0 +1,6895 @@
+[
+  {
+    "id": "aegislash-delta",
+    "name": "Aegislash-Delta",
+    "blurb": "the Flame Sword Pokemon, is the Delta variant of Aegislash.",
+    "types": [
+      "Steel",
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 45,
+      "defense": 130,
+      "special-attack": 45,
+      "special-defense": 130,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "blazing-swap",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1103009860485914724/1103009860985040917/aegislash_chriscendo_idle.gif?ex=68d81e7b&is=68d6ccfb&hm=01a9ef06b479ac82336e2e80179794db4499fbdf67d9c903f88a4ffa07c2a02e&"
+  },
+  {
+    "id": "aipom-delta",
+    "name": "Aipom-Delta",
+    "blurb": "the Long Tail Pokemon, is the Delta variant of Aipom.",
+    "types": [
+      "Normal",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 80,
+      "defense": 55,
+      "special-attack": 40,
+      "special-defense": 50,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "long-reach",
+        "hidden": true
+      },
+      {
+        "name": "technician",
+        "hidden": false
+      },
+      {
+        "name": "pick-up",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1110808723703746670/1350222889026060349/aipom_delta.gif?ex=68d7b1ce&is=68d6604e&hm=e26f02131a75f180a43bd5fd91c05d51531870c56c2acb8abb53512faa9dea83&"
+  },
+  {
+    "id": "aipom-ultra",
+    "name": "Aipom-Ultra",
+    "blurb": "the Long Tail Pokemon, is the ultra variant of Aipom.",
+    "types": [
+      "Fire",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 70,
+      "defense": 55,
+      "special-attack": 40,
+      "special-defense": 55,
+      "speed": 85
+    },
+    "abilities": [
+      {
+        "name": "hustle",
+        "hidden": true
+      },
+      {
+        "name": "flash-fire",
+        "hidden": false
+      },
+      {
+        "name": "pick-up",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1246926559940579418/1246926560200495224/aipom_ultra.gif?ex=68d7a31a&is=68d6519a&hm=a301ea9fa4b56edfb8bb2d639512bc50b224195859bb6576f6f9d54cd01a56a0&"
+  },
+  {
+    "id": "ambipom-delta",
+    "name": "Ambipom-Delta",
+    "blurb": "the Long Tail Pokemon, is the Delta variant of Ambipom.",
+    "types": [
+      "Normal",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 115,
+      "defense": 68,
+      "special-attack": 56,
+      "special-defense": 75,
+      "speed": 103
+    },
+    "abilities": [
+      {
+        "name": "long-reach",
+        "hidden": true
+      },
+      {
+        "name": "technician",
+        "hidden": false
+      },
+      {
+        "name": "pick-up",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1110811046077280256/1350223041811972146/ambipom_delta.gif?ex=68d7b1f3&is=68d66073&hm=f99903391d44bcc6c09521731b956d8c2d4e7eebaf289c40d63d66be4339f1c1&"
+  },
+  {
+    "id": "ambipom-ultra",
+    "name": "Ambipom-Ultra",
+    "blurb": "the Long Tail Pokemon, is the ultra variant of Ambipom.",
+    "types": [
+      "Fire",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 118,
+      "defense": 61,
+      "special-attack": 58,
+      "special-defense": 55,
+      "speed": 115
+    },
+    "abilities": [
+      {
+        "name": "tough-claws",
+        "hidden": true
+      },
+      {
+        "name": "flash-fire",
+        "hidden": false
+      },
+      {
+        "name": "pick-up",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1246928915990052914/1246928916401356900/ambipom_ultra.gif?ex=68d7a54c&is=68d653cc&hm=42493e67777f6c94eefa0c173f7303f7dbb484f76a1b83754f51f3e1c795cffe&"
+  },
+  {
+    "id": "ancient-gene",
+    "name": "Ancient Gene",
+    "blurb": "the Paradox Pokemon, is the past paradox variant of Mew.",
+    "types": [
+      "Psychic",
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "attack": 95,
+      "defense": 95,
+      "special-attack": 95,
+      "special-defense": 95,
+      "speed": 105
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1258530387802460201/1258530388163428442/ancientgene.gif?ex=68d7aa02&is=68d65882&hm=0aa25896340dd7f856e265caa7a4c0f5b3397c8ab3b410b23a2b0c09e5499a4c&"
+  },
+  {
+    "id": "ancieon",
+    "name": "Ancieon",
+    "blurb": "the Primitive Pokemon, is the evolution of Eevee.",
+    "types": [
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 110,
+      "attack": 130,
+      "defense": 65,
+      "special-attack": 60,
+      "special-defense": 65,
+      "speed": 95
+    },
+    "abilities": [
+      {
+        "name": "prowler",
+        "hidden": true
+      },
+      {
+        "name": "proweler",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1164637942795485264/1164637943105855519/ancieon.gif?ex=68d8331b&is=68d6e19b&hm=96c727a666a7ffc5c80a21bf741c68c84cd3f21ae725aaf3610d9a4749d62600&"
+  },
+  {
+    "id": "annetrem",
+    "name": "Annetrem",
+    "blurb": "the Silent Pokemon, is the convergent variant of Hattrem.",
+    "types": [
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 57,
+      "attack": 40,
+      "defense": 65,
+      "special-attack": 86,
+      "special-defense": 63,
+      "speed": 59
+    },
+    "abilities": [
+      {
+        "name": "inner-focus",
+        "hidden": true
+      },
+      {
+        "name": "anticipation",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1295383164839264276/1295383165552168970/annetrem.gif?ex=68d7eb95&is=68d69a15&hm=b74f8b40a3890808f2020d8629d985bc1a68c9323eee6d0b87098c71aabacede&"
+  },
+  {
+    "id": "arcanine-delta",
+    "name": "Arcanine-Delta",
+    "blurb": "the Legendary Pokemon, is the Delta variant of Arcanine.",
+    "types": [
+      "Water",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 115,
+      "defense": 80,
+      "special-attack": 95,
+      "special-defense": 80,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "justified",
+        "hidden": true
+      },
+      {
+        "name": "intimidate",
+        "hidden": false
+      },
+      {
+        "name": "own-tempo",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1109243236268130335/1349604056800170034/arcanine_delta.gif?ex=68d81479&is=68d6c2f9&hm=9ffaa94bbff37251d41e3a1e0aff8f964bcc7dfb752bc8eae95788dc077664ed&"
+  },
+  {
+    "id": "archapult",
+    "name": "Archapult",
+    "blurb": "the Stealth Alloy Pokemon, is the fusion between Archaludon and Dragapult.",
+    "types": [
+      "Dragon",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 72,
+      "attack": 116,
+      "defense": 112,
+      "special-attack": 112,
+      "special-defense": 56,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "levitate",
+        "hidden": true
+      },
+      {
+        "name": "stalwart",
+        "hidden": false
+      },
+      {
+        "name": "infiltrator",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1333458903068840038/1333458903433740380/archapult.gif?ex=68d802e1&is=68d6b161&hm=5cd5637963849737e3f3b69f4d1b72724875c69ab5363c057d856250b8418fdf&"
+  },
+  {
+    "id": "armaledge",
+    "name": "Armaledge",
+    "blurb": "the Fire Guardian Pokemon, is the fusion between Armarouge and Ceruledge.",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 120,
+      "defense": 68,
+      "special-attack": 120,
+      "special-defense": 68,
+      "speed": 104
+    },
+    "abilities": [
+      {
+        "name": "final-verdict",
+        "hidden": true
+      },
+      {
+        "name": "flash-fire",
+        "hidden": false
+      },
+      {
+        "name": "weak-armor",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1329633280223481858/1330789325423509665/armaledge.gif?ex=68d82fe4&is=68d6de64&hm=65fca9a8ef9d77b67d30181a7e9d7e87d041aa3a01d9da00fca4682186b47ee1&"
+  },
+  {
+    "id": "articeon",
+    "name": "Articeon",
+    "blurb": "the Cruel Jet Pokemon, is the fusion between Articuno and Vaporeon.",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 132,
+      "attack": 84,
+      "defense": 72,
+      "special-attack": 116,
+      "special-defense": 104,
+      "speed": 92
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1334191713677475972/1334191714042249277/articeon.gif?ex=68d80a5c&is=68d6b8dc&hm=7d2fd4761e5b6aaa5447d8f9e89aa97a4956d55790002d04af511f05cee28dac&"
+  },
+  {
+    "id": "axew-delta",
+    "name": "Axew-Delta",
+    "blurb": "the Small Tusk Pokemon, is the delta variant of Axew.",
+    "types": [
+      "Dragon",
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 46,
+      "attack": 76,
+      "defense": 70,
+      "special-attack": 30,
+      "special-defense": 51,
+      "speed": 47
+    },
+    "abilities": [
+      {
+        "name": "flame-body",
+        "hidden": true
+      },
+      {
+        "name": "battle-armor",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1154032236778225694/1154032237097013279/axew_delta.gif?ex=68d7d946&is=68d687c6&hm=401655360a632186daba5ace820ba810d88cf9eee7f74649df12cc9bbaac99a4&"
+  },
+  {
+    "id": "axew-delta-2",
+    "name": "Axew-Delta",
+    "blurb": "the Axe Jaw Pokemon, is the delta variant of Fraxure.",
+    "types": [
+      "Dragon",
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 66,
+      "attack": 102,
+      "defense": 85,
+      "special-attack": 40,
+      "special-defense": 60,
+      "speed": 57
+    },
+    "abilities": [
+      {
+        "name": "skill-link",
+        "hidden": true
+      },
+      {
+        "name": "battle-armor",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1154038077644341318/1154038078122512425/fraxure_delta.gif?ex=68d7deb6&is=68d68d36&hm=4311b8e898d596caab3225eed34995651dcc448d6f4432c985c6073bd7eeb9db&"
+  },
+  {
+    "id": "azelf-delta",
+    "name": "Azelf-Delta",
+    "blurb": "the Pride Pokemon, is the possessed variant of Azelf.",
+    "types": [
+      "Poison",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 125,
+      "defense": 70,
+      "special-attack": 125,
+      "special-defense": 70,
+      "speed": 115
+    },
+    "abilities": [
+      {
+        "name": "unaware",
+        "hidden": true
+      },
+      {
+        "name": "levitate",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1292359413415542795/1292359413650296832/azelf_delta.gif?ex=68d8203f&is=68d6cebf&hm=15fc51ace54690e543c36bab815f4390e073bb0014f27763c41a6c87d54483fa&"
+  },
+  {
+    "id": "azumarill-delta",
+    "name": "Azumarill-Delta",
+    "blurb": "the Cryo Rabbit Pokemon, is the Delta variant of Azumarill.",
+    "types": [
+      "Ice",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "attack": 100,
+      "defense": 60,
+      "special-attack": 40,
+      "special-defense": 80,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "mold-breaker",
+        "hidden": true
+      },
+      {
+        "name": "thick-fat",
+        "hidden": false
+      },
+      {
+        "name": "ice-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1315779387437879359/1315779387995586593/azumarill_delta-1.gif?ex=68d7a24c&is=68d650cc&hm=eb53c934bef3cadbe4b9df2c92769189b88d76ed8bb3165ad10611b80c43eb27&"
+  },
+  {
+    "id": "azurill-delta",
+    "name": "Azurill-Delta",
+    "blurb": "the Polka Dot Pokemon, is the Delta variant of Azurill.",
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 30,
+      "defense": 30,
+      "special-attack": 20,
+      "special-defense": 30,
+      "speed": 30
+    },
+    "abilities": [
+      {
+        "name": "mold-breaker",
+        "hidden": true
+      },
+      {
+        "name": "thick-fat",
+        "hidden": false
+      },
+      {
+        "name": "ice-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1315775645284040704/1315775646575624404/azurill_delta.gif?ex=68d79ed0&is=68d64d50&hm=a483fe4e968308ac96d0c3d4129720dda7f0787960bac1ebc857a18eaba0b117&"
+  },
+  {
+    "id": "bansherene",
+    "name": "Bansherene",
+    "blurb": "the Resonance Pokemon, is the convergent variant of Hatterene.",
+    "types": [
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 57,
+      "attack": 60,
+      "defense": 78,
+      "special-attack": 126,
+      "special-defense": 110,
+      "speed": 79
+    },
+    "abilities": [
+      {
+        "name": "death-defiance",
+        "hidden": true
+      },
+      {
+        "name": "anticipation",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1295386956599132241/1295386957282807840/bansherene.gif?ex=68d7ef1d&is=68d69d9d&hm=bf0db790af4c2f219575c74549f99387e1380e01517d63eaf25e90e44c39297f&"
+  },
+  {
+    "id": "beldum-delta",
+    "name": "Beldum-Delta",
+    "blurb": "the Ancient Ball Pokemon, is the delta variant of Beldum.",
+    "types": [
+      "Rock",
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 55,
+      "defense": 80,
+      "special-attack": 35,
+      "special-defense": 60,
+      "speed": 30
+    },
+    "abilities": [
+      {
+        "name": "levitate",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1155208512922730696/1155208513086296134/beldum_delta.gif?ex=68d82c44&is=68d6dac4&hm=7208ea59ddc236a7d1e0f23f01e104ae92f0e25fb75146d2bdfda926ce92adf0&"
+  },
+  {
+    "id": "brawleon",
+    "name": "Brawleon",
+    "blurb": "the Grapple Pokemon, is the Fighting-type Eeveelution of Eevee.",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 130,
+      "defense": 110,
+      "special-attack": 65,
+      "special-defense": 65,
+      "speed": 95
+    },
+    "abilities": [
+      {
+        "name": "moxie",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1108497447229063209/1412255137799471214/brawleon.gif?ex=68d7ed57&is=68d69bd7&hm=5cb6045d99c92aaa8becd09f8d0592580e9a1ed3b137a86c9ad502f67a81ed71&"
+  },
+  {
+    "id": "brewloom",
+    "name": "Brewloom",
+    "blurb": "the Witch Pokemon, is the evolution of Broomish",
+    "types": [
+      "Ground",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 40,
+      "defense": 65,
+      "special-attack": 105,
+      "special-defense": 85,
+      "speed": 90
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1132248487392714812/1350223837626765484/brewloom.gif?ex=68d7b2b0&is=68d66130&hm=8d0c03e528c3c9a4e5dc0d5f305812f2ba5eefe307d9276c62aea187d2826a98&"
+  },
+  {
+    "id": "broomish",
+    "name": "Broomish",
+    "blurb": "the Broom Pokemon, is the convergent form of Shroomish",
+    "types": [
+      "Ground",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 35,
+      "defense": 65,
+      "special-attack": 35,
+      "special-defense": 55,
+      "speed": 35
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1132241745602695199/1350223315264081992/broomish.gif?ex=68d7b234&is=68d660b4&hm=df440dce8d4ea5cf868e5341aed4fdc0e7630523bed6556769de3fab1c4a10ba&"
+  },
+  {
+    "id": "budew-delta",
+    "name": "Budew-Delta",
+    "blurb": "the Bud Pokemon, is the delta variant of Budew",
+    "types": [
+      "Grass",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 50,
+      "defense": 70,
+      "special-attack": 30,
+      "special-defense": 35,
+      "speed": 55
+    },
+    "abilities": [
+      {
+        "name": "iron-barbs",
+        "hidden": true
+      },
+      {
+        "name": "natural-cure",
+        "hidden": false
+      },
+      {
+        "name": "chlorophyll",
+        "hidden": false
+      }
+    ],
+    "sprite": null
+  },
+  {
+    "id": "charizard-delta",
+    "name": "Charizard-Delta",
+    "blurb": "the Gargoyle Pokemon, is the delta variant of Charizard.",
+    "types": [
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 72,
+      "attack": 125,
+      "defense": 107,
+      "special-attack": 77,
+      "special-defense": 88,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "stoneheart",
+        "hidden": true
+      },
+      {
+        "name": "draconic",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1346458402586624055/1346462449292808333/charizard_delta.gif?ex=68d7db5f&is=68d689df&hm=7cefdb0fd1de57bfbc8202dfec9bfd2564f2bc56bb9fa00db6ec7327e484ae86&"
+  },
+  {
+    "id": "charmander-delta",
+    "name": "Charmander-Delta",
+    "blurb": "the Hard Scale Pokemon, is the delta variant of Charmander.",
+    "types": [
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 39,
+      "attack": 70,
+      "defense": 65,
+      "special-attack": 40,
+      "special-defense": 45,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "sturdy",
+        "hidden": true
+      },
+      {
+        "name": "draconic",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1346454558888693810/1346454559131959326/charmander_delta.gif?ex=68d7d406&is=68d68286&hm=602b3c4d1192737d5d9511479b0883419379c0af0235de6c17de34cfe9734b7d&"
+  },
+  {
+    "id": "charmander-delta-2",
+    "name": "Charmander-Delta",
+    "blurb": "the Hard Scale Pokemon, is the delta variant of Charmeleon.",
+    "types": [
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 52,
+      "attack": 88,
+      "defense": 82,
+      "special-attack": 58,
+      "special-defense": 65,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "sturdy",
+        "hidden": true
+      },
+      {
+        "name": "draconic",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1346455297442578482/1346455297698300025/charmeleon_delta.gif?ex=68d7d4b6&is=68d68336&hm=3fb0145b64af2ec74c9a620c1c63d02ac7a9237e7513108ae349d45bfea6ff73&"
+  },
+  {
+    "id": "chatot-delta",
+    "name": "Chatot-Delta",
+    "blurb": "the Music Note Pokemon, is the delta variant of Chatot.",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 76,
+      "attack": 55,
+      "defense": 55,
+      "special-attack": 86,
+      "special-defense": 52,
+      "speed": 86
+    },
+    "abilities": [
+      {
+        "name": "own-tempo",
+        "hidden": true
+      },
+      {
+        "name": "soundproof",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1119739473924739182/1119739474226712676/chatot_delta_male.gif?ex=68d7ad66&is=68d65be6&hm=04f3143f8ec4f5d17a794b08ae8dcb0c759207e97940f7c99474b685dca87c01&"
+  },
+  {
+    "id": "chimchar-delta",
+    "name": "Chimchar-Delta",
+    "blurb": "the Chimp Pokemon, is the delta variant of Chimchar",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 44,
+      "attack": 58,
+      "defense": 44,
+      "special-attack": 58,
+      "special-defense": 44,
+      "speed": 61
+    },
+    "abilities": [
+      {
+        "name": "vital-spirit",
+        "hidden": true
+      },
+      {
+        "name": "surge",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1222142136817025127/1346453101149949972/chimchar-ezgif.com-resize.gif?ex=68d7d2ab&is=68d6812b&hm=946179da6e212ace49236906272b9d7ae5393b98aaa0fc1db78d2657b4d8e4c4&"
+  },
+  {
+    "id": "chimecho-delta",
+    "name": "Chimecho-Delta",
+    "blurb": "the Wind Chime Pokemon, is the delta variant of Chimecho.",
+    "types": [
+      "Dark",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 50,
+      "defense": 70,
+      "special-attack": 105,
+      "special-defense": 80,
+      "speed": 75
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1130017655261249580/1130017656016216134/chimecho_delta.gif?ex=68d827b3&is=68d6d633&hm=f4b5fe8398b49481e3f29d28aaaf93df0754568e0af52fb597ec510a6fce62ef&"
+  },
+  {
+    "id": "clamperl-delta",
+    "name": "Clamperl-Delta",
+    "blurb": "the Bivalve Pokemon, is the delta variant of Clamperl.",
+    "types": [
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "attack": 75,
+      "defense": 80,
+      "special-attack": 62,
+      "special-defense": 53,
+      "speed": 40
+    },
+    "abilities": [
+      {
+        "name": "simple",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1157721558853357780/1157721559109226526/clamperl_delta.gif?ex=68d81639&is=68d6c4b9&hm=69918486825f2dd7ebc909859df6b931f915d9e8b297cef44d3e8e91b1cfd876&"
+  },
+  {
+    "id": "clefgar",
+    "name": "Clefgar",
+    "blurb": "the Shadow Fairy Pokemon, is the fusion between Clefable and Gengar.",
+    "types": [
+      "Ghost",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 64,
+      "attack": 100,
+      "defense": 80,
+      "special-attack": 124,
+      "special-defense": 100,
+      "speed": 92
+    },
+    "abilities": [
+      {
+        "name": "poison-heal",
+        "hidden": true
+      },
+      {
+        "name": "unaware",
+        "hidden": false
+      },
+      {
+        "name": "cused-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1329631931972718612/1330789849686478858/clefgar.gif?ex=68d83061&is=68d6dee1&hm=a448b2681413fec6e39c5393541cd16bf908e8b813435474c12b42841f80411c&"
+  },
+  {
+    "id": "cloyster-delta",
+    "name": "Cloyster-Delta",
+    "blurb": "the Bivalve Pokemon, is the delta variant of Cloyster.",
+    "types": [
+      "Ice",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 115,
+      "defense": 165,
+      "special-attack": 65,
+      "special-defense": 55,
+      "speed": 75
+    },
+    "abilities": [
+      {
+        "name": "intimidate",
+        "hidden": true
+      },
+      {
+        "name": "poison-point",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1142729805113086013/1142729805440237608/cloyster_delta.gif?ex=68d84250&is=68d6f0d0&hm=0c5c86fda6357fb249f57eaf9d6d8baf46f0d067f1cceabf9030623003a69254&"
+  },
+  {
+    "id": "corsola-delta",
+    "name": "Corsola-Delta",
+    "blurb": "the Coral Pokemon, is the Delta variant of Corsola.",
+    "types": [
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "attack": 45,
+      "defense": 65,
+      "special-attack": 85,
+      "special-defense": 85,
+      "speed": 40
+    },
+    "abilities": [
+      {
+        "name": "healer",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1116712598025547806/1116712598193307739/corsola_delta.gif?ex=68d7df26&is=68d68da6&hm=3a2a4d782d2a45ce2283623e812b883792f15b5ace33cd88af2aac841bc522da&"
+  },
+  {
+    "id": "cosmachi",
+    "name": "Cosmachi",
+    "blurb": "the Nebula Wish Pokemon, is the fusion of Cosmog and Jirachi.",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 136,
+      "attack": 84,
+      "defense": 72,
+      "special-attack": 112,
+      "special-defense": 100,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "helix-nebula",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1315370800731394159/1315370801448616028/cosmachi.gif?ex=68d82005&is=68d6ce85&hm=644474fbacfa44c30d0202c445a14a97f9cf3b25c778b2245a065c9318d942f8&"
+  },
+  {
+    "id": "cresselia-delta",
+    "name": "Cresselia-Delta",
+    "blurb": "the Solar Pokemon, is the delta variant of Cresselia",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 120,
+      "attack": 75,
+      "defense": 70,
+      "special-attack": 120,
+      "special-defense": 110,
+      "speed": 85
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1397622204404858980/1397622204769898639/cresselia_delta.gif?ex=68d8161c&is=68d6c49c&hm=163d32971088ab0209e7f7ca1b7fcea4c53cc4bd258f706070381314d28ae343&"
+  },
+  {
+    "id": "curesola",
+    "name": "Curesola",
+    "blurb": "the Sacred Tree Pokemon, is the evolution of Corsola-Delta.",
+    "types": [
+      "Grass",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 120,
+      "attack": 65,
+      "defense": 75,
+      "special-attack": 120,
+      "special-defense": 85,
+      "speed": 45
+    },
+    "abilities": [
+      {
+        "name": "sacred-body",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1116717331247267940/1381770699739369516/curesola.gif?ex=68d7c47e&is=68d672fe&hm=583b56dc44279bf2be9b700fc0f03db54efea5a2b96ae3d54209c74be54ec24f&"
+  },
+  {
+    "id": "cyndaquil-delta",
+    "name": "Cyndaquil-Delta",
+    "blurb": "the Electric Mouse Pokemon, is the delta variant of Cyndaquil.",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "attack": 56,
+      "defense": 42,
+      "special-attack": 65,
+      "special-defense": 41,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "volt-absorb",
+        "hidden": true
+      },
+      {
+        "name": "surge",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1259838328946294937/1259838329726173215/cyndaquil_delta.gif?ex=68d7cee0&is=68d67d60&hm=8306861c8133b59ad5c9bac24fd34bccd5010717771e972bbdafcc347d8eb05d&"
+  },
+  {
+    "id": "diancette",
+    "name": "Diancette",
+    "blurb": "the Eternal Jewel Pokemon, is the fusion between Mega Diancie and Eternal Floette.",
+    "types": [
+      "Fairy",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 100,
+      "defense": 96,
+      "special-attack": 120,
+      "special-defense": 124,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "diamond-grove",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1380684386659471380/1380684386877308958/diancette.gif?ex=68d7c549&is=68d673c9&hm=141f02353e4a85beed319e8bc61ad1b5b471cca3067cd928fe473a22697712f5&"
+  },
+  {
+    "id": "diancie-ruby",
+    "name": "Diancie-Ruby",
+    "blurb": "the Jewel Pokemon, is the Ruby variant of Diancie.",
+    "types": [
+      "Rock",
+      "Dark"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 100,
+      "defense": 150,
+      "special-attack": 100,
+      "special-defense": 150,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "grim-sigil",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418955908993781871/1418955909601689723/diancie_ruby.gif?ex=68d7ea2b&is=68d698ab&hm=c91fd2ba420f9f7e25cc5b586da300a04dcddd0fb30ffa3d377e271ad2d180fe&"
+  },
+  {
+    "id": "diancie-sapphire",
+    "name": "Diancie-Sapphire",
+    "blurb": "the Jewel Pokemon, is the Sapphire variant of Diancie.",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 100,
+      "defense": 150,
+      "special-attack": 100,
+      "special-defense": 150,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "tide-sigil",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418957055024435271/1418957055414370355/diancie_sapphire.gif?ex=68d7eb3c&is=68d699bc&hm=7b7e11410c9296e46d29586bdf3b0d3dec402c86ae2d6187623449499e2af300&"
+  },
+  {
+    "id": "doublade-delta",
+    "name": "Doublade-Delta",
+    "blurb": "the Flame Sword Pokemon, is the Delta variant of Doublade.",
+    "types": [
+      "Steel",
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 64,
+      "attack": 85,
+      "defense": 68,
+      "special-attack": 40,
+      "special-defense": 135,
+      "speed": 56
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1103005725350953092/1103005725908799538/doublade_chriscendo_idle.gif?ex=68d81aa1&is=68d6c921&hm=706547ba5b6afa087d95c489f745ab0a3c7fc4db8a9cb7588aedceebf044f032&"
+  },
+  {
+    "id": "draceon",
+    "name": "Draceon",
+    "blurb": "the Wyvern Pokemon, is the Dragon-type Eeveelution of Eevee.",
+    "types": [
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 110,
+      "attack": 130,
+      "defense": 65,
+      "special-attack": 65,
+      "special-defense": 60,
+      "speed": 95
+    },
+    "abilities": [
+      {
+        "name": "unnerve",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1108500556546310224/1412255040751665274/draceon.gif?ex=68d7ed40&is=68d69bc0&hm=8dc9fad5167d429cc0b3965e3d2746a69b29b0e81528e234c3b5c0c57696a7ae&"
+  },
+  {
+    "id": "dragapult-ultra",
+    "name": "Dragapult-Ultra",
+    "blurb": "the Clamor Pokemon, is the ultra variant of Dragapult.",
+    "types": [
+      "Dragon",
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 93,
+      "attack": 100,
+      "defense": 79,
+      "special-attack": 108,
+      "special-defense": 100,
+      "speed": 120
+    },
+    "abilities": [
+      {
+        "name": "flash-fire",
+        "hidden": true
+      },
+      {
+        "name": "clear-body",
+        "hidden": false
+      },
+      {
+        "name": "defiant",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1377627388749545512/1377627389068050432/dragapult_ultra.gif?ex=68d7dafc&is=68d6897c&hm=639f996394e7006fde5ad8766c6172409df2b4963a89bacac2d9fb5f50bb0392&"
+  },
+  {
+    "id": "dragascue",
+    "name": "Dragascue",
+    "blurb": "the Dragon Penguin Pokemon, is the fusion between Dragapult and Eiscue.",
+    "types": [
+      "Dragon",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 112,
+      "defense": 100,
+      "special-attack": 88,
+      "special-defense": 60,
+      "speed": 120
+    },
+    "abilities": [
+      {
+        "name": "aftermath",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1380670891075178506/1380670891863703633/dragascue.gif?ex=68d7b8b8&is=68d66738&hm=672f536831d2279ad3723f68d9a83a93864074d4367e186fb80845f50eb1e549&"
+  },
+  {
+    "id": "dragetsu",
+    "name": "Dragetsu",
+    "blurb": "the Pure Dragon Pokemon, is the secondary evolution of Dragonair.",
+    "types": [
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 93,
+      "attack": 70,
+      "defense": 88,
+      "special-attack": 123,
+      "special-defense": 127,
+      "speed": 99
+    },
+    "abilities": [
+      {
+        "name": "pure-guise",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1099286526237618247/1099286526451515472/dragetsu.gif?ex=68d7c1db&is=68d6705b&hm=01ed36a0b256c2915a8c946f552911ef600c7bcd6ce6878c1dd89f40b1fc8e2d&"
+  },
+  {
+    "id": "drakloak-ultra",
+    "name": "Drakloak-Ultra",
+    "blurb": "the Caretaker Pokemon, is the ultra variant of Drakloak.",
+    "types": [
+      "Dragon",
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 68,
+      "attack": 60,
+      "defense": 50,
+      "special-attack": 80,
+      "special-defense": 50,
+      "speed": 102
+    },
+    "abilities": [
+      {
+        "name": "flame-body",
+        "hidden": true
+      },
+      {
+        "name": "clear-body",
+        "hidden": false
+      },
+      {
+        "name": "analytic",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1377623347231457382/1377623348384628756/drakloak_ultra.gif?ex=68d7d739&is=68d685b9&hm=99156afdc3ba2140af9da76948719de76a61922f48253922e2eb3631b618597e&"
+  },
+  {
+    "id": "dreepy-ultra",
+    "name": "Dreepy-Ultra",
+    "blurb": "the Lingering Pokemon, is the ultra variant of Dreepy.",
+    "types": [
+      "Dragon",
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 28,
+      "attack": 40,
+      "defense": 30,
+      "special-attack": 60,
+      "special-defense": 30,
+      "speed": 82
+    },
+    "abilities": [
+      {
+        "name": "flame-body",
+        "hidden": true
+      },
+      {
+        "name": "clear-body",
+        "hidden": false
+      },
+      {
+        "name": "analytic",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1377621519441592320/1377621519659827351/dreepy_ultra.gif?ex=68d7d585&is=68d68405&hm=5e333eb777a1d2e616340ac2fbf4d04b4105e529099b8ea80d65de007e6684db&"
+  },
+  {
+    "id": "drifblimp",
+    "name": "Drifblimp",
+    "blurb": "the Blimp Pokemon, is the evolution of Drifblim.",
+    "types": [
+      "Ghost",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 200,
+      "attack": 58,
+      "defense": 62,
+      "special-attack": 100,
+      "special-defense": 70,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "flare-boost",
+        "hidden": true
+      },
+      {
+        "name": "unburden",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1211446061193887754/1350222567000117348/Drifblimp.gif?ex=68d7b181&is=68d66001&hm=898733d31b39e84e837034688da9043657cd4291f6f0a4ba5984f964558ef5b3&"
+  },
+  {
+    "id": "druddigon-delta",
+    "name": "Druddigon-Delta",
+    "blurb": "the Gargoyle Pokemon, is the delta variant of Druddigon.",
+    "types": [
+      "Rock",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 77,
+      "attack": 109,
+      "defense": 123,
+      "special-attack": 65,
+      "special-defense": 60,
+      "speed": 51
+    },
+    "abilities": [
+      {
+        "name": "intimidate",
+        "hidden": true
+      },
+      {
+        "name": "rough-skin",
+        "hidden": false
+      },
+      {
+        "name": "sheer-force",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1394882360331337831/1394882360645783662/druddigon_delta.gif?ex=68d801ae&is=68d6b02e&hm=ab5d7850e72df0641e690d9970bcf3c22f73342a8772f8483a57a2e8596916bd&"
+  },
+  {
+    "id": "dunecargo",
+    "name": "Dunecargo",
+    "blurb": "the Sand Dune Pokemon, is the convergent species of Magcargo and the evolution of Slugrit.",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 90,
+      "defense": 120,
+      "special-attack": 50,
+      "special-defense": 70,
+      "speed": 20
+    },
+    "abilities": [
+      {
+        "name": "weak-armor",
+        "hidden": true
+      },
+      {
+        "name": "sand-veil",
+        "hidden": false
+      },
+      {
+        "name": "earth-eater",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418912230501777518/1418912231227396207/dunecargo.gif?ex=68d7c17e&is=68d66ffe&hm=21e4b1edd0b89c7f4df870ab6d3bdfe02c074b06b5b829413378e14687d89a8c&"
+  },
+  {
+    "id": "dunsparath",
+    "name": "Dunsparath",
+    "blurb": "the Stormbringer Pokemon, is the evolution of Dunsparce-Ultra.",
+    "types": [
+      "Dragon",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 115,
+      "attack": 60,
+      "defense": 60,
+      "special-attack": 125,
+      "special-defense": 80,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "levitate",
+        "hidden": true
+      },
+      {
+        "name": "neutralizing-gas",
+        "hidden": false
+      },
+      {
+        "name": "static",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1246932115489165373/1246932115724173363/dunsparath.gif?ex=68d7a847&is=68d656c7&hm=11fe391f6e8d251b6586dc059db8aaaff97514b25b427fe0f76324a4b74fa6de&"
+  },
+  {
+    "id": "dunsparce-ultra",
+    "name": "Dunsparce-Ultra",
+    "blurb": "the Land Snake Pokemon, is the ultra variant of Dunsparce.",
+    "types": [
+      "Dragon",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 40,
+      "defense": 55,
+      "special-attack": 85,
+      "special-defense": 70,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "rattled",
+        "hidden": true
+      },
+      {
+        "name": "neutralizing-gas",
+        "hidden": false
+      },
+      {
+        "name": "static",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1246929975278440558/1246929975911907460/dunsparce_ultra.gif?ex=68d7a649&is=68d654c9&hm=f8fd6e08696312386f18ab91a979aceba88e146e0f0bd32c28ea6960440b9ce2&"
+  },
+  {
+    "id": "ectarachnid",
+    "name": "Ectarachnid",
+    "blurb": "the Long Leg Pokemon, is the evolution of Ariados.",
+    "types": [
+      "Bug",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "attack": 120,
+      "defense": 100,
+      "special-attack": 70,
+      "special-defense": 80,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "sniper",
+        "hidden": true
+      },
+      {
+        "name": "swarm",
+        "hidden": false
+      },
+      {
+        "name": "merciless",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1107322302326116473/1107322302863003690/ectarachnid.gif?ex=68d7fcc2&is=68d6ab42&hm=e17080b4d37028d0e97bf55d5ce13d256b3bfa79a7683bfc368d405b5b5d37d3&"
+  },
+  {
+    "id": "eeveeon",
+    "name": "Eeveeon",
+    "blurb": "the Ordinary Pokemon, is the evolution of Eevee.",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 100,
+      "defense": 75,
+      "special-attack": 100,
+      "special-defense": 75,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "protean",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1140231507793940571/1412254872782377000/eeveeon.gif?ex=68d7ed18&is=68d69b98&hm=f0be2edbb027ee0b8fdd3d603ec56adb1ac97a7aae3e260315396ced7a1b804d&"
+  },
+  {
+    "id": "electisaur",
+    "name": "Electisaur",
+    "blurb": "the Thunderbolt Seed Pokemon, is the fusion between Electivire and Venusaur.",
+    "types": [
+      "Grass",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 92,
+      "attack": 108,
+      "defense": 88,
+      "special-attack": 112,
+      "special-defense": 80,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "anger-point",
+        "hidden": true
+      },
+      {
+        "name": "motor-drive",
+        "hidden": false
+      },
+      {
+        "name": "chlorophyll",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1333451263626711071/1333451264406589510/venusaur_electivire1.gif?ex=68d7fbc3&is=68d6aa43&hm=d66782e196cf82c530e35da7862fdb8584515760eaf2521cdee7c80668e19e35&"
+  },
+  {
+    "id": "emolga",
+    "name": "Emolga",
+    "blurb": "the Sky Vampire Pokemon, is the delta variant of Emolga.",
+    "types": [
+      "Dark",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 75,
+      "defense": 60,
+      "special-attack": 75,
+      "special-defense": 60,
+      "speed": 103
+    },
+    "abilities": [
+      {
+        "name": "hustle",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1126487758043631626/1126487758362394684/emolga_delta.gif?ex=68d7d67a&is=68d684fa&hm=dadda9262dfd448a2c14659e8a6b17d82fe897c4ec50603aaca59ece15e2e209&"
+  },
+  {
+    "id": "energeist",
+    "name": "Energeist",
+    "blurb": "the Energy Drink Pokemon, is the convergent form of Polteageist.",
+    "types": [
+      "Electric",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 76,
+      "defense": 86,
+      "special-attack": 104,
+      "special-defense": 91,
+      "speed": 86
+    },
+    "abilities": [
+      {
+        "name": "insomnia",
+        "hidden": true
+      },
+      {
+        "name": "surge-deluge",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1176442705199505439/1176442705501499432/enrgeist.gif?ex=68d7a3a6&is=68d65226&hm=675fc7926bec48e56d89a83a3dac3a633bf5b58c145bc4a7a323113b680e84ec&"
+  },
+  {
+    "id": "eruptois",
+    "name": "Eruptois",
+    "blurb": "the Steam Pokemon, is the evolution of Torkoal-Delta.",
+    "types": [
+      "Fire",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 65,
+      "defense": 170,
+      "special-attack": 105,
+      "special-defense": 75,
+      "speed": 20
+    },
+    "abilities": [
+      {
+        "name": "geyser",
+        "hidden": true
+      },
+      {
+        "name": "water-absorb",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1292349908564578335/1292349909147848736/eruptois.gif?ex=68d81765&is=68d6c5e5&hm=3011c1863007b95bf674760cd9d971bb74cc49c11b55137530b58b82a2e1e188&"
+  },
+  {
+    "id": "etherion",
+    "name": "Etherion",
+    "blurb": "the Vigilante Pokemon, is the former leader of the Swords of Justice.",
+    "types": [
+      "Ghost",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 91,
+      "attack": 129,
+      "defense": 90,
+      "special-attack": 90,
+      "special-defense": 72,
+      "speed": 108
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1397615110809325670/1397615113166520362/etherion.gif?ex=68d80f81&is=68d6be01&hm=098bb54c70c870b2fa8cdfda15872c24d91211600fb4e2579301b3e6f28a5e5c&"
+  },
+  {
+    "id": "falinks-delta",
+    "name": "Falinks-Delta",
+    "blurb": "the Formation Pokemon, is the Delta variant of Falinks.",
+    "types": [
+      "Fighting",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 110,
+      "defense": 110,
+      "special-attack": 45,
+      "special-defense": 70,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "filter",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1105443736898519131/1346426050460127233/falinks_delta.gif?ex=68d7b979&is=68d667f9&hm=496fad305c102412d95bb55f829b39a90f54cd4f9d185396edda9297b4d37150&"
+  },
+  {
+    "id": "floragato-delta",
+    "name": "Floragato-Delta",
+    "blurb": "the Medium Pokemon, is the delta variant of Floragato",
+    "types": [
+      "Fairy",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 61,
+      "attack": 63,
+      "defense": 53,
+      "special-attack": 80,
+      "special-defense": 73,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "telepathy",
+        "hidden": true
+      },
+      {
+        "name": "twinkle-boosts-the-pok-mon-s-attack-or-special-attack-by-50-during-damage-calculation-if-a-fairy",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1254700184965873725/1356618768062873610/floragato_delta.gif?ex=68d7e42f&is=68d692af&hm=47d7d15f55472b50cbc92505a07a6ade9da151b815ad0ab2cff23d700d84c1d6&"
+  },
+  {
+    "id": "florizim",
+    "name": "Florizim",
+    "blurb": "the Miasma Pokemon, is a newly introduced Ultra Beast. Codename: UB-Corrode",
+    "types": [
+      "Poison",
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 79,
+      "attack": 83,
+      "defense": 61,
+      "special-attack": 113,
+      "special-defense": 151,
+      "speed": 83
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1377687834256736408/1377687834835816588/florizim.gif?ex=68d81348&is=68d6c1c8&hm=e1791ab7062ac8d704176f5d35c3e7f9ff1345c2a3364da8aaf59e0d88248ce4&"
+  },
+  {
+    "id": "flygon-delta",
+    "name": "Flygon-Delta",
+    "blurb": "the Mystic Pokemon, is the delta variant of Flygon.",
+    "types": [
+      "Bug",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 80,
+      "defense": 80,
+      "special-attack": 100,
+      "special-defense": 80,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "chromatic-scales",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1171046534369005588/1356618289563959408/flygon_delta.gif?ex=68d7e3bc&is=68d6923c&hm=af4943e5c46bfaa84c36e7536e215b229c0576fb2f150542b603385b71e76c17&"
+  },
+  {
+    "id": "flygon-ultra",
+    "name": "Flygon-Ultra",
+    "blurb": "the Mystic Pokemon, is the ultra variant of Flygon.",
+    "types": [
+      "Steel",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 90,
+      "defense": 110,
+      "special-attack": 75,
+      "special-defense": 90,
+      "speed": 75
+    },
+    "abilities": [
+      {
+        "name": "tinted-lens",
+        "hidden": true
+      },
+      {
+        "name": "thick-fat",
+        "hidden": false
+      },
+      {
+        "name": "weak-armor",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1246941055971233833/1246941056520683613/flygon_ultra.gif?ex=68d7b09a&is=68d65f1a&hm=0a043486a161f285a7a671e62fb721b2e28b1cdbf0d0783d1887332eb60fcdaf&"
+  },
+  {
+    "id": "froakie-delta",
+    "name": "Froakie-Delta",
+    "blurb": "the Samurai Pokemon, is the Delta variant of Froakie.",
+    "types": [
+      "Water",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 41,
+      "attack": 64,
+      "defense": 50,
+      "special-attack": 46,
+      "special-defense": 44,
+      "speed": 69
+    },
+    "abilities": [
+      {
+        "name": "limber",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418924330829615164/1418924331119153173/froakie_delta.gif?ex=68d7ccc2&is=68d67b42&hm=d49b40270af43884f357fecd34864059e6ecc0161b6cb75bed85a3f47447b6af&"
+  },
+  {
+    "id": "froakie-omega",
+    "name": "Froakie-Omega",
+    "blurb": "the Ice Frog Pokemon, is the Omega variant of Froakie.",
+    "types": [
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 47,
+      "attack": 64,
+      "defense": 41,
+      "special-attack": 55,
+      "special-defense": 40,
+      "speed": 67
+    },
+    "abilities": [
+      {
+        "name": "opportunist",
+        "hidden": true
+      },
+      {
+        "name": "flurry",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1356575295808737321/1356575296484020426/froakie_omega.gif?ex=68d7bbb2&is=68d66a32&hm=5d9c18c510cad1d8c63626ffa0064ce1434f968fa8a10bb065173f36eb6f7348&"
+  },
+  {
+    "id": "frogadier-delta",
+    "name": "Frogadier-Delta",
+    "blurb": "the Samurai Pokemon, is the Delta variant of Frogadier.",
+    "types": [
+      "Water",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 54,
+      "attack": 74,
+      "defense": 69,
+      "special-attack": 62,
+      "special-defense": 55,
+      "speed": 91
+    },
+    "abilities": [
+      {
+        "name": "limber",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418921628196409437/1418921628599058482/frogadier_delta.gif?ex=68d7ca3e&is=68d678be&hm=cddcdbfbc5934519fe15c15a2af24b3765f59988b308ab9a5dd2a9f3b31f86fc&"
+  },
+  {
+    "id": "frogadier-omega",
+    "name": "Frogadier-Omega",
+    "blurb": "the Ice Frog Pokemon, is the Omega variant of Frogadier.",
+    "types": [
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 59,
+      "attack": 78,
+      "defense": 55,
+      "special-attack": 71,
+      "special-defense": 55,
+      "speed": 87
+    },
+    "abilities": [
+      {
+        "name": "opportunist",
+        "hidden": true
+      },
+      {
+        "name": "flurry",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1356614237966831808/1356614304534630661/frogadier_omega.gif?ex=68d7e006&is=68d68e86&hm=130386b5f0bf5b2912251f4db4476926e9bca50fc769ae475ab10469a753572b&"
+  },
+  {
+    "id": "furret-delta",
+    "name": "Furret-Delta",
+    "blurb": "the Fluffy Pokemon, is the delta variant of Furret",
+    "types": [
+      "Normal",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "attack": 52,
+      "defense": 95,
+      "special-attack": 38,
+      "special-defense": 65,
+      "speed": 75
+    },
+    "abilities": [
+      {
+        "name": "fur-coat",
+        "hidden": true
+      },
+      {
+        "name": "run-away",
+        "hidden": false
+      },
+      {
+        "name": "soundproof",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1228650457698795520/1228650457958715392/furret_delta.gif?ex=68d7b9e8&is=68d66868&hm=aa8c2817d75478aadadcb5816337a9768bab51cd4ddf7465d8bd31a55b603b84&"
+  },
+  {
+    "id": "gabite-delta",
+    "name": "Gabite-Delta",
+    "blurb": "the Land Shark Pokemon, is the Delta variant of Gabite.",
+    "types": [
+      "Dragon",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 68,
+      "attack": 55,
+      "defense": 52,
+      "special-attack": 85,
+      "special-defense": 80,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "own-tempo",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1093882317296119888/1093882317551976509/gabite.gif?ex=68d7df4b&is=68d68dcb&hm=478a31f69b200ead96a3e40c17fce03da557cff2ce17470dc571809d158b23fb&"
+  },
+  {
+    "id": "garchomp-delta",
+    "name": "Garchomp-Delta",
+    "blurb": "the Land Shark Pokemon, is the Delta variant of Garchomp.",
+    "types": [
+      "Dragon",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 94,
+      "attack": 85,
+      "defense": 95,
+      "special-attack": 120,
+      "special-defense": 100,
+      "speed": 106
+    },
+    "abilities": [
+      {
+        "name": "own-tempo",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1093883544796930178/1350204593300049961/garchomp_delta.gif?ex=68d7a0c4&is=68d64f44&hm=8f175083ef5e10f64e7504836ef18561acd9b0867d003ec34e3075aa7a7cb106&"
+  },
+  {
+    "id": "gastly-ultra",
+    "name": "Gastly-Ultra",
+    "blurb": "the Bubble Pokemon, is the ultra variant of Gastly.",
+    "types": [
+      "Ghost",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "attack": 35,
+      "defense": 30,
+      "special-attack": 100,
+      "special-defense": 35,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "levitate",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1246994018802470993/1246994019150463007/gastly_ultra.gif?ex=68d7e1ee&is=68d6906e&hm=4746301e3024f1019f510d05789c4b2b1905417a0b56ca848aa7e6c96ba3e170&"
+  },
+  {
+    "id": "gastrodon-delta",
+    "name": "Gastrodon-Delta",
+    "blurb": "the Dragon Slug Pokemon, is the delta variant of Gastrodon.",
+    "types": [
+      "Water",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 111,
+      "attack": 63,
+      "defense": 98,
+      "special-attack": 82,
+      "special-defense": 72,
+      "speed": 49
+    },
+    "abilities": [
+      {
+        "name": "poison-heal",
+        "hidden": true
+      },
+      {
+        "name": "sticky-hold",
+        "hidden": false
+      },
+      {
+        "name": "gooey",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1208802611378135080/1208802611755483208/gastrodon_delta.gif?ex=68d807a9&is=68d6b629&hm=807b024b767367c1fdb1fff2cfa100a1a0636398ee95d4c14da05e62fa0ad5fa&"
+  },
+  {
+    "id": "gengar-ultra",
+    "name": "Gengar-Ultra",
+    "blurb": "the Foam Pokemon, is the ultra variant of Gengar.",
+    "types": [
+      "Ghost",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 65,
+      "defense": 60,
+      "special-attack": 130,
+      "special-defense": 75,
+      "speed": 110
+    },
+    "abilities": [
+      {
+        "name": "levitate",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1247013990190551070/1247014923721117806/gengar_ultra.gif?ex=68d7f566&is=68d6a3e6&hm=e822be8097c0ff5e22441187ddc0f60e93b2f50b90b92e86d4bd6a7b33427270&"
+  },
+  {
+    "id": "gholdaton",
+    "name": "Gholdaton",
+    "blurb": "the Coin Hammer Pokemon, is the fusion between Gholdengo and Tinkaton.",
+    "types": [
+      "Fairy",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 92,
+      "attack": 92,
+      "defense": 80,
+      "special-attack": 80,
+      "special-defense": 120,
+      "speed": 96
+    },
+    "abilities": [
+      {
+        "name": "surge-surfer",
+        "hidden": true
+      },
+      {
+        "name": "mold-breaker",
+        "hidden": false
+      },
+      {
+        "name": "good-as-gold",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1333453090648752128/1333453091034632293/gholdaton.gif?ex=68d7fd77&is=68d6abf7&hm=a106d34d1287d0531a515eded398f845df5d90726a2cc0cc96b39a518f399e8b&"
+  },
+  {
+    "id": "gholdengo-delta",
+    "name": "Gholdengo-Delta",
+    "blurb": "the Pearl Chest Pokemon, is the delta variant of Gholdengo.",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 87,
+      "attack": 60,
+      "defense": 95,
+      "special-attack": 133,
+      "special-defense": 91,
+      "speed": 84
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1258533290525069403/1258533290789568622/gholdengo_delta.gif?ex=68d7acb6&is=68d65b36&hm=232e37ca22e5bc40bc8efc0fa3a7a14dba274655cfe21e381ca778324ea082b8&"
+  },
+  {
+    "id": "gible-delta",
+    "name": "Gible-Delta",
+    "blurb": "the Land Shark Pokemon, is the Delta variant of Gible.",
+    "types": [
+      "Dragon",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 58,
+      "attack": 45,
+      "defense": 50,
+      "special-attack": 60,
+      "special-defense": 50,
+      "speed": 37
+    },
+    "abilities": [
+      {
+        "name": "own-tempo",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1093881490913366107/1093881491089522718/gible.gif?ex=68d7de86&is=68d68d06&hm=723c2a3b03abb53d25ef3402c14bd3f3a9949c932dedf40519b2593513855222&"
+  },
+  {
+    "id": "gimmighoul-delta",
+    "name": "Gimmighoul-Delta",
+    "blurb": "the Pearl Chest Pokemon, is the delta variant of Gimmighoul.",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 30,
+      "defense": 70,
+      "special-attack": 75,
+      "special-defense": 70,
+      "speed": 10
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1258532174127300689/1258532174597197864/gimmighoul_delta.gif?ex=68d7abac&is=68d65a2c&hm=fd60b36ec1ff0a749acccc4818bf957fddf84e525ac1ae520e8232c239948ce8&"
+  },
+  {
+    "id": "glimmerix",
+    "name": "Glimmerix",
+    "blurb": "the Reflection Pokemon, is a newly introduced Ultra Beast. Codename: UB-Abyss",
+    "types": [
+      "Ghost",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 53,
+      "attack": 103,
+      "defense": 151,
+      "special-attack": 101,
+      "special-defense": 83,
+      "speed": 79
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1377694238954881044/1377694239760322610/glimmerix.gif?ex=68d8193f&is=68d6c7bf&hm=2a4ecb73a52c945a23548ee8f7e766666864c43bb40f9e18972a618fe3712ae3&"
+  },
+  {
+    "id": "glimmet-delta",
+    "name": "Glimmet-Delta",
+    "blurb": "the Rime Pokemon, is the delta variant of Glimmet.",
+    "types": [
+      "Ice",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 35,
+      "defense": 100,
+      "special-attack": 70,
+      "special-defense": 45,
+      "speed": 55
+    },
+    "abilities": [
+      {
+        "name": "sturdy",
+        "hidden": true
+      },
+      {
+        "name": "slush-rush",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1368619287425843300/1368619287853535292/glimmet_delta.gif?ex=68d80b09&is=68d6b989&hm=ade16bc2bab3b8be87d84107ee36f0e8d119df4a0d70f13e242e4876b0728bfe&"
+  },
+  {
+    "id": "glimmet-ultra",
+    "name": "Glimmet-Ultra",
+    "blurb": "the Wormhole Pokemon, is the ultra variant of Glimmet.",
+    "types": [
+      "Electric",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 29,
+      "defense": 34,
+      "special-attack": 110,
+      "special-defense": 62,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "infiltrator",
+        "hidden": true
+      },
+      {
+        "name": "volt-absorb",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1353712062014160938/1353712062391521290/glimmet_ultra.gif?ex=68d7dd1a&is=68d68b9a&hm=9e9de262e3b91f10df368adff3eb72a7f44e30262c58c3ed651b26452eb9df2b&"
+  },
+  {
+    "id": "glimmora-delta",
+    "name": "Glimmora-Delta",
+    "blurb": "the Rime Pokemon, is the delta variant of Glimmora.",
+    "types": [
+      "Ice",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 81,
+      "attack": 45,
+      "defense": 134,
+      "special-attack": 115,
+      "special-defense": 60,
+      "speed": 90
+    },
+    "abilities": [
+      {
+        "name": "sturdy",
+        "hidden": true
+      },
+      {
+        "name": "slush-rush",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1368620881898635314/1412254652916957184/glimmora_delta.gif?ex=68d7ece3&is=68d69b63&hm=f44d59cdddf88cbd86276f9a5c166e50a5bf41d7069dba0d5bed271f01101dca&"
+  },
+  {
+    "id": "glimmora-ultra",
+    "name": "Glimmora-Ultra",
+    "blurb": "the Wormhole Pokemon, is the ultra variant of Glimmora.",
+    "types": [
+      "Electric",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 60,
+      "defense": 64,
+      "special-attack": 140,
+      "special-defense": 99,
+      "speed": 92
+    },
+    "abilities": [
+      {
+        "name": "infiltrator",
+        "hidden": true
+      },
+      {
+        "name": "volt-absorb",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1353714634485665922/1412254739135205426/glimmora_ultra.gif?ex=68d7ecf8&is=68d69b78&hm=73d21b4a1c4a5917c036995ec82db079536a54c67fe150a819bf58d497895a04&"
+  },
+  {
+    "id": "gogoat-delta",
+    "name": "Gogoat-Delta",
+    "blurb": "the Mount Pokemon, is the delta variant of Gogoat.",
+    "types": [
+      "Normal",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 133,
+      "defense": 90,
+      "special-attack": 59,
+      "special-defense": 61,
+      "speed": 88
+    },
+    "abilities": [
+      {
+        "name": "fluffy",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1297516082403217471/1297516082914918400/gogoat_delta.gif?ex=68d7c504&is=68d67384&hm=ebb4bb99bf5eab04281aced225cf974cf2a42f9aea7500404f3b93c5fee43856&"
+  },
+  {
+    "id": "golurk-delta",
+    "name": "Golurk-Delta",
+    "blurb": "the Automaton Pokemon, is the delta variant of Golurk",
+    "types": [
+      "Ghost",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 79,
+      "attack": 134,
+      "defense": 80,
+      "special-attack": 65,
+      "special-defense": 60,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "covenant",
+        "hidden": true
+      },
+      {
+        "name": "klutz",
+        "hidden": false
+      },
+      {
+        "name": "contrary",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1234637941444448366/1234637941918138408/golurk_delta.gif?ex=68d7c16f&is=68d66fef&hm=32b1992d92df28c7d031e1bfc19e93fc0092049ad96aeb64f3ff4a680646cfd7&"
+  },
+  {
+    "id": "goolossal",
+    "name": "Goolossal",
+    "blurb": "the Crowned Pokemon, is the evolution of Goomy-Epsilon.",
+    "types": [
+      "Dragon",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 180,
+      "attack": 115,
+      "defense": 86,
+      "special-attack": 115,
+      "special-defense": 64,
+      "speed": 40
+    },
+    "abilities": [
+      {
+        "name": "monarch",
+        "hidden": true
+      },
+      {
+        "name": "sticky-hold",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1272157433275617322/1272157434018005063/goolossal.gif?ex=68d7ccef&is=68d67b6f&hm=02ff326fd0740a38e80b3d64a6647d54b9aba781a6c6c9d092c78c1669616845&"
+  },
+  {
+    "id": "goomy-epsilon",
+    "name": "Goomy-Epsilon",
+    "blurb": "the Crownless Pokemon, is the Epsilon variant of Goomy.",
+    "types": [
+      "Dragon",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 50,
+      "defense": 35,
+      "special-attack": 55,
+      "special-defense": 75,
+      "speed": 40
+    },
+    "abilities": [
+      {
+        "name": "rattled",
+        "hidden": true
+      },
+      {
+        "name": "sticky-hold",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1272154376806469713/1272154377158918234/goomy_epsilon.gif?ex=68d7ca17&is=68d67897&hm=8e8ef7ff7096ea2758d0b17a3b60bd217fa74c466b8076897767d94b3cd38403&"
+  },
+  {
+    "id": "gorebyss-delta",
+    "name": "Gorebyss-Delta",
+    "blurb": "the North Sea Pokemon, is the delta variant of Gorebyss.",
+    "types": [
+      "Dragon",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 93,
+      "defense": 95,
+      "special-attack": 112,
+      "special-defense": 70,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "exalt",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1157745778803081358/1157745779436433479/gorebyss_delta.gif?ex=68d82cc7&is=68d6db47&hm=84f8b0d6143cea31a32c2b997aa79cd07ec215de22ecf2f6fdec38f8b6a5b4d6&"
+  },
+  {
+    "id": "gorochu",
+    "name": "Gorochu",
+    "blurb": "the Electric Mouse Pokemon, is the evolution of Raichu",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 120,
+      "defense": 90,
+      "special-attack": 90,
+      "special-defense": 130,
+      "speed": 110
+    },
+    "abilities": [
+      {
+        "name": "transistor",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1096023231061819512/1096023231267352616/gorochu.gif?ex=68d7c02d&is=68d66ead&hm=683d45a229954ddf9059e27eee36b07c14c4c7f8ad2d75a30d392a5378e2f8ac&"
+  },
+  {
+    "id": "greninja-delta",
+    "name": "Greninja-Delta",
+    "blurb": "the Samurai Pokemon, is the Delta variant of Greninja.",
+    "types": [
+      "Water",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 72,
+      "attack": 115,
+      "defense": 89,
+      "special-attack": 83,
+      "special-defense": 66,
+      "speed": 105
+    },
+    "abilities": [
+      {
+        "name": "precedence",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1098540679933734952/1418915754572779612/greninja_delta.gif?ex=68d7c4c6&is=68d67346&hm=c351e2cef68ba2e7fd7b6c188646d28c1b0d1cb17ccb4dc33463902b2e93f3ca&"
+  },
+  {
+    "id": "greninja-omega",
+    "name": "Greninja-Omega",
+    "blurb": "the Ninja Pokemon, is the Omega variant of Greninja.",
+    "types": [
+      "Ice",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 100,
+      "defense": 78,
+      "special-attack": 90,
+      "special-defense": 83,
+      "speed": 104
+    },
+    "abilities": [
+      {
+        "name": "opportunist",
+        "hidden": true
+      },
+      {
+        "name": "flurry",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1356617540503339058/1356617540918448299/greninja_omega.gif?ex=68d7e30a&is=68d6918a&hm=da941c4c9657bfbe9bb6489f76bd7c7f50eb6b0e15f65a5a223c1b9b6163ec49&"
+  },
+  {
+    "id": "grimmeon",
+    "name": "Grimmeon",
+    "blurb": "the Cruel Moon Pokemon, is the fusion between Grimmsnarl and Umbreon.",
+    "types": [
+      "Dark",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 96,
+      "attack": 76,
+      "defense": 112,
+      "special-attack": 68,
+      "special-defense": 132,
+      "speed": 76
+    },
+    "abilities": [
+      {
+        "name": "moonwake",
+        "hidden": true
+      },
+      {
+        "name": "synchronize",
+        "hidden": false
+      },
+      {
+        "name": "frisk",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1380657786496745542/1380657786723111055/grimmeon.gif?ex=68d7ac83&is=68d65b03&hm=d0c699586b7cef1ba35e5ddee5f9dc7e186f2f948ebce6416bd4fc2ab7330805&"
+  },
+  {
+    "id": "grimmsnarl-delta",
+    "name": "Grimmsnarl-Delta",
+    "blurb": "the Bulk Up Pokemon, is the delta variant of Grimmsnarl.",
+    "types": [
+      "Ice",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "attack": 130,
+      "defense": 65,
+      "special-attack": 65,
+      "special-defense": 85,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "winter-arbiter",
+        "hidden": true
+      },
+      {
+        "name": "frisk",
+        "hidden": false
+      },
+      {
+        "name": "technician",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1329620250290814996/1330791522571911178/grimmsnarl_delta.gif?ex=68d831ef&is=68d6e06f&hm=243393e7d4a6bd6cbf8f4e539d8ebd06fc4b6951ff84b3bdd070ce473bfee7c2&"
+  },
+  {
+    "id": "grimorgon",
+    "name": "Grimorgon",
+    "blurb": "the Gargoyle Pokemon, is the evolution of Druddigon-Delta.",
+    "types": [
+      "Rock",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 87,
+      "attack": 134,
+      "defense": 136,
+      "special-attack": 55,
+      "special-defense": 60,
+      "speed": 53
+    },
+    "abilities": [
+      {
+        "name": "intimidate",
+        "hidden": true
+      },
+      {
+        "name": "rough-skin",
+        "hidden": false
+      },
+      {
+        "name": "sturdy",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1394884746839851051/1394884747318267914/grimorgon.gif?ex=68d803e7&is=68d6b267&hm=ba9b6182ade88071a78a00819ac9cfaf328c8667e511ecad1bf62481c45eda59&"
+  },
+  {
+    "id": "growlithe-delta",
+    "name": "Growlithe-Delta",
+    "blurb": "the Puppy Pokemon, is the Delta variant of Growlithe.",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 70,
+      "defense": 45,
+      "special-attack": 65,
+      "special-defense": 50,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "justified",
+        "hidden": true
+      },
+      {
+        "name": "intimidate",
+        "hidden": false
+      },
+      {
+        "name": "own-tempo",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1109240714560278619/1349603934448123945/growlithe_delta.gif?ex=68d8145c&is=68d6c2dc&hm=520976308b757b382c24de3e29ae8fbbda27e61fc501d8a7908262392b762f81&"
+  },
+  {
+    "id": "guardeon",
+    "name": "Guardeon",
+    "blurb": "the Guardian Pokemon, is the Steel-type Eeveelution of Eevee.",
+    "types": [
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 110,
+      "attack": 65,
+      "defense": 130,
+      "special-attack": 65,
+      "special-defense": 95,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "guardian",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1108495006865555487/1412253860130586664/guardeon.gif?ex=68d7ec26&is=68d69aa6&hm=7ecc15598126daf0a0bddd499ce36866d9b13f7043b3a6c2157db66eb4767fa9&"
+  },
+  {
+    "id": "hatenna-delta",
+    "name": "Hatenna-Delta",
+    "blurb": "the Trickster Pokemon, is the delta variant of Hatenna.",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 42,
+      "attack": 25,
+      "defense": 40,
+      "special-attack": 60,
+      "special-defense": 49,
+      "speed": 49
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1393805617889546433/1393805619064209509/hatenna_delta.gif?ex=68d80b63&is=68d6b9e3&hm=7fb2e708c6d44fe604c65dd3f0986b5a82556088869d81736eb9054a2a4d37c4&"
+  },
+  {
+    "id": "hatteon",
+    "name": "Hatteon",
+    "blurb": "the Silent Sun Pokemon, is the fusion between Hatterene and Espeon.",
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 76,
+      "attack": 76,
+      "defense": 68,
+      "special-attack": 132,
+      "special-defense": 96,
+      "speed": 112
+    },
+    "abilities": [
+      {
+        "name": "dawnbreak",
+        "hidden": true
+      },
+      {
+        "name": "synchronize",
+        "hidden": false
+      },
+      {
+        "name": "healer",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1380654794640982016/1380654795685105795/hatteon.gif?ex=68d7a9ba&is=68d6583a&hm=826fae8b2611edf349b1257548d5fb79ae85a8242d75f1546300f92f86f667c0&"
+  },
+  {
+    "id": "hattirage",
+    "name": "Hattirage",
+    "blurb": "the Trickster Pokemon, is the evolution of Hattrem-Delta.",
+    "types": [
+      "Fire",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 66,
+      "attack": 66,
+      "defense": 66,
+      "special-attack": 142,
+      "special-defense": 99,
+      "speed": 71
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1393813538857943181/1393813539205943416/hattirage.gif?ex=68d812c3&is=68d6c143&hm=c9668c81ddb7901f761b5a04ca3cace9e2c8876c2c8db4f1752c6fc66335a013&"
+  },
+  {
+    "id": "hattrem-delta",
+    "name": "Hattrem-Delta",
+    "blurb": "the Trickster Pokemon, is the delta variant of Hattrem.",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 56,
+      "defense": 60,
+      "special-attack": 70,
+      "special-defense": 68,
+      "speed": 61
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1393809950538469476/1393809951255822429/hattrem_delta.gif?ex=68d80f6c&is=68d6bdec&hm=e10c659777b8478994972a0e13febec82ab4ba3fbf307040f7584d4dc7e245f6&"
+  },
+  {
+    "id": "haunter-ultra",
+    "name": "Haunter-Ultra",
+    "blurb": "the Bubble Pokemon, is the ultra variant of Haunter.",
+    "types": [
+      "Ghost",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 50,
+      "defense": 45,
+      "special-attack": 115,
+      "special-defense": 55,
+      "speed": 95
+    },
+    "abilities": [
+      {
+        "name": "levitate",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1247006969336823869/1247006969659654255/haunter_ultra.gif?ex=68d7edfd&is=68d69c7d&hm=f5e2869f4bf3e6cd37eb2b2871a07e21cab05feeeacef19a31147bf834a56683&"
+  },
+  {
+    "id": "haxorus-delta",
+    "name": "Haxorus-Delta",
+    "blurb": "the Axe Jaw Pokemon, is the delta variant of Haxorus.",
+    "types": [
+      "Dragon",
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 76,
+      "attack": 124,
+      "defense": 105,
+      "special-attack": 63,
+      "special-defense": 73,
+      "speed": 99
+    },
+    "abilities": [
+      {
+        "name": "flame-body",
+        "hidden": true
+      },
+      {
+        "name": "battle-armor",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1154039999596085329/1154040000015507527/haxorus_delta.gif?ex=68d7e081&is=68d68f01&hm=c145481de61749ff6686ebe026c7b84306f2f95af9323471a9b9474a3fb8b2a3&"
+  },
+  {
+    "id": "heatran-delta",
+    "name": "Heatran-Delta",
+    "blurb": "the Water Dome Pokemon, is the delta variant of Heatran",
+    "types": [
+      "Water",
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 91,
+      "attack": 108,
+      "defense": 103,
+      "special-attack": 134,
+      "special-defense": 96,
+      "speed": 69
+    },
+    "abilities": [
+      {
+        "name": "steamforged",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1397629213384769548/1397629213884022814/heatran_delta.gif?ex=68d81ca3&is=68d6cb23&hm=42ce6147a7803b7b1b7a25a7f0dff4f3d41b49812bb45665f96b7bc21760fbff&"
+  },
+  {
+    "id": "heliolisk-ultra",
+    "name": "Heliolisk-Ultra",
+    "blurb": "the Photosynthesis Pokemon, is the ultra variant of Heliolisk.",
+    "types": [
+      "Grass",
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 67,
+      "attack": 60,
+      "defense": 50,
+      "special-attack": 111,
+      "special-defense": 88,
+      "speed": 105
+    },
+    "abilities": [
+      {
+        "name": "solar-power",
+        "hidden": true
+      },
+      {
+        "name": "steadfast",
+        "hidden": false
+      },
+      {
+        "name": "flower-veil",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1377620628055658617/1377620628349255731/heliolisk_ultra.gif?ex=68d7d4b0&is=68d68330&hm=f6b00e70d28807bfb14b01c9b1a72510b13eecd146478ef5f6239a0dcf123416&"
+  },
+  {
+    "id": "helioptile-ultra",
+    "name": "Helioptile-Ultra",
+    "blurb": "the Photosynthesis Pokemon, is the ultra variant of Helioptile.",
+    "types": [
+      "Grass",
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 44,
+      "attack": 38,
+      "defense": 33,
+      "special-attack": 61,
+      "special-defense": 43,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "solar-power",
+        "hidden": true
+      },
+      {
+        "name": "steadfast",
+        "hidden": false
+      },
+      {
+        "name": "flower-veil",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1377616247260319866/1377616247604248617/helioptile_ultra.gif?ex=68d7d09c&is=68d67f1c&hm=1402a412902701202653f98a27f9f740146b415d446110a66268178fd328ee82&"
+  },
+  {
+    "id": "honedge-delta",
+    "name": "Honedge-Delta",
+    "blurb": "the Rusted Sword Pokemon, is the Delta variant of Honedge.",
+    "types": [
+      "Steel",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 60,
+      "defense": 47,
+      "special-attack": 35,
+      "special-defense": 80,
+      "speed": 58
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1103004117913325638/1103004118588596244/honedge_chriscendo_idle.gif?ex=68d81922&is=68d6c7a2&hm=3f264f1723c25e8ea0d42d2cdfd3e4ce19fa0360c7b684f2893b897d9a1e3c75&"
+  },
+  {
+    "id": "hoopa-delta",
+    "name": "Hoopa-Delta",
+    "blurb": "the Mischief Pokemon, is the delta variant of Hoopa.",
+    "types": [
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 150,
+      "defense": 125,
+      "special-attack": 110,
+      "special-defense": 60,
+      "speed": 75
+    },
+    "abilities": [
+      {
+        "name": "mirage",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1308039389729001573/1308039390269931520/hoopa_confined_delta_juggle.gif?ex=68d7d21c&is=68d6809c&hm=528c93038596c0da31bd6ba8624f0cd8b0198868250003f409c7338300064c23&"
+  },
+  {
+    "id": "hoothoot-delta",
+    "name": "Hoothoot-Delta",
+    "blurb": "the Owl Pokemon, is the delta variant of Hoothoot.",
+    "types": [
+      "Dark",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 25,
+      "defense": 35,
+      "special-attack": 42,
+      "special-defense": 60,
+      "speed": 40
+    },
+    "abilities": [
+      {
+        "name": "forewarn",
+        "hidden": true
+      },
+      {
+        "name": "insomnia",
+        "hidden": false
+      },
+      {
+        "name": "frisk",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1167685126881284138/1167685127363641447/hoothoot.gif?ex=68d81444&is=68d6c2c4&hm=db97b4b4fbf23e7200dc208b7c7763c84bbc714597875e7351992439e7643a52&"
+  },
+  {
+    "id": "hover-pollen",
+    "name": "Hover Pollen",
+    "blurb": "the Paradox Pokemon, is the past paradox variant of Meganium.",
+    "types": [
+      "Grass",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 83,
+      "attack": 55,
+      "defense": 123,
+      "special-attack": 111,
+      "special-defense": 133,
+      "speed": 65
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1253246495080054877/1253246495726108733/hoverpollen.gif?ex=68d83780&is=68d6e600&hm=b9285710e48fda5baa8d72661efd8dc0a6406c0ea831e14aeda6102ec93da4f9&"
+  },
+  {
+    "id": "huntail-delta",
+    "name": "Huntail-Delta",
+    "blurb": "the Deep Cave Pokemon, is the delta variant of Huntail.",
+    "types": [
+      "Dragon",
+      "Dark"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 107,
+      "defense": 95,
+      "special-attack": 98,
+      "special-defense": 70,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "breach",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1157743783773995080/1157743784394756096/huntail_delta.gif?ex=68d82aec&is=68d6d96c&hm=4189fc8d9bd23ba94427c62dd8b060e5a47e0b6bfe65926a179c352850da0384&"
+  },
+  {
+    "id": "impidimp-delta",
+    "name": "Impidimp-Delta",
+    "blurb": "the Wily Pokemon, is the delta variant of Impidimp.",
+    "types": [
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 50,
+      "defense": 45,
+      "special-attack": 35,
+      "special-defense": 40,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "slush-rush",
+        "hidden": true
+      },
+      {
+        "name": "frisk",
+        "hidden": false
+      },
+      {
+        "name": "technician",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1329618034905845762/1329618035450970162/impidimp_delta.gif?ex=68d7e18a&is=68d6900a&hm=a0cebe323aa029b0250681a87d81fc21bb9652937a6f9bb6f50d4e9a5f5c7a1f&"
+  },
+  {
+    "id": "infernape-delta",
+    "name": "Infernape-Delta",
+    "blurb": "the Guisarmier Pokemon, is the delta variant of Infernape. Infernape-Delta can Mega Evolve into Mega Infernape-Delta.",
+    "types": [
+      "Electric",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 73,
+      "attack": 112,
+      "defense": 75,
+      "special-attack": 97,
+      "special-defense": 75,
+      "speed": 102
+    },
+    "abilities": [
+      {
+        "name": "long-reach",
+        "hidden": true
+      },
+      {
+        "name": "surge",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1222146109959438366/1350222373055496325/infernape_delta.gif?ex=68d7b153&is=68d65fd3&hm=802cfe3c6b648514e84683ef0a889b44715c2a8fd380e4e6b7630f954f845252&"
+  },
+  {
+    "id": "iron-coil",
+    "name": "Iron Coil",
+    "blurb": "the Paradox Pokemon, is the future paradox variant of Ferrothorn.",
+    "types": [
+      "Steel",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 78,
+      "attack": 56,
+      "defense": 124,
+      "special-attack": 168,
+      "special-defense": 108,
+      "speed": 36
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1361409858628227282/1412253716823933070/ironcoil.gif?ex=68d7ec04&is=68d69a84&hm=79eaac513a15354c641af97f87a88ed0f3aeceeb16092aa119190070b9f12768&"
+  },
+  {
+    "id": "iron-pilot",
+    "name": "Iron Pilot",
+    "blurb": "the Paradox Pokemon, is the future paradox variant of Genesect.",
+    "types": [
+      "Steel",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 78,
+      "attack": 120,
+      "defense": 100,
+      "special-attack": 120,
+      "special-defense": 60,
+      "speed": 112
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1248395103454629918/1248395103920459886/ironpilot.gif?ex=68d7b4ca&is=68d6634a&hm=2623f83535d11a10bad61ce59446d83014dd30edbad2cf0b88b3c4886e80f505&"
+  },
+  {
+    "id": "iron-revival",
+    "name": "Iron Revival",
+    "blurb": "the Paradox Pokemon, is the future Paradox variant of Ho-Oh.",
+    "types": [
+      "Flying",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "attack": 85,
+      "defense": 105,
+      "special-attack": 135,
+      "special-defense": 130,
+      "speed": 110
+    },
+    "abilities": [],
+    "sprite": null
+  },
+  {
+    "id": "iron-runner",
+    "name": "Iron Runner",
+    "blurb": "the Paradox Pokemon, is the future paradox variant of Dodrio.",
+    "types": [
+      "Normal",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 68,
+      "attack": 98,
+      "defense": 94,
+      "special-attack": 96,
+      "special-defense": 80,
+      "speed": 134
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1346436875975393400/1346436876399153174/ironrunner.gif?ex=68d7c38e&is=68d6720e&hm=5ec36d9c72e6a7d57d812f17c7b09ba1d904800af23311eeadcf4fd9b5abe204&"
+  },
+  {
+    "id": "iron-shades",
+    "name": "Iron Shades",
+    "blurb": "the Paradox Pokemon, is the future paradox variant of Krookodile.",
+    "types": [
+      "Dark",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 92,
+      "attack": 140,
+      "defense": 104,
+      "special-attack": 74,
+      "special-defense": 64,
+      "speed": 96
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1346439648062476402/1346439648372723793/ironshades.gif?ex=68d7c623&is=68d674a3&hm=93ba6aa78ea9266008edc52e338a1c2837f2ef05e01854b63cc896f4314f0ec0&"
+  },
+  {
+    "id": "iron-storm",
+    "name": "Iron Storm",
+    "blurb": "the Paradox Pokemon, is the future Paradox variant of Lugia.",
+    "types": [
+      "Flying",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "attack": 110,
+      "defense": 115,
+      "special-attack": 110,
+      "special-defense": 140,
+      "speed": 90
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1221601522958340248/1346427600356114442/ironstorm.gif?ex=68d7baeb&is=68d6696b&hm=9affa59e55e5bb6937924439898bd97b620ae6c655009e85a818c445053ac811&"
+  },
+  {
+    "id": "iron-world",
+    "name": "Iron World",
+    "blurb": "the Paradox Pokemon, is the future paradox variant of Torterra.",
+    "types": [
+      "Grass",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 64,
+      "attack": 132,
+      "defense": 150,
+      "special-attack": 64,
+      "special-defense": 128,
+      "speed": 32
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1346443353541316648/1350195520018186311/ironworld.gif?ex=68d84111&is=68d6ef91&hm=36d3e5e9d98b666b4f6e941389b70bbe3e9018220859604bc25755d62c1a33a7&"
+  },
+  {
+    "id": "jirachi-delta",
+    "name": "Jirachi-Delta",
+    "blurb": "the Wish Pokemon, is the delta variant of Jirachi",
+    "types": [
+      "Steel",
+      "Dark"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 100,
+      "defense": 100,
+      "special-attack": 100,
+      "special-defense": 100,
+      "speed": 100
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1397634832502358056/1397634832841965681/jirachi_delta.gif?ex=68d821de&is=68d6d05e&hm=522093a26005e256e25fb738558ec325f3dda2c474b01fb72be0898f655698d3&"
+  },
+  {
+    "id": "klang-delta",
+    "name": "Klang-Delta",
+    "blurb": "the Gear Pokemon, is the delta variant of Klang.",
+    "types": [
+      "Steel",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 55,
+      "defense": 75,
+      "special-attack": 85,
+      "special-defense": 79,
+      "speed": 76
+    },
+    "abilities": [
+      {
+        "name": "plus",
+        "hidden": true
+      },
+      {
+        "name": "ice-body",
+        "hidden": false
+      },
+      {
+        "name": "clear-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1168871963423416411/1168871963926724709/klang_delta.gif?ex=68d7c858&is=68d676d8&hm=0c45e40f458ee10c5f94e45f06532cd4ad445f785240775ce331f5de934cc1ec&"
+  },
+  {
+    "id": "klink-delta",
+    "name": "Klink-Delta",
+    "blurb": "the Gear Pokemon, is the delta variant of Klink.",
+    "types": [
+      "Steel",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 40,
+      "defense": 55,
+      "special-attack": 55,
+      "special-defense": 50,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "minus",
+        "hidden": true
+      },
+      {
+        "name": "ice-body",
+        "hidden": false
+      },
+      {
+        "name": "clear-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1168870454988128347/1168870456162517042/klink_delta.gif?ex=68d7c6f1&is=68d67571&hm=cdba7a64896b3c58b79284d5e1f6c7610703a7725bab8464b7dd3ac456d7774e&"
+  },
+  {
+    "id": "klinklang-delta",
+    "name": "Klinklang-Delta",
+    "blurb": "the Distortion Pokemon, is the delta variant of Klinklang.",
+    "types": [
+      "Steel",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 60,
+      "defense": 98,
+      "special-attack": 114,
+      "special-defense": 80,
+      "speed": 88
+    },
+    "abilities": [
+      {
+        "name": "chronostasis",
+        "hidden": true
+      },
+      {
+        "name": "ice-body",
+        "hidden": false
+      },
+      {
+        "name": "clear-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1168873120053076028/1168873120875171840/klinklang_delta.gif?ex=68d7c96c&is=68d677ec&hm=c151df545dc67b09f8d573925ee1e9c3d6879becbc87cbc6c79eeea0b8883195&"
+  },
+  {
+    "id": "klocktowl",
+    "name": "Klocktowl",
+    "blurb": "the Owl Pokemon, is the evolution of Noctowl-Delta.",
+    "types": [
+      "Dark",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 145,
+      "attack": 50,
+      "defense": 70,
+      "special-attack": 100,
+      "special-defense": 112,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "prospect",
+        "hidden": true
+      },
+      {
+        "name": "insomnia",
+        "hidden": false
+      },
+      {
+        "name": "frisk",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1167688698368905266/1167688698628939817/klocktowl.gif?ex=68d81798&is=68d6c618&hm=2f6137dcbce63e48f7b02404f1cf33faa27d62e10ecaf05307b0be89c3749c20&"
+  },
+  {
+    "id": "koraiton",
+    "name": "Koraiton",
+    "blurb": "the Past Chainsaw Pokemon, is the fusion of Tinkaton and Koraidon.",
+    "types": [
+      "Fighting",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 132,
+      "defense": 112,
+      "special-attack": 72,
+      "special-defense": 104,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "orichalcum-scale",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418926644718080142/1418926645414465616/koraiton.gif?ex=68d7ceea&is=68d67d6a&hm=426f2e507a15c6fd2717659c4ed5e99d441cf5a9fba0af3560bd1ca03b2073c4&"
+  },
+  {
+    "id": "kyurem-original",
+    "name": "Kyurem-Original",
+    "blurb": "the Boundary Pokemon, is the Original form combining Kyurem, Zekrom, and Reshiram.",
+    "types": [
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 120,
+      "attack": 160,
+      "defense": 100,
+      "special-attack": 160,
+      "special-defense": 100,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "boundless",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1356641984416317480/1356641984647008386/kyurem_original.gif?ex=68d7f9ce&is=68d6a84e&hm=811f66192509c2da638619b5afce2fefb69d3532143e9b1a19d735ea01e8f858&"
+  },
+  {
+    "id": "labsire",
+    "name": "Labsire",
+    "blurb": "the Toxic Slug Pokemon, is the evolution of Wooper-Omega.",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 45,
+      "defense": 140,
+      "special-attack": 75,
+      "special-defense": 70,
+      "speed": 25
+    },
+    "abilities": [
+      {
+        "name": "corrosive-surge",
+        "hidden": true
+      },
+      {
+        "name": "liquid-ooze",
+        "hidden": false
+      },
+      {
+        "name": "aftermath",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1356573762278916128/1356573762669248514/labsire.gif?ex=68d7ba44&is=68d668c4&hm=969b07cc6e9db6290feb5d5e481548282356da19242639b8266b6a24d164214a&"
+  },
+  {
+    "id": "larvesta-delta",
+    "name": "Larvesta-Delta",
+    "blurb": "the Shimmer Pokemon, is the delta variant of Larvesta",
+    "types": [
+      "Bug",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 85,
+      "defense": 55,
+      "special-attack": 50,
+      "special-defense": 55,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "swarm",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1123015398632194049/1346427349754712145/larvesta_delta.gif?ex=68d7baaf&is=68d6692f&hm=4bad1ecf8bf852fcdde613714c988b5c980adc70c59ce83221e010c1a998c151&"
+  },
+  {
+    "id": "latias-delta",
+    "name": "Latias-Delta",
+    "blurb": "the Harmony Pokemon, is the delta variant of Latias.",
+    "types": [
+      "Dragon",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 85,
+      "defense": 100,
+      "special-attack": 105,
+      "special-defense": 120,
+      "speed": 110
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1362161990935777432/1366041549292568597/latias_delta.gif?ex=68d7e4d5&is=68d69355&hm=aec1375fdf5f97bdaece557351e39d03753a4760e2742ae79230c2e72bdae14a&"
+  },
+  {
+    "id": "latios-delta",
+    "name": "Latios-Delta",
+    "blurb": "the Harmony Pokemon, is the delta variant of Latios.",
+    "types": [
+      "Dragon",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 130,
+      "defense": 95,
+      "special-attack": 110,
+      "special-defense": 75,
+      "speed": 110
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1362160959103303912/1366041346053505125/latios_delta.gif?ex=68d7e4a4&is=68d69324&hm=61b501ffcf3aa6e7638bb0facd34273e6cf56a27fe5b6e05199cf6bb4afa6d6f&"
+  },
+  {
+    "id": "liesler",
+    "name": "Liesler",
+    "blurb": "the Wind Scythe Pokemon, is the fusion between Liepard and Sneasler.",
+    "types": [
+      "Dark",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 72,
+      "attack": 116,
+      "defense": 76,
+      "special-attack": 88,
+      "special-defense": 64,
+      "speed": 144
+    },
+    "abilities": [
+      {
+        "name": "wind-rider",
+        "hidden": true
+      },
+      {
+        "name": "limber",
+        "hidden": false
+      },
+      {
+        "name": "poison-touch",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1330785787180220568/1330785787641331712/liesler.gif?ex=68d82c98&is=68d6db18&hm=ca313bd2a248fd11b64415ea3a8dd551f2cad601b66d423c4dd9cfba9f6af113&"
+  },
+  {
+    "id": "lochtrier",
+    "name": "Lochtrier",
+    "blurb": "the Elegant Horse Pokemon, is the Water-type Legendary Pokemon equivalent of the Calyrex horses.",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 70,
+      "defense": 65,
+      "special-attack": 130,
+      "special-defense": 145,
+      "speed": 70
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1257447104435982386/1257447104851345408/lochtrier.gif?ex=68d7ada0&is=68d65c20&hm=bbc6c6106ba1de01e906b07d5f179dcea3f130532a95b7270d3ec40f2298b1ce&"
+  },
+  {
+    "id": "looming-tune",
+    "name": "Looming Tune",
+    "blurb": "the Paradox Pokemon, is the past paradox variant of Chatot.",
+    "types": [
+      "Normal",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 79,
+      "attack": 95,
+      "defense": 75,
+      "special-attack": 123,
+      "special-defense": 127,
+      "speed": 71
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1353709790458679477/1353709790727241789/loomingtune.gif?ex=68d7dafc&is=68d6897c&hm=7843447d930e1c134f6614b8828924820dc80f85eb754510947119df250f44c5&"
+  },
+  {
+    "id": "lopunny-delta",
+    "name": "Lopunny-Delta",
+    "blurb": "the Rabbit Pokemon, is the Delta variant of Lopunny.",
+    "types": [
+      "Dark",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 85,
+      "defense": 76,
+      "special-attack": 60,
+      "special-defense": 92,
+      "speed": 92
+    },
+    "abilities": [
+      {
+        "name": "queenly-majesty",
+        "hidden": true
+      },
+      {
+        "name": "cute-charm",
+        "hidden": false
+      },
+      {
+        "name": "fatalize",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1101143780712796251/1336046759994196032/lopunny_delta.gif?ex=68d83282&is=68d6e102&hm=3bbd4b07bf9f88f5c8a270204d1ae03b53f97a87890bdbce88c18de0d28f11b9&"
+  },
+  {
+    "id": "lucaurus",
+    "name": "Lucaurus",
+    "blurb": "the Aura Pokemon, is the secondary evolution of Riolu.",
+    "types": [
+      "Dark",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 105,
+      "defense": 94,
+      "special-attack": 61,
+      "special-defense": 85,
+      "speed": 110
+    },
+    "abilities": [
+      {
+        "name": "unburden",
+        "hidden": true
+      },
+      {
+        "name": "strong-jaw",
+        "hidden": false
+      },
+      {
+        "name": "anger-point",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1092112507746918462/1092112508157964358/lucario.gif?ex=68d80688&is=68d6b508&hm=f35d6375320b62cd605fd9c9c2ef55f56da5075e1acf8edbd212276d53ed79e7&"
+  },
+  {
+    "id": "luxio-delta",
+    "name": "Luxio-Delta",
+    "blurb": "the Star Pokemon, is the delta variant of Luxio.",
+    "types": [
+      "Electric",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 90,
+      "defense": 60,
+      "special-attack": 48,
+      "special-defense": 50,
+      "speed": 55
+    },
+    "abilities": [
+      {
+        "name": "costar",
+        "hidden": true
+      },
+      {
+        "name": "opportunist",
+        "hidden": false
+      },
+      {
+        "name": "rivalry",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1168863022031323207/1352450781164474518/luxio_delta.gif?ex=68d7e3b1&is=68d69231&hm=264b322755b744aa28f2f582239ee6275467b32a0000582767bb7732d642cfcc&"
+  },
+  {
+    "id": "luxray-delta",
+    "name": "Luxray-Delta",
+    "blurb": "the Star Pokemon, is the delta variant of Luxray.",
+    "types": [
+      "Electric",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 132,
+      "defense": 99,
+      "special-attack": 65,
+      "special-defense": 62,
+      "speed": 95
+    },
+    "abilities": [
+      {
+        "name": "costar",
+        "hidden": true
+      },
+      {
+        "name": "opportunist",
+        "hidden": false
+      },
+      {
+        "name": "rivalry",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1168864720141439006/1352450678462746734/luxray_delta.gif?ex=68d7e399&is=68d69219&hm=e16332898dfcc8644346652f7901d748c27626d147ea962c80e6be1d88d9059f&"
+  },
+  {
+    "id": "maestrot",
+    "name": "Maestrot",
+    "blurb": "the Music Note Pokemon, is the evolution of Chatot-Delta.",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 70,
+      "defense": 80,
+      "special-attack": 105,
+      "special-defense": 84,
+      "speed": 86
+    },
+    "abilities": [
+      {
+        "name": "rivalry",
+        "hidden": true
+      },
+      {
+        "name": "conductor",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1119746733455446189/1119746733824548976/maestrot.gif?ex=68d7b429&is=68d662a9&hm=e96348d1c2b55c727474bb432a2b7801f1dca2dcb62917fd894e93eaa5724229&"
+  },
+  {
+    "id": "magirigus",
+    "name": "Magirigus",
+    "blurb": "the Trickster Pokemon, is the evolution of Yamask-Delta.",
+    "types": [
+      "Psychic",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 58,
+      "attack": 95,
+      "defense": 105,
+      "special-attack": 50,
+      "special-defense": 145,
+      "speed": 30
+    },
+    "abilities": [
+      {
+        "name": "hocus-pocus",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1117740589820170320/1117740590122147850/magirigus.gif?ex=68d7a80b&is=68d6568b&hm=8155e0f99c6a22da1420560911e644496b41110bdc1cdc3e04df083d3ffb9906&"
+  },
+  {
+    "id": "magoodra",
+    "name": "Magoodra",
+    "blurb": "the Lava Dragon Pokemon, is the fusion between Magcargo and Goodra.",
+    "types": [
+      "Dragon",
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 68,
+      "attack": 104,
+      "defense": 152,
+      "special-attack": 100,
+      "special-defense": 64,
+      "speed": 72
+    },
+    "abilities": [
+      {
+        "name": "pyroclastic",
+        "hidden": true
+      },
+      {
+        "name": "magma-armor",
+        "hidden": false
+      },
+      {
+        "name": "gooey",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1333456162062078116/1333456162670248008/magoodra.gif?ex=68d80053&is=68d6aed3&hm=1c5e4f560a2b476dfc2198dd57952c41ffd98878d5ec1f1eb92c3da99d9d2bf2&"
+  },
+  {
+    "id": "malevorus",
+    "name": "Malevorus",
+    "blurb": "the Catastrophe Pokemon, is the fifth genie Legendary Pokemon. Malevorus has an Incarnate and Therian Form",
+    "types": [
+      "Dark",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 89,
+      "attack": 100,
+      "defense": 102,
+      "special-attack": 120,
+      "special-defense": 90,
+      "speed": 99
+    },
+    "abilities": [
+      {
+        "name": "vital-spirit",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1210223765976522804/1366041113596530729/malevorus_incarnate.gif?ex=68d7e46d&is=68d692ed&hm=a5a3dbd56bd6e6e295ee07262fb1c6d3d27162d4ec4606ed3ba672af85e24d9a&"
+  },
+  {
+    "id": "manteon",
+    "name": "Manteon",
+    "blurb": "the Mantis Pokemon, is the  Bug-type Eeveelution of Eevee.",
+    "types": [
+      "Bug"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 110,
+      "defense": 130,
+      "special-attack": 60,
+      "special-defense": 95,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "dire-ambush",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1108503332860997672/1108503333079105638/manteon.gif?ex=68d7ab6d&is=68d659ed&hm=7d5a5562c0541ed3538f621520d91c515cb71844fc24375880739b1299c34e65&"
+  },
+  {
+    "id": "marill-delta",
+    "name": "Marill-Delta",
+    "blurb": "the Cryo Mouse Pokemon, is the Delta variant of Marill.",
+    "types": [
+      "Ice",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 50,
+      "defense": 30,
+      "special-attack": 20,
+      "special-defense": 50,
+      "speed": 30
+    },
+    "abilities": [
+      {
+        "name": "mold-breaker",
+        "hidden": true
+      },
+      {
+        "name": "thick-fat",
+        "hidden": false
+      },
+      {
+        "name": "ice-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1315777150602707077/1315777151592698007/marill_delta.gif?ex=68d7a036&is=68d64eb6&hm=63dd5fad3b31eb5f40313154680e10c40061169ecb85945ef6390f3ac4545492&"
+  },
+  {
+    "id": "marshadow-delta",
+    "name": "Marshadow-Delta",
+    "blurb": "the Hopedweller Pokemon, is the delta variant of Marshadow.",
+    "types": [
+      "Fire",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 125,
+      "defense": 90,
+      "special-attack": 125,
+      "special-defense": 105,
+      "speed": 95
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1362169847521349666/1382316688095187066/marshadow_delta.gif?ex=68d7c6bc&is=68d6753c&hm=98a36826cc6b0fa6c7582de9c6daac203604bd76c278aa6cb848bd90cdc70280&"
+  },
+  {
+    "id": "meloetta-delta",
+    "name": "Meloetta-Delta",
+    "blurb": "the Symphony Pokemon, is the delta variant of Meloetta. Meloetta-Delta has 2 forms: Lento Form, and Allegro Form. Using Relic Song in-battle will swap forms between Lento and Allegro Form.",
+    "types": [],
+    "baseStats": {
+      "hp": 100,
+      "attack": 77,
+      "defense": 90,
+      "special-attack": 128,
+      "special-defense": 128,
+      "speed": 77
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1259486143678906418/1259486143955861545/meloetta_delta.gif?ex=68d7d860&is=68d686e0&hm=8bc47ee1a53459800321c9f3ebdacee8f492bc9f79722c0727acf219f39c868a&"
+  },
+  {
+    "id": "meloetta-omega",
+    "name": "Meloetta-Omega",
+    "blurb": "the Soloist Pokemon, is the omega variant of Meloetta",
+    "types": [
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 87,
+      "defense": 77,
+      "special-attack": 128,
+      "special-defense": 128,
+      "speed": 80
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1403479736151310416/1403479736486990015/meloetta_omega.gif?ex=68d7a49c&is=68d6531c&hm=518f2fc4be21a67ea8ef11db30da986b62938cbe05fda766dc718938fd437e20&"
+  },
+  {
+    "id": "meowscarada-delta",
+    "name": "Meowscarada-Delta",
+    "blurb": "the Medium Pokemon, is the delta variant of Meowscarada",
+    "types": [
+      "Fairy",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 76,
+      "attack": 82,
+      "defense": 73,
+      "special-attack": 100,
+      "special-defense": 99,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "purranormal",
+        "hidden": true
+      },
+      {
+        "name": "twinkle-boosts-the-pok-mon-s-attack-or-special-attack-by-50-during-damage-calculation-if-a-fairy-type-move-is-being-used-if-the-user-s-hp-is-under-1-3rd-of-its-maximum",
+        "hidden": false
+      },
+      {
+        "name": "purranormal-causes-the-user-s-spatk-or-speed-to-be-increased-the-more-unique-types-are-present-the-party-this-ability-only-works-if-the-user-is-50-hp-or-higher-",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1254703858412687411/1356618928910106747/meowscarada_delta.gif?ex=68d7e455&is=68d692d5&hm=600ea13a6e71bf5967d6925fb6509fe2905c7f9f209ac62f60adcc79a260e9bb&"
+  },
+  {
+    "id": "meowth-delta",
+    "name": "Meowth-Delta",
+    "blurb": "the Scratch Cat Pokemon, is the delta variant of Meowth.",
+    "types": [
+      "Normal",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 40,
+      "defense": 35,
+      "special-attack": 65,
+      "special-defense": 45,
+      "speed": 55
+    },
+    "abilities": [
+      {
+        "name": "own-tempo",
+        "hidden": true
+      },
+      {
+        "name": "quick-wit",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1137525586768699403/1137525587339116616/meowth_delta.gif?ex=68d7c882&is=68d67702&hm=83f31503a9653a2974ddc3bee5c7082a66e8e51b9978199792462e19575bb8c7&"
+  },
+  {
+    "id": "meowth-omega",
+    "name": "Meowth-Omega",
+    "blurb": "the Sealed Cat Pokemon, is the omega variant of Meowth.",
+    "types": [
+      "Normal",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 30,
+      "defense": 35,
+      "special-attack": 65,
+      "special-defense": 50,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "evil-s-bane",
+        "hidden": true
+      },
+      {
+        "name": "levitate",
+        "hidden": false
+      },
+      {
+        "name": "cursed-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1173704352658108426/1366041721837850767/meowth_omega.gif?ex=68d7e4fe&is=68d6937e&hm=ada74bbc75b10a76926969dc396c104e2ff3559b5dcbb96a2886103f74e7df03&"
+  },
+  {
+    "id": "mesprit-delta",
+    "name": "Mesprit-Delta",
+    "blurb": "the Rage Pokemon, is the possessed variant of Mesprit.",
+    "types": [
+      "Poison",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 100,
+      "defense": 100,
+      "special-attack": 100,
+      "special-defense": 100,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "merciless",
+        "hidden": true
+      },
+      {
+        "name": "levitate",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1292360599858053235/1292360600168566815/mesprit_delta.gif?ex=68d82159&is=68d6cfd9&hm=2698bf0a7fc268c98252eb7503cdf17647439fa8392969086b116a681ab39801&"
+  },
+  {
+    "id": "metagross-delta",
+    "name": "Metagross-Delta",
+    "blurb": "the Ancient Leg Pokemon, is the delta variant of Metagross.",
+    "types": [
+      "Rock",
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 125,
+      "defense": 145,
+      "special-attack": 75,
+      "special-defense": 110,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "reckless",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1155220190074785792/1155220190322229319/metagross_delta.gif?ex=68d83724&is=68d6e5a4&hm=66efa6c41a1533e4044b2195cbee3bd125adeecc281be7d3ad4dcc8efa39e00c&"
+  },
+  {
+    "id": "metang-delta",
+    "name": "Metang-Delta",
+    "blurb": "the Ancient Claw Pokemon, is the delta variant of Metang.",
+    "types": [
+      "Rock",
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 70,
+      "defense": 115,
+      "special-attack": 50,
+      "special-defense": 75,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "reckless",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1155218338113396927/1155218338436370462/metang_delta.gif?ex=68d8356a&is=68d6e3ea&hm=a2ac9330f032d0926102a34208366003e71ba245853d850f177d77229272cc28&"
+  },
+  {
+    "id": "mewrai",
+    "name": "Mewrai",
+    "blurb": "the Pitch-Black Species Pokemon, is the fusion between Mew and Darkrai.",
+    "types": [
+      "Psychic",
+      "Dark"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 120,
+      "defense": 80,
+      "special-attack": 120,
+      "special-defense": 80,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "feast-or-famine",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1334188460658921575/1334203569561403434/mewrai1.gif?ex=68d81567&is=68d6c3e7&hm=62a5cb7f3a0c01f8abe4c7e69031454a2469c3234b0c8af6cb002334b26a3b12&"
+  },
+  {
+    "id": "mewthree",
+    "name": "Mewthree",
+    "blurb": "the Genetic Pokemon, is a different variant of Mewtwo.",
+    "types": [
+      "Dark"
+    ],
+    "baseStats": {
+      "hp": 106,
+      "attack": 132,
+      "defense": 85,
+      "special-attack": 148,
+      "special-defense": 85,
+      "speed": 124
+    },
+    "abilities": [
+      {
+        "name": "dark-decree",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1287824366767312968/1287824367014772808/mewthree.gif?ex=68d81b67&is=68d6c9e7&hm=ce9af830b2be0f6573669a2d01cddcb701236311637957a336df9446b2ea1f9e&"
+  },
+  {
+    "id": "miraiton",
+    "name": "Miraiton",
+    "blurb": "the Future Hammer Pokemon, is the fusion of Tinkaton and Miraidon.",
+    "types": [
+      "Electric",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 112,
+      "defense": 132,
+      "special-attack": 100,
+      "special-defense": 104,
+      "speed": 72
+    },
+    "abilities": [
+      {
+        "name": "hadron-cell",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418931859844497580/1418931860108480592/miraiton.gif?ex=68d7d3c5&is=68d68245&hm=3dfa9795fdffdb2d3fec5bcadb883700e1068364755a63aaa6203148822adde9&"
+  },
+  {
+    "id": "molteon",
+    "name": "Molteon",
+    "blurb": "the Malevolent Flame Pokemon, is the fusion between Moltres and Flareon.",
+    "types": [
+      "Fire",
+      "Dark"
+    ],
+    "baseStats": {
+      "hp": 84,
+      "attack": 132,
+      "defense": 72,
+      "special-attack": 116,
+      "special-defense": 104,
+      "speed": 92
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1334201916577808526/1334201917613543454/molteon.gif?ex=68d813dd&is=68d6c25d&hm=7da1e00bacc58faf14abc1967b941fc3d1647d29af9df6302bcb92a0a43d4be7&"
+  },
+  {
+    "id": "monferno-delta",
+    "name": "Monferno-Delta",
+    "blurb": "the Playful Pokemon, is the delta variant of Monferno",
+    "types": [
+      "Electric",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 64,
+      "attack": 76,
+      "defense": 52,
+      "special-attack": 76,
+      "special-defense": 52,
+      "speed": 85
+    },
+    "abilities": [
+      {
+        "name": "vital-spirit",
+        "hidden": true
+      },
+      {
+        "name": "surge",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1222143251751108730/1346453296982003753/monferno-ezgif.com-resize_1.gif?ex=68d7d2d9&is=68d68159&hm=a7639e61b58c2a867e5a4c51f174b9c96e28b169d64c2759bf45845f8152e28f&"
+  },
+  {
+    "id": "morgrem-delta",
+    "name": "Morgrem-Delta",
+    "blurb": "the Devious Pokemon, is the delta variant of Morgrem.",
+    "types": [
+      "Ice",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 70,
+      "defense": 45,
+      "special-attack": 55,
+      "special-defense": 55,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "slush-rush",
+        "hidden": true
+      },
+      {
+        "name": "frisk",
+        "hidden": false
+      },
+      {
+        "name": "technician",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1329619260166639687/1329619261097771038/morgrem_delta.gif?ex=68d7e2ae&is=68d6912e&hm=01b060e793cc6cdc8a0ba04dd8216d54b546c1d339c7d156c7c6560c16c2e905&"
+  },
+  {
+    "id": "necromauser",
+    "name": "Necromauser",
+    "blurb": "the Lich Pokemon, is the evolution of Tandemaus-Delta.",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 150,
+      "attack": 125,
+      "defense": 60,
+      "special-attack": 35,
+      "special-defense": 60,
+      "speed": 40
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1196575142508232774/1196575142835392522/necromauser.gif?ex=68d7b631&is=68d664b1&hm=83c987b4637f21fdd0b745a38301b5990e1c5f01e2f9ad408945f8655ae06e5a&"
+  },
+  {
+    "id": "niveon",
+    "name": "Niveon",
+    "blurb": "the Nimbus Pokemon, is the Flying-type Eeveelution of Eevee.",
+    "types": [
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 95,
+      "defense": 65,
+      "special-attack": 110,
+      "special-defense": 65,
+      "speed": 130
+    },
+    "abilities": [
+      {
+        "name": "super-luck",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1109237344793538651/1412254520058052701/niveon.gif?ex=68d7ecc4&is=68d69b44&hm=ee83a1534f2c2163827b0c5f0733070c7e1b49828af54b9ca63b10b0d2bcaff2&"
+  },
+  {
+    "id": "noctowl-delta",
+    "name": "Noctowl-Delta",
+    "blurb": "the Owl Pokemon, is the delta variant of Noctowl.",
+    "types": [
+      "Dark",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "attack": 62,
+      "defense": 60,
+      "special-attack": 90,
+      "special-defense": 70,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "forewarn",
+        "hidden": true
+      },
+      {
+        "name": "insomnia",
+        "hidden": false
+      },
+      {
+        "name": "frisk",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1167687056558919680/1167687056835760158/noctowl.gif?ex=68d81610&is=68d6c490&hm=a33011f9abd721af3fe81663d4c6ef192afb0919ee052f39be5748913e7e28c2&"
+  },
+  {
+    "id": "obsideon",
+    "name": "Obsideon",
+    "blurb": "the Obsidian Pokemon, is the evolution of Eevee.",
+    "types": [
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "attack": 110,
+      "defense": 130,
+      "special-attack": 65,
+      "special-defense": 65,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "igneous",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1164634846891610275/1403492646558629928/obsideon.gif?ex=68d7b0a2&is=68d65f22&hm=2ec14e56ae7fc0f0a2f62f423f63ecc1a8ece454ac458d3b07055dca9406a2a7&"
+  },
+  {
+    "id": "ogerpon-shadowcrest",
+    "name": "Ogerpon-Shadowcrest",
+    "blurb": "the Mask Pokemon, is the Ghost mask variant of Ogerpon.",
+    "types": [
+      "Grass",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 120,
+      "defense": 84,
+      "special-attack": 60,
+      "special-defense": 96,
+      "speed": 110
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1399126789439361085/1399126790458314873/ogerpon_shadowcrest.gif?ex=68d7a09d&is=68d64f1d&hm=7a07a90af9c375cd7de3957cca2b572e998e968e466d8a5a9621a1e4f8701fc8&"
+  },
+  {
+    "id": "ogerpon-stormpeak",
+    "name": "Ogerpon-Stormpeak",
+    "blurb": "the Mask Pokemon, is the Electric mask variant of Ogerpon.",
+    "types": [
+      "Grass",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 120,
+      "defense": 84,
+      "special-attack": 60,
+      "special-defense": 96,
+      "speed": 110
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1256594946526543983/1256594946945716365/ogerpon_stormpeak.gif?ex=68d7dfbd&is=68d68e3d&hm=aefd1070f1f26c11cec3e0f6c168dd11779f0470b1e83b1041923b7c221a9530&"
+  },
+  {
+    "id": "operettot",
+    "name": "Operettot",
+    "blurb": "the Music Note Pokemon, is the evolution of Chatot-Delta.",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 80,
+      "defense": 90,
+      "special-attack": 100,
+      "special-defense": 80,
+      "speed": 75
+    },
+    "abilities": [
+      {
+        "name": "rivalry",
+        "hidden": true
+      },
+      {
+        "name": "performer",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1119749790352294010/1119749791467982868/operettot.gif?ex=68d7b702&is=68d66582&hm=0098eeeece9ae0ad87a2bb8fccc98902715e998a6f394bacbf0c38fc553149d3&"
+  },
+  {
+    "id": "palossand-delta",
+    "name": "Palossand-Delta",
+    "blurb": "the Candy House Pokemon, is the delta form of Palossand.",
+    "types": [
+      "Ghost",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 50,
+      "defense": 95,
+      "special-attack": 100,
+      "special-defense": 120,
+      "speed": 30
+    },
+    "abilities": [
+      {
+        "name": "aroma-veil",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1185767515138301952/1185767515683573810/palossand_delta.gif?ex=68d7f1ce&is=68d6a04e&hm=175b62d7d94bec03f49846d188962bb905431baae4a5182f5e5c43d082101fc5&"
+  },
+  {
+    "id": "perrception",
+    "name": "Perrception",
+    "blurb": "the Sorcerer Cat Pokemon, is the evolution of Meowth-Delta.",
+    "types": [
+      "Normal",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 40,
+      "defense": 60,
+      "special-attack": 140,
+      "special-defense": 70,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "telepathy",
+        "hidden": true
+      },
+      {
+        "name": "quick-wit",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1137527606737109103/1137527607034925056/perrception.gif?ex=68d7ca63&is=68d678e3&hm=06b103d08e6f07074d413d69f43924f48cb023881d40afc700a19df8ff79c06b&"
+  },
+  {
+    "id": "perrgatory",
+    "name": "Perrgatory",
+    "blurb": "the Sealed Cat Pokemon, is the evolution of Meowth-Omega.",
+    "types": [
+      "Normal",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 40,
+      "defense": 50,
+      "special-attack": 100,
+      "special-defense": 80,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "evil-s-bane",
+        "hidden": true
+      },
+      {
+        "name": "levitate",
+        "hidden": false
+      },
+      {
+        "name": "cursed-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1173706191709425694/1366041849789419622/perrgatory.gif?ex=68d7e51c&is=68d6939c&hm=836e58d14c67df8d06a6915f6fc85b20ed55501f4c467aac67c79f2dd6254f01&"
+  },
+  {
+    "id": "polfeegeist",
+    "name": "Polfeegeist",
+    "blurb": "the Coffee Pokemon, is the convergent form on Polteageist.",
+    "types": [
+      "Water",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 65,
+      "defense": 132,
+      "special-attack": 91,
+      "special-defense": 85,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "insomnia",
+        "hidden": true
+      },
+      {
+        "name": "sheltered-slumber",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1176438447028842546/1176438447519580181/polcoffeist.gif?ex=68d79faf&is=68d64e2f&hm=f4839b483a60ad189bc81f675ea558193d75630f96aef101b04f0990ab2feb44&"
+  },
+  {
+    "id": "quaxolotl",
+    "name": "Quaxolotl",
+    "blurb": "the Fairy Fish Pokemon, is the evolved form of Wooper-Delta",
+    "types": [
+      "Water",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 65,
+      "defense": 65,
+      "special-attack": 55,
+      "special-defense": 85,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "sheer-force",
+        "hidden": true
+      },
+      {
+        "name": "strong-psyche",
+        "hidden": false
+      },
+      {
+        "name": "water-absorb",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1091776083449368707/1412254017840615464/quaxolotl.gif?ex=68d7ec4c&is=68d69acc&hm=f337b0e8738efdf765b1b4c95f4b91390990dd74800d5caa52a6629d8244324f&"
+  },
+  {
+    "id": "quilava-delta",
+    "name": "Quilava-Delta",
+    "blurb": "the Thunderstorm Pokemon, is the delta variant of Quilava.",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 69,
+      "defense": 56,
+      "special-attack": 80,
+      "special-defense": 60,
+      "speed": 85
+    },
+    "abilities": [
+      {
+        "name": "volt-absorb",
+        "hidden": true
+      },
+      {
+        "name": "surge",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1259838580289962116/1259838701651890247/quilava_delta.gif?ex=68d7cf39&is=68d67db9&hm=a0b48bd4c802822143740ed2a9c818f17736c6cc7a31847e4c1d3c2afdc411b3&"
+  },
+  {
+    "id": "radiant-moon",
+    "name": "Radiant Moon",
+    "blurb": "the Eclipsed Moone Pokemon, is the fusion between Roaring Moon and Lunala.",
+    "types": [
+      "Dragon",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 84,
+      "attack": 100,
+      "defense": 76,
+      "special-attack": 132,
+      "special-defense": 116,
+      "speed": 92
+    },
+    "abilities": [
+      {
+        "name": "brilliance",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1338949122560098324/1338949123142848602/radiantmoon.gif?ex=68d8358b&is=68d6e40b&hm=d72bd6ea4f595457ace67d5fe74d6b60ef249d8271905d77df4e1e39f7424df1&"
+  },
+  {
+    "id": "raticate-delta",
+    "name": "Raticate-Delta",
+    "blurb": "the Mouse Pokemon, is the Delta variant of Raticate",
+    "types": [
+      "Grass",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 42,
+      "defense": 66,
+      "special-attack": 70,
+      "special-defense": 88,
+      "speed": 62
+    },
+    "abilities": [
+      {
+        "name": "technician",
+        "hidden": true
+      },
+      {
+        "name": "minus",
+        "hidden": false
+      },
+      {
+        "name": "thick-fat",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1097862556674179102/1366042072007839845/raticate_delta.gif?ex=68d7e551&is=68d693d1&hm=59f230a1bcddddced1c7d2d79a128b38008977f46a2d665d84fe58b8a828af22&"
+  },
+  {
+    "id": "rattata-delta",
+    "name": "Rattata-Delta",
+    "blurb": "the Mouse Pokemon, is the Delta variant of Rattata",
+    "types": [
+      "Grass",
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 27,
+      "defense": 34,
+      "special-attack": 40,
+      "special-defense": 42,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "technician",
+        "hidden": true
+      },
+      {
+        "name": "run-away",
+        "hidden": false
+      },
+      {
+        "name": "thick-fat",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1097953132983615548/1366041973986820236/rattata_delta.gif?ex=68d7e53a&is=68d693ba&hm=6ca22a1a219817b8bc3e220f210c7530f299e9c0d4bf0dec097683ae0c16b0e9&"
+  },
+  {
+    "id": "regiroot",
+    "name": "Regiroot",
+    "blurb": "the Tree Bark Pokemon, is the Grass-type Regi.",
+    "types": [
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 150,
+      "attack": 150,
+      "defense": 80,
+      "special-attack": 100,
+      "special-defense": 50,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "stalwart",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418944465103753266/1418944465715990578/regiroot.gif?ex=68d7df83&is=68d68e03&hm=fc8febe3aed5fe87760c5d9dae0b7b08fc381a2d26feab3c094e1d570cb6bbce&"
+  },
+  {
+    "id": "regisand",
+    "name": "Regisand",
+    "blurb": "the Sand Core Pokemon, is the Ground-type Regi.",
+    "types": [
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 150,
+      "defense": 150,
+      "special-attack": 100,
+      "special-defense": 50,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "sand-dweller",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418952682219241592/1418952682562912316/regisand.gif?ex=68d7e72a&is=68d695aa&hm=c30088bee59a250e49dd4fbff3df8470fb5802e29651c2fbedb9e85ba615d665&"
+  },
+  {
+    "id": "regisurge",
+    "name": "Regisurge",
+    "blurb": "the Flaming Core Pokemon, is the Fire-type Regi.",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 50,
+      "defense": 50,
+      "special-attack": 150,
+      "special-defense": 150,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "flash-fire",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418950054915604582/1418950055636897904/regiblaze.gif?ex=68d7e4b8&is=68d69338&hm=f410845d341dc29d73c0cb6bb4515217490d63234e93f8c2d91d1c2cb44bd4f9&"
+  },
+  {
+    "id": "regisurge-2",
+    "name": "Regisurge",
+    "blurb": "the Water Flow Pokemon, is the Water-type Regi.",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 100,
+      "defense": 50,
+      "special-attack": 150,
+      "special-defense": 150,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "water-absorb",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418947714011365548/1418947714258833448/regisurge.gif?ex=68d7e289&is=68d69109&hm=f32319c32e031af03cf5055a803cc5f2d1b7155e50ce8b1a798ab1ac1aadea96&"
+  },
+  {
+    "id": "rising-phoenix",
+    "name": "Rising Phoenix",
+    "blurb": "the Paradox Pokemon, is the past Paradox variant of Ho-Oh.",
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "attack": 135,
+      "defense": 130,
+      "special-attack": 85,
+      "special-defense": 105,
+      "speed": 110
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1221620077799936020/1403187589955059772/risingphoenix.gif?ex=68d7e607&is=68d69487&hm=9d8868eccca2394a8d29ebebde658ad73ec451d59f5525ac16f4ec4645516b75&"
+  },
+  {
+    "id": "rogue-prince",
+    "name": "Rogue Prince",
+    "blurb": "the Paradox Pokemon, is the past paradox variant of Manaphy.",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 97,
+      "attack": 91,
+      "defense": 81,
+      "special-attack": 125,
+      "special-defense": 103,
+      "speed": 93
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1346431714691387392/1346431714968207430/rogueprince.gif?ex=68d7bec0&is=68d66d40&hm=4d7ebaf117dfa1ac162dd7f95caed09a45100f58d7da666bf9d23bd23995bea9&"
+  },
+  {
+    "id": "roselia-delta",
+    "name": "Roselia-Delta",
+    "blurb": "the Thorn Pokemon, is the delta variant of Roselia",
+    "types": [
+      "Grass",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 80,
+      "defense": 95,
+      "special-attack": 40,
+      "special-defense": 65,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "iron-barbs",
+        "hidden": true
+      },
+      {
+        "name": "natural-cure",
+        "hidden": false
+      },
+      {
+        "name": "chlorophyll",
+        "hidden": false
+      }
+    ],
+    "sprite": null
+  },
+  {
+    "id": "roserade-delta",
+    "name": "Roserade-Delta",
+    "blurb": "the Espada Ropera Pokemon, is the delta variant of Roserade",
+    "types": [
+      "Grass",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 105,
+      "defense": 120,
+      "special-attack": 60,
+      "special-defense": 70,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "swordmaster",
+        "hidden": true
+      },
+      {
+        "name": "sharpness",
+        "hidden": false
+      },
+      {
+        "name": "chlorophyll",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1216710810135433236/1381771104204357743/roserade_delta.gif?ex=68d7c4df&is=68d6735f&hm=d304ce523f2646a6bac533a30c9fc6e2d59731fb5ad4e65a4e9ff1b737c9ceb8&"
+  },
+  {
+    "id": "rotogar",
+    "name": "Rotogar",
+    "blurb": "the Plasma Shadow Pokemon, is the fusion between Rotom and Gengar.",
+    "types": [
+      "Ghost",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 88,
+      "attack": 92,
+      "defense": 68,
+      "special-attack": 132,
+      "special-defense": 84,
+      "speed": 96
+    },
+    "abilities": [
+      {
+        "name": "trace",
+        "hidden": true
+      },
+      {
+        "name": "levitate",
+        "hidden": false
+      },
+      {
+        "name": "cursed-body",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1380668326270734488/1412253615355203767/rotogar.gif?ex=68d7ebec&is=68d69a6c&hm=a7614b708205e8cbe905ea663b71fc9affeb8a8d0b85f8b87add70499fc154d6&"
+  },
+  {
+    "id": "rotom-dowse",
+    "name": "Rotom-Dowse",
+    "blurb": "the Plasma Pokemon, is the possessed Dowsing Machine variant of Rotom.",
+    "types": [
+      "Electric",
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 107,
+      "special-attack": 105,
+      "special-defense": 107,
+      "speed": 86
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1361417179681001723/1361417179949433094/rotom_dowsing.gif?ex=68d8358d&is=68d6e40d&hm=fad832eb56c52d581b0341ed6894cca342f7a06f0c8a956a5b4ee5b03d9956be&"
+  },
+  {
+    "id": "rotom-radio",
+    "name": "Rotom-Radio",
+    "blurb": "the Plasma Pokemon, is the possessed Radio variant of Rotom.",
+    "types": [
+      "Eletctric",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 107,
+      "special-attack": 105,
+      "special-defense": 107,
+      "speed": 86
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1361416798183886958/1361416798674751649/rotom_radio.gif?ex=68d83532&is=68d6e3b2&hm=691ce416b14ff4d3549556dface0284c810ec690ef143d5bb7817af96cf4c2f4&"
+  },
+  {
+    "id": "sableye-delta",
+    "name": "Sableye-Delta",
+    "blurb": "the Deep Darkness Pokemon, is the Delta variant of Sableye.",
+    "types": [
+      "Ghost",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 20,
+      "defense": 60,
+      "special-attack": 40,
+      "special-defense": 75,
+      "speed": 105
+    },
+    "abilities": [
+      {
+        "name": "unaware",
+        "hidden": true
+      },
+      {
+        "name": "no-guard",
+        "hidden": false
+      },
+      {
+        "name": "sturdy",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1092138105424842784/1092138106146259057/sableye_delta.gif?ex=68d81e5f&is=68d6ccdf&hm=875f3d708444af26edb21a08e0042f0cd397fc5b758eff92b71e409e3c8d0d5e&"
+  },
+  {
+    "id": "sandygast-delta",
+    "name": "Sandygast-Delta",
+    "blurb": "the Candy Heap Pokemon, is the delta form of Sandygast.",
+    "types": [
+      "Ghost",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 55,
+      "defense": 45,
+      "special-attack": 70,
+      "special-defense": 80,
+      "speed": 15
+    },
+    "abilities": [
+      {
+        "name": "aroma-veil",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1185764088081555576/1185764088563904542/sandygast_delta.gif?ex=68d7ee9d&is=68d69d1d&hm=de90a7320e4c748ccf19d0c447da1284f222a125804dc621550cc80ab51b55eb&"
+  },
+  {
+    "id": "savage-scar",
+    "name": "Savage Scar",
+    "blurb": "the Paradox Pokemon, is the past paradox variant of Krookodile.",
+    "types": [
+      "Ground",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 81,
+      "attack": 127,
+      "defense": 101,
+      "special-attack": 69,
+      "special-defense": 93,
+      "speed": 99
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1368615069402923018/1368615070057107456/savagescar.gif?ex=68d8071c&is=68d6b59c&hm=360bd9dd8cb1505745ebc42ffd012031c9cce50517d6a9ebc3393f69ae5356b4&"
+  },
+  {
+    "id": "scizantrum",
+    "name": "Scizantrum",
+    "blurb": "the Despot Pincer Pokemon, is the fusion between Scizor and Tyrantrum.",
+    "types": [
+      "Bug",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 84,
+      "attack": 136,
+      "defense": 132,
+      "special-attack": 68,
+      "special-defense": 56,
+      "speed": 84
+    },
+    "abilities": [
+      {
+        "name": "hypercutter",
+        "hidden": true
+      },
+      {
+        "name": "swarm",
+        "hidden": false
+      },
+      {
+        "name": "strong-jaw",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1380677305617219724/1380677306787299328/scizantrum.gif?ex=68d7beb1&is=68d66d31&hm=d1dc84087326646ff1fbe87b4870746145f0b0f430a56a353d91b4a23a6f8c01&"
+  },
+  {
+    "id": "secret-armor",
+    "name": "Secret Armor",
+    "blurb": "the Paradox Pokemon, is the past paradox variant of Kubfu.",
+    "types": [
+      "Fighting",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 101,
+      "attack": 141,
+      "defense": 131,
+      "special-attack": 53,
+      "special-defense": 73,
+      "speed": 91
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1344626188265459773/1344626188827754526/secretarmor-ezgif.com-resize_1.gif?ex=68d7c4b9&is=68d67339&hm=d1e6402d34937452473ad0eb3b05b8117277b31a10f9a365761f95c1a7e7909f&"
+  },
+  {
+    "id": "serperior-ultra",
+    "name": "Serperior-Ultra",
+    "blurb": "the Regal Pokemon, is the ultra variant of Serperior.",
+    "types": [
+      "Water",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 77,
+      "attack": 88,
+      "defense": 90,
+      "special-attack": 75,
+      "special-defense": 90,
+      "speed": 108
+    },
+    "abilities": [
+      {
+        "name": "contrary",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1249654448746401792/1403187310819807404/serperior_ultra.gif?ex=68d7e5c4&is=68d69444&hm=3343a23c6d5eb8da7a1072b121e45cc1223603c1c18af1336506308bcc9896fd&"
+  },
+  {
+    "id": "servine-ultra",
+    "name": "Servine-Ultra",
+    "blurb": "the Water Snake Pokemon, is the ultra variant of Servine.",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 60,
+      "defense": 75,
+      "special-attack": 60,
+      "special-defense": 75,
+      "speed": 83
+    },
+    "abilities": [
+      {
+        "name": "contrary",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1249653392960262254/1403187205920260147/servine_ultra.gif?ex=68d7e5ab&is=68d6942b&hm=2189ad831af4b275f57dd91bb3914637283e1c7a8835e7d60937d4f57b567e4b&"
+  },
+  {
+    "id": "shaykarp",
+    "name": "Shaykarp",
+    "blurb": "the Prototype Fish Pokemon, is the fusion between Shaymin and Magikarp.",
+    "types": [
+      "Water",
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 60,
+      "defense": 60,
+      "special-attack": 60,
+      "special-defense": 60,
+      "speed": 144
+    },
+    "abilities": [
+      {
+        "name": "fabled",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1334183277753536687/1334183278327894127/shaykarp.gif?ex=68d80281&is=68d6b101&hm=919beed60e8b5d0a93446217d8b8f94a1a79b0a661798543e415e1f281156400&"
+  },
+  {
+    "id": "shaymin-delta",
+    "name": "Shaymin-Delta",
+    "blurb": "the Generosity Pokemon, is the Delta variant of Shaymin. Shaymin-Delta has both a Land forme and a Sky forme",
+    "types": [
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 100,
+      "defense": 100,
+      "special-attack": 100,
+      "special-defense": 100,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "altruistic",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1315762794464940243/1315762795199074375/winter_shaymin.gif?ex=68d83b98&is=68d6ea18&hm=89c6f38a0d78e46ec84218b145eadc121d5c539fa9310e1b4bf1799073111c4d&"
+  },
+  {
+    "id": "shaymin-lake",
+    "name": "Shaymin-Lake",
+    "blurb": "the Gratitude Pokemon, is the Lake variant of Shaymin.",
+    "types": [
+      "Grass",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 120,
+      "defense": 75,
+      "special-attack": 127,
+      "special-defense": 75,
+      "speed": 103
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1362164994493382810/1362164994963149071/shaymin_lake.gif?ex=68d7a242&is=68d650c2&hm=5de222137de12dc5302649bb44cce75e7e9911ad7f95ff0acb270ff364fc3609&"
+  },
+  {
+    "id": "shellder-delta",
+    "name": "Shellder-Delta",
+    "blurb": "the Bivalve Pokemon, is the delta variant of Shellder.",
+    "types": [
+      "Ice",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "attack": 70,
+      "defense": 100,
+      "special-attack": 35,
+      "special-defense": 30,
+      "speed": 40
+    },
+    "abilities": [
+      {
+        "name": "weak-armor",
+        "hidden": true
+      },
+      {
+        "name": "poison-point",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1142725993157627924/1142725993371545780/shellder_delta.gif?ex=68d83ec3&is=68d6ed43&hm=b34f77f936916234fd1a23b01e523df432d29ffe8bd67b4bf792da31c2653097&"
+  },
+  {
+    "id": "shellos-delta",
+    "name": "Shellos-Delta",
+    "blurb": "the Dragon Slug Pokemon, is the delta variant of Shellos.",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 76,
+      "attack": 43,
+      "defense": 48,
+      "special-attack": 57,
+      "special-defense": 62,
+      "speed": 34
+    },
+    "abilities": [
+      {
+        "name": "immunity",
+        "hidden": true
+      },
+      {
+        "name": "sticky-hold",
+        "hidden": false
+      },
+      {
+        "name": "gooey",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1208800227520151582/1208800227864350830/shellos_delta.gif?ex=68d80570&is=68d6b3f0&hm=563689e3fb4aae90224802ee9f95256320e536cc9d2f45a0e732bd9b1f57627d&"
+  },
+  {
+    "id": "shinx-delta",
+    "name": "Shinx-Delta",
+    "blurb": "the Star Pokemon, is the delta variant of Shinx.",
+    "types": [
+      "Electric",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 70,
+      "defense": 40,
+      "special-attack": 31,
+      "special-defense": 30,
+      "speed": 42
+    },
+    "abilities": [
+      {
+        "name": "costar",
+        "hidden": true
+      },
+      {
+        "name": "opportunist",
+        "hidden": false
+      },
+      {
+        "name": "rivalry",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1168860680049410068/1352450894742032404/shinx_delta.gif?ex=68d7e3cc&is=68d6924c&hm=1af3f75f2eb1d6bb0d75d647b9eb222adef3f5c95826e101e1e847c8cd529b98&"
+  },
+  {
+    "id": "shrookle",
+    "name": "Shrookle",
+    "blurb": "the Concoction Pokemon, is the evolution of Shuckle-Delta",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 45,
+      "defense": 160,
+      "special-attack": 80,
+      "special-defense": 160,
+      "speed": 35
+    },
+    "abilities": [
+      {
+        "name": "contrary",
+        "hidden": true
+      },
+      {
+        "name": "effect-spore",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1201291477003808778/1201291477280628906/shrookle.gif?ex=68d7bb1f&is=68d6699f&hm=07c2ee69dd01c33fd86f11080157b5ede41be65796fd65e28672cc0a818bf640&"
+  },
+  {
+    "id": "shuckle-delta",
+    "name": "Shuckle-Delta",
+    "blurb": "the Log Pokemon, is the delta variant of Shuckle.",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 20,
+      "attack": 10,
+      "defense": 230,
+      "special-attack": 10,
+      "special-defense": 230,
+      "speed": 5
+    },
+    "abilities": [
+      {
+        "name": "contrary",
+        "hidden": true
+      },
+      {
+        "name": "effect-spore",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1201289505534128148/1201289505777389678/shuckle_delta.gif?ex=68d7b949&is=68d667c9&hm=77b476430d6dcd532fc826fc2a2ea00fdc12b2a6b3ac10b1a747790b66de60e3&"
+  },
+  {
+    "id": "sinisfee",
+    "name": "Sinisfee",
+    "blurb": "the Coffee Pokemon, is the convergent form on Sinistea.",
+    "types": [
+      "Water",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 45,
+      "defense": 45,
+      "special-attack": 74,
+      "special-defense": 54,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "insomnia",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1176436444567449602/1176436445188198400/polfeee.gif?ex=68d79dd1&is=68d64c51&hm=becb157bca16e658f0529a2a96977008ca29e34b5c7c5a06c9769243d48f7b4d&"
+  },
+  {
+    "id": "sinisurge",
+    "name": "Sinisurge",
+    "blurb": "the Energy Drink Pokemon, is the convergent form on Sinistea.",
+    "types": [
+      "Electric",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 45,
+      "defense": 45,
+      "special-attack": 74,
+      "special-defense": 54,
+      "speed": 50
+    },
+    "abilities": [
+      {
+        "name": "insomnia",
+        "hidden": true
+      },
+      {
+        "name": "surge-deludge",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1176439912376053772/1176439912610938960/siniztea.gif?ex=68d7a10c&is=68d64f8c&hm=ee61efd345d78d28f90a04c9a3a8f7cc0812eb2782d746fa5ce9e0e69d54d8a2&"
+  },
+  {
+    "id": "skiddo-delta",
+    "name": "Skiddo-Delta",
+    "blurb": "the Mount Pokemon, is the delta variant of Skiddo.",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 66,
+      "attack": 70,
+      "defense": 66,
+      "special-attack": 36,
+      "special-defense": 46,
+      "speed": 66
+    },
+    "abilities": [
+      {
+        "name": "fluffy",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1297514169742131292/1297514170597511260/skiddo_delta.gif?ex=68d7c33c&is=68d671bc&hm=7510393dd8d944829168bb66c784bf20436235a8a4aa07945caa4543ed60934f&"
+  },
+  {
+    "id": "slaughtermaus",
+    "name": "Slaughtermaus",
+    "blurb": "the Doombringer Pokemon, is the evolution of Tandemaus-Delta.",
+    "types": [
+      "Dark",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 110,
+      "defense": 65,
+      "special-attack": 50,
+      "special-defense": 65,
+      "speed": 115
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1196577944022298654/1196577944307515522/slaughtermaus.gif?ex=68d7b8cd&is=68d6674d&hm=35ac79698d19b7ad503c2d0a20a1b6e7e72829a53e0bcadab3700bd18739f8bb&"
+  },
+  {
+    "id": "slowhost",
+    "name": "Slowhost",
+    "blurb": "the Host Pokemon, is the evolution of Slowpoke-Delta.",
+    "types": [
+      "Water",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 70,
+      "defense": 75,
+      "special-attack": 130,
+      "special-defense": 100,
+      "speed": 30
+    },
+    "abilities": [
+      {
+        "name": "usurped",
+        "hidden": true
+      },
+      {
+        "name": "motor-drive",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1300157515312533565/1300157515811520703/slowhost.gif?ex=68d8268b&is=68d6d50b&hm=618dac494523ac25393b2c9621e0a761df882d9687ad5f6e27f0411bf0420b07&"
+  },
+  {
+    "id": "slowpoke-delta",
+    "name": "Slowpoke-Delta",
+    "blurb": "the Dopey Pokemon, is the delta variant of Slowpoke.",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 35,
+      "defense": 65,
+      "special-attack": 75,
+      "special-defense": 60,
+      "speed": 15
+    },
+    "abilities": [
+      {
+        "name": "own-tempo",
+        "hidden": true
+      },
+      {
+        "name": "oblivious",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1300155768225660958/1300155768481382441/slowpoke_delta.gif?ex=68d824ea&is=68d6d36a&hm=094ee1a4c43e39b61b09f0bb0787d6c27a3ac8ddbaeff1c7b68555285a0c0005&"
+  },
+  {
+    "id": "slugrit",
+    "name": "Slugrit",
+    "blurb": "the Sand Dune Pokemon, is the convergent species of Slugma.",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 80,
+      "defense": 40,
+      "special-attack": 35,
+      "special-defense": 40,
+      "speed": 15
+    },
+    "abilities": [
+      {
+        "name": "weak-armor",
+        "hidden": true
+      },
+      {
+        "name": "sand-veil",
+        "hidden": false
+      },
+      {
+        "name": "earth-eater",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418911247633616916/1418911248245854279/slugrit.gif?ex=68d7c093&is=68d66f13&hm=a40c07bec2e276d4b76f73d4bcd86ea742ceeb017267137511dead6ca5a29894&"
+  },
+  {
+    "id": "snivy-ultra",
+    "name": "Snivy-Ultra",
+    "blurb": "the Water Snake Pokemon, is the ultra variant of Snivy.",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 45,
+      "defense": 55,
+      "special-attack": 45,
+      "special-defense": 55,
+      "speed": 63
+    },
+    "abilities": [
+      {
+        "name": "contrary",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1249652220136263701/1403187018699243662/snivy_ultra.gif?ex=68d7e57f&is=68d693ff&hm=0c56cc758d675eda98799461df12a061a86d0f75705fa239391353922c52f8db&"
+  },
+  {
+    "id": "snorlax-delta",
+    "name": "Snorlax-Delta",
+    "blurb": "the Sleeping Pokemon, is the Delta variant of Snorlax.",
+    "types": [
+      "Normal",
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 160,
+      "attack": 110,
+      "defense": 110,
+      "special-attack": 65,
+      "special-defense": 65,
+      "speed": 30
+    },
+    "abilities": [
+      {
+        "name": "gluttony",
+        "hidden": true
+      },
+      {
+        "name": "thick-fat",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1267465102186254417/1267465102806880306/snorlax_delta_spring.gif?ex=68d7de5c&is=68d68cdc&hm=c8cff949a71a05e5152d209c59b7deef3323a81814b19982e4c42cc7970a82bb&"
+  },
+  {
+    "id": "spectreon",
+    "name": "Spectreon",
+    "blurb": "the Spectral Pokemon, is the Ghost-type Eeveelution of Eevee.",
+    "types": [
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "attack": 60,
+      "defense": 65,
+      "special-attack": 110,
+      "special-defense": 65,
+      "speed": 130
+    },
+    "abilities": [
+      {
+        "name": "speed-boost",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1091081010961190912/1412253080363339776/spectreon.gif?ex=68d7eb6c&is=68d699ec&hm=cf3a81c079c658ada7e7268174cc2ebbf18f9b4692841fb88a5762d752788746&"
+  },
+  {
+    "id": "spiritomb-unbound",
+    "name": "Spiritomb-Unbound",
+    "blurb": "the Unsealed Pokemon, is the Unbound form of Spiritomb.",
+    "types": [
+      "Ghost",
+      "Dark"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 132,
+      "defense": 108,
+      "special-attack": 132,
+      "special-defense": 108,
+      "speed": 35
+    },
+    "abilities": [
+      {
+        "name": "spectre-onslaught",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1194742945191055521/1194742945673392209/spiritomb_unbound.gif?ex=68d7a353&is=68d651d3&hm=70600b78919c7a29ecf0aa3b3ea63291fb194bc1b2849a3bbeb18e51f782591a&"
+  },
+  {
+    "id": "sprigatito-delta",
+    "name": "Sprigatito-Delta",
+    "blurb": "the Auspicious Cat Pokemon, is the delta variant of Sprigatito",
+    "types": [
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 45,
+      "defense": 45,
+      "special-attack": 61,
+      "special-defense": 54,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "telepathy",
+        "hidden": true
+      },
+      {
+        "name": "twinkle-boosts-the-pok-mon-s-attack-or-special-attack-by-50-during-damage-calculation-if-a-fairy",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1254698449505619968/1356618569852387559/sprigatito_delta.gif?ex=68d7e3ff&is=68d6927f&hm=0d6b194f5677ebd6540ee0bbc1ccdaed7b8e4390c13ad7ae60d8ebe349678089&"
+  },
+  {
+    "id": "staralyx",
+    "name": "Staralyx",
+    "blurb": "the Stellar Pokemon, is the convergent species of Starmie and the evolution of Starid.",
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 50,
+      "defense": 105,
+      "special-attack": 85,
+      "special-defense": 90,
+      "speed": 115
+    },
+    "abilities": [
+      {
+        "name": "telepathy",
+        "hidden": true
+      },
+      {
+        "name": "illuminate",
+        "hidden": false
+      },
+      {
+        "name": "heatproof",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418914737298739221/1418914737584078958/staralyx.gif?ex=68d7c3d3&is=68d67253&hm=91e3302fb9e7afb016be02072dbafe31293682e4a80666ac977fe650b725d882&"
+  },
+  {
+    "id": "staraptor-delta",
+    "name": "Staraptor-Delta",
+    "blurb": "the Predator Pokemon, is the evolution of Staravia-Delta.",
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 100,
+      "defense": 80,
+      "special-attack": 60,
+      "special-defense": 60,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "welkin-torch",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1203218694428168273/1259846750894817320/staraptor_delta.gif?ex=68d7d6b8&is=68d68538&hm=bf33ab664dbff1b8c66df594a253b5b41efb1512a25fe9dcd575328e1ad9e37e&"
+  },
+  {
+    "id": "staravia-delta",
+    "name": "Staravia-Delta",
+    "blurb": "the Starling Pokemon, is the evolution of Starly-Delta.",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 75,
+      "defense": 50,
+      "special-attack": 40,
+      "special-defense": 40,
+      "speed": 80
+    },
+    "abilities": [
+      {
+        "name": "pressure",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1203212575790202970/1203212576297721907/staravia_delta.gif?ex=68d820c8&is=68d6cf48&hm=24ebce111dea9447514b82541b2dd724deb688c4fb20631eb595dcae5c524e39&"
+  },
+  {
+    "id": "starid",
+    "name": "Starid",
+    "blurb": "the Stellar Pokemon, is the convergent species of Staryu.",
+    "types": [
+      "Steel",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "attack": 45,
+      "defense": 65,
+      "special-attack": 55,
+      "special-defense": 55,
+      "speed": 85
+    },
+    "abilities": [
+      {
+        "name": "telepathy",
+        "hidden": true
+      },
+      {
+        "name": "illuminate",
+        "hidden": false
+      },
+      {
+        "name": "heatproof",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418913518585122848/1418913519046230098/starid.gif?ex=68d7c2b1&is=68d67131&hm=5696a433a86884d29490f3e0d79f5542d7ada10a9a0b33d9019fcdd99277f878&"
+  },
+  {
+    "id": "starly-delta",
+    "name": "Starly-Delta",
+    "blurb": "the Starling Pokemon, is the delta variant of Starly.",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 55,
+      "defense": 30,
+      "special-attack": 30,
+      "special-defense": 30,
+      "speed": 60
+    },
+    "abilities": [
+      {
+        "name": "pressure",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1203205976417894430/1203205976967225375/starly_delta.gif?ex=68d81aa3&is=68d6c923&hm=4c8234fab5cc80b503f47a128ab2e80b4ff9b70136246b33e6908ea8c6a69238&"
+  },
+  {
+    "id": "steelix-delta",
+    "name": "Steelix-Delta",
+    "blurb": "the Psychic Snake Pokemon, is the Delta variant of Steelix.",
+    "types": [
+      "Ground",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 55,
+      "defense": 65,
+      "special-attack": 75,
+      "special-defense": 200,
+      "speed": 30
+    },
+    "abilities": [
+      {
+        "name": "regenerator",
+        "hidden": true
+      },
+      {
+        "name": "overcoat",
+        "hidden": false
+      },
+      {
+        "name": "telepathy",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1094904445684428871/1336048316240236584/Steelix-Delta.gif?ex=68d833f5&is=68d6e275&hm=19a30422c6590d5e1a5e2f91f19e16f74d7b750d21649843c7284d1048960064&"
+  },
+  {
+    "id": "tandemaus-delta",
+    "name": "Tandemaus-Delta",
+    "blurb": "the Unfortunate Pokemon, is the Delta form of Tandemaus.",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 50,
+      "defense": 45,
+      "special-attack": 40,
+      "special-defense": 45,
+      "speed": 75
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1196572257988919376/1196572258408341514/tandemaus_delta.gif?ex=68d7b381&is=68d66201&hm=368997bd8cbe76dbd811db19350827cc5aebcb63cc11d52a01ae926642efc136&"
+  },
+  {
+    "id": "tangled-time",
+    "name": "Tangled Time",
+    "blurb": "the Paradox Pokemon, is the Paradox form of Celebi.",
+    "types": [
+      "Dragon",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 95,
+      "defense": 75,
+      "special-attack": 125,
+      "special-defense": 75,
+      "speed": 120
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1194749662477959260/1194749662897385623/tangledtime.gif?ex=68d7a995&is=68d65815&hm=cd4429d54722b283c9043962fd81a0e130bac50e7292d44b283f1de7bf38839b&"
+  },
+  {
+    "id": "tentacool-delta",
+    "name": "Tentacool-Delta",
+    "blurb": "the Jellyfish Pokemon, is the delta variant of Tentacool.",
+    "types": [
+      "Poison",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "attack": 35,
+      "defense": 50,
+      "special-attack": 55,
+      "special-defense": 65,
+      "speed": 90
+    },
+    "abilities": [
+      {
+        "name": "usurper",
+        "hidden": true
+      },
+      {
+        "name": "liquid-ooze",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1300147274206154762/1300147274726244405/tentacool_delta.gif?ex=68d81d01&is=68d6cb81&hm=cc1a33ac81943cc2af08841bc044b6f4d0a9aaad6fe1e3f2f0cd50ba3911f697&"
+  },
+  {
+    "id": "tentacruel-delta",
+    "name": "Tentacruel-Delta",
+    "blurb": "the Jellyfish Pokemon, is the delta variant of Tentacruel.",
+    "types": [
+      "Poison",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 60,
+      "defense": 70,
+      "special-attack": 90,
+      "special-defense": 100,
+      "speed": 115
+    },
+    "abilities": [
+      {
+        "name": "usurper",
+        "hidden": true
+      },
+      {
+        "name": "liquid-ooze",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1300150396068696185/1300150396362293268/tentacruel_delta.gif?ex=68d81fea&is=68d6ce6a&hm=66967ac462171f64dc781b84bcba585131697ca77451eeb7d06a92df7e867fcd&"
+  },
+  {
+    "id": "tinkatink-delta",
+    "name": "Tinkatink-Delta",
+    "blurb": "the Mermaid Pokemon, is the delta variant of Tinkatink",
+    "types": [
+      "Fairy",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 55,
+      "defense": 54,
+      "special-attack": 40,
+      "special-defense": 40,
+      "speed": 58
+    },
+    "abilities": [
+      {
+        "name": "rain-dish",
+        "hidden": true
+      },
+      {
+        "name": "pickpocket",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1126351158458449970/1126351158747861032/tinkatink_delta.gif?ex=68d80002&is=68d6ae82&hm=45c9fcf3d9a0982955548b836f680aa3898a53a0a2e319217a7b7291af571b83&"
+  },
+  {
+    "id": "tinkatink-gamma",
+    "name": "Tinkatink-Gamma",
+    "blurb": "the Fan Pokemon, is the Gamma variant of Tinkatink.",
+    "types": [
+      "Fairy",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 35,
+      "defense": 45,
+      "special-attack": 45,
+      "special-defense": 64,
+      "speed": 58
+    },
+    "abilities": [
+      {
+        "name": "pickpocket",
+        "hidden": true
+      },
+      {
+        "name": "dazzling",
+        "hidden": false
+      },
+      {
+        "name": "flare-boost",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1259488366903169068/1259488441448530004/tinkatink_gamma.gif?ex=68d7da84&is=68d68904&hm=712dab9096a4c199d25f7534c1cbc46d2dde704441159ead8ba777b596321fe4&"
+  },
+  {
+    "id": "tinkatink-omega",
+    "name": "Tinkatink-Omega",
+    "blurb": "the Dagger Pokemon, is the omega variant of Tinkatink.",
+    "types": [
+      "Fairy",
+      "Bug"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 55,
+      "defense": 50,
+      "special-attack": 30,
+      "special-defense": 48,
+      "speed": 54
+    },
+    "abilities": [
+      {
+        "name": "sharpness",
+        "hidden": true
+      },
+      {
+        "name": "hyper-cutter",
+        "hidden": false
+      },
+      {
+        "name": "own-tempo",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1213901036419420190/1213901036796772423/tinkatink_omega.gif?ex=68d81ef0&is=68d6cd70&hm=da1a7eb9cd2336bf171936facf1352865ec2bba211ec7027f7dd40ae247fdf76&"
+  },
+  {
+    "id": "tinkatink-ultra",
+    "name": "Tinkatink-Ultra",
+    "blurb": "the Zapping Pokemon, is the Ultra variant of Tinkatink.",
+    "types": [
+      "Fairy",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 45,
+      "defense": 40,
+      "special-attack": 50,
+      "special-defense": 57,
+      "speed": 55
+    },
+    "abilities": [
+      {
+        "name": "pressure",
+        "hidden": true
+      },
+      {
+        "name": "plus",
+        "hidden": false
+      },
+      {
+        "name": "pickpocket",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1368607846375231700/1368607846706450592/tinkatink_ultra.gif?ex=68d80062&is=68d6aee2&hm=27a481936d77654f1831a40c191d0ed0a3c4d81edc558b529639903d4797c412&"
+  },
+  {
+    "id": "tinkaton-delta",
+    "name": "Tinkaton-Delta",
+    "blurb": "the Anchor Pokemon, is the evolution of Tinkatuff-Delta",
+    "types": [
+      "Fairy",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 90,
+      "defense": 95,
+      "special-attack": 65,
+      "special-defense": 77,
+      "speed": 94
+    },
+    "abilities": [
+      {
+        "name": "immunity",
+        "hidden": true
+      },
+      {
+        "name": "steelworker",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1126390472869433415/1126390473234333766/tinkaton_delta-1.gif?ex=68d824a0&is=68d6d320&hm=5c02d1efff7928f9f849e9b26753fa43dd3025eb0033e5338181f0c97f07b4a4&"
+  },
+  {
+    "id": "tinkaton-gamma",
+    "name": "Tinkaton-Gamma",
+    "blurb": "the Parasol Pokemon, is the Gamma variant of Tinkaton.",
+    "types": [
+      "Fairy",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 45,
+      "defense": 67,
+      "special-attack": 110,
+      "special-defense": 105,
+      "speed": 94
+    },
+    "abilities": [
+      {
+        "name": "parasol-prayer",
+        "hidden": true
+      },
+      {
+        "name": "dazzling",
+        "hidden": false
+      },
+      {
+        "name": "flare-boost",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1259491741044572200/1259491741325594705/tinkaton_gamma.gif?ex=68d7dd97&is=68d68c17&hm=b532dcb2b0d64698b65cfee46e3bb403ea77c8786516a0559ab5f0c0e279702a&"
+  },
+  {
+    "id": "tinkaton-omega",
+    "name": "Tinkaton-Omega",
+    "blurb": "the Scissor Pokemon, is the omega variant of Tinkaton",
+    "types": [
+      "Fairy",
+      "Bug"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "attack": 130,
+      "defense": 86,
+      "special-attack": 50,
+      "special-defense": 60,
+      "speed": 85
+    },
+    "abilities": [
+      {
+        "name": "sharpness",
+        "hidden": true
+      },
+      {
+        "name": "hyper-cutter",
+        "hidden": false
+      },
+      {
+        "name": "own-tempo",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1213906828992315473/1213906830204346418/tinkaton_omega.gif?ex=68d82455&is=68d6d2d5&hm=3dc67317d308e958a57e42fd38aaf363bd891537c50cbbcc686928fb946e9185&"
+  },
+  {
+    "id": "tinkaton-ultra",
+    "name": "Tinkaton-Ultra",
+    "blurb": "the Glowing Lash Pokemon, is the Ultra variant of Tinkaton.",
+    "types": [
+      "Fairy",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 83,
+      "attack": 65,
+      "defense": 60,
+      "special-attack": 155,
+      "special-defense": 70,
+      "speed": 73
+    },
+    "abilities": [
+      {
+        "name": "beast-boost",
+        "hidden": true
+      },
+      {
+        "name": "plus",
+        "hidden": false
+      },
+      {
+        "name": "pickpocket",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1368612455110148218/1368612455420264478/tinkaton_ultra.gif?ex=68d804ac&is=68d6b32c&hm=c1592060a8ad73fc85a82e7d159d7939748224854f1b3b8ca899bd7fa4c5f971&"
+  },
+  {
+    "id": "tinkatuff-delta",
+    "name": "Tinkatuff-Delta",
+    "blurb": "the Trident Pokemon, is the evolution of Tinkatink-Delta",
+    "types": [
+      "Fairy",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 60,
+      "defense": 72,
+      "special-attack": 50,
+      "special-defense": 55,
+      "speed": 78
+    },
+    "abilities": [
+      {
+        "name": "rain-dish",
+        "hidden": true
+      },
+      {
+        "name": "pickpocket",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1126380911555002469/1126380911877967932/tinkatuff_delta.gif?ex=68d81bb8&is=68d6ca38&hm=ca89636dd46bbe525aa5b68a6a1ab0a6ba05119c9e064ab797675632c539d064&"
+  },
+  {
+    "id": "tinkatuff-gamma",
+    "name": "Tinkatuff-Gamma",
+    "blurb": "the Fan Pokemon, is the Gamma variant of Tinkatuff.",
+    "types": [
+      "Fairy",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 35,
+      "defense": 55,
+      "special-attack": 72,
+      "special-defense": 75,
+      "speed": 78
+    },
+    "abilities": [
+      {
+        "name": "pickpocket",
+        "hidden": true
+      },
+      {
+        "name": "dazzling",
+        "hidden": false
+      },
+      {
+        "name": "flare-boost",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1259489673290448927/1259489673814868018/tinkatuff_gamma.gif?ex=68d7dbaa&is=68d68a2a&hm=4047245aae4e230ccabe6db6722c92e7669f789dc757bc9c843a377b28f86aa7&"
+  },
+  {
+    "id": "tinkatuff-omega",
+    "name": "Tinkatuff-Omega",
+    "blurb": "the Twinblade Pokemon, is the omega variant of Tinkatuff",
+    "types": [
+      "Fairy",
+      "Bug"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 75,
+      "defense": 68,
+      "special-attack": 32,
+      "special-defense": 50,
+      "speed": 70
+    },
+    "abilities": [
+      {
+        "name": "sharpness",
+        "hidden": true
+      },
+      {
+        "name": "hyper-cutter",
+        "hidden": false
+      },
+      {
+        "name": "own-tempo",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1213902445185335357/1213902445802160128/tinkatuff_omega.gif?ex=68d82040&is=68d6cec0&hm=b6c5f1f7a8dfdf9e460c2a40aa90ab4582748e4de61caa92ed372ce8d71350d9&"
+  },
+  {
+    "id": "tinkatuff-ultra",
+    "name": "Tinkatuff-Ultra",
+    "blurb": "the Zapping Pokemon, is the Ultra variant of Tinkatuff.",
+    "types": [
+      "Fairy",
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 64,
+      "attack": 55,
+      "defense": 50,
+      "special-attack": 84,
+      "special-defense": 65,
+      "speed": 62
+    },
+    "abilities": [
+      {
+        "name": "pressure",
+        "hidden": true
+      },
+      {
+        "name": "plus",
+        "hidden": false
+      },
+      {
+        "name": "pickpocket",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1368609277744255017/1368609278365007964/tinkatuff_ultra.gif?ex=68d801b7&is=68d6b037&hm=e28ecccd3f0d56cfe08d1367621773292d783c81bc5d63d8f1b2ee7b3e7e28d2&"
+  },
+  {
+    "id": "torkoal-delta",
+    "name": "Torkoal-Delta",
+    "blurb": "the Steam Pokemon, is the delta variant of Torkoal.",
+    "types": [
+      "Fire",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "attack": 60,
+      "defense": 150,
+      "special-attack": 95,
+      "special-defense": 75,
+      "speed": 20
+    },
+    "abilities": [
+      {
+        "name": "flame-body",
+        "hidden": true
+      },
+      {
+        "name": "water-absorb",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1292347846879613052/1292347847194447922/torkoal_delta.gif?ex=68d81579&is=68d6c3f9&hm=2c879e3802a872854755f05a5efbabf18de18e8b98192a1531410b8d6399f587&"
+  },
+  {
+    "id": "trapinch-delta",
+    "name": "Trapinch-Delta",
+    "blurb": "the Ant Pit Pokemon, is the delta variant of Trapinch.",
+    "types": [
+      "Bug"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 100,
+      "defense": 45,
+      "special-attack": 45,
+      "special-defense": 45,
+      "speed": 10
+    },
+    "abilities": [
+      {
+        "name": "swarm",
+        "hidden": true
+      },
+      {
+        "name": "hyper-cutter",
+        "hidden": false
+      },
+      {
+        "name": "arena-trap",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1171042494578954370/1356618035196199004/trapinch_delta.gif?ex=68d7e380&is=68d69200&hm=faecdec0dcbbe214321f90ee1455c03581e3bc3995fa770c440896fb596aad4b&"
+  },
+  {
+    "id": "trapinch-ultra",
+    "name": "Trapinch-Ultra",
+    "blurb": "the Ant Trap Pokemon, is the ultra variant of Trapinch.",
+    "types": [
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 110,
+      "defense": 45,
+      "special-attack": 35,
+      "special-defense": 45,
+      "speed": 10
+    },
+    "abilities": [
+      {
+        "name": "strong-jaw",
+        "hidden": true
+      },
+      {
+        "name": "overcoat",
+        "hidden": false
+      },
+      {
+        "name": "weak-armor",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1246934640380350554/1246937601428951040/trapinch_ultra.gif?ex=68d7ad63&is=68d65be3&hm=ab246cb204ec6d436232e475482b1b9f7db329a3e00bda93f7a9b34341bb160b&"
+  },
+  {
+    "id": "turnimite",
+    "name": "Turnimite",
+    "blurb": "the Vegetable Pokemon, is the convergent form of Magnemite.",
+    "types": [
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "attack": 55,
+      "defense": 60,
+      "special-attack": 85,
+      "special-defense": 55,
+      "speed": 35
+    },
+    "abilities": [
+      {
+        "name": "natural-cure",
+        "hidden": true
+      },
+      {
+        "name": "water-absorb",
+        "hidden": false
+      },
+      {
+        "name": "harvest",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1114162111539585044/1114162111820611674/turnimite.gif?ex=68d7d253&is=68d680d3&hm=bf9a4bcfe4f7eb5538aa113796cb5faca62c020eba593af282e6a3ff6ddc9ff5&"
+  },
+  {
+    "id": "turniton",
+    "name": "Turniton",
+    "blurb": "the Vegetable Pokemon, is the convergent form of Magneton.",
+    "types": [
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 75,
+      "defense": 85,
+      "special-attack": 95,
+      "special-defense": 65,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "natural-cure",
+        "hidden": true
+      },
+      {
+        "name": "water-absorb",
+        "hidden": false
+      },
+      {
+        "name": "harvest",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1114164495430979585/1114164496118853672/turniton.gif?ex=68d7d48c&is=68d6830c&hm=87add976e08ccff99711fbda3e084ccb665de19d3ef58a8e31df69319bb67b98&"
+  },
+  {
+    "id": "turnizone",
+    "name": "Turnizone",
+    "blurb": "the Vegetable Pokemon, is the convergent form of Magnezone.",
+    "types": [
+      "Grass",
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "attack": 50,
+      "defense": 110,
+      "special-attack": 110,
+      "special-defense": 130,
+      "speed": 40
+    },
+    "abilities": [
+      {
+        "name": "taproot",
+        "hidden": true
+      },
+      {
+        "name": "water-absorb",
+        "hidden": false
+      },
+      {
+        "name": "harvest",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1114169911145664673/1114169911632207922/turnizone.gif?ex=68d7d997&is=68d68817&hm=c70156c81f66bd1b8af58826b56c66318e02ff1543f978d95fe5d2eae113d0d2&"
+  },
+  {
+    "id": "typhlosion-delta",
+    "name": "Typhlosion-Delta",
+    "blurb": "the Thunderstorm Pokemon, is the delta variant of Typhlosion.",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 73,
+      "attack": 84,
+      "defense": 73,
+      "special-attack": 124,
+      "special-defense": 80,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "drizzle",
+        "hidden": true
+      },
+      {
+        "name": "surge",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1259839528928284753/1259839529561362492/typhlosion_delta.gif?ex=68d7cffe&is=68d67e7e&hm=1dbdcdca4963923c626f8725aaa4650c6b05a75c25a8393eb417dedc682216ac&"
+  },
+  {
+    "id": "ursanette",
+    "name": "Ursanette",
+    "blurb": "the Marionette Moon Pokemon, is the fusion between Ursaluna-Bloodmoon and Mega Banette.",
+    "types": [
+      "Normal",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 96,
+      "attack": 128,
+      "defense": 76,
+      "special-attack": 104,
+      "special-defense": 88,
+      "speed": 68
+    },
+    "abilities": [
+      {
+        "name": "analytic",
+        "hidden": true
+      },
+      {
+        "name": "mind-s-eye",
+        "hidden": false
+      },
+      {
+        "name": "prankster",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1329629396264554597/1330790534536757268/ursanette.gif?ex=68d83104&is=68d6df84&hm=a27025d15df84a28756e47acc01d470792a6773f411959d7b88c44aa62deac44&"
+  },
+  {
+    "id": "ursasola",
+    "name": "Ursasola",
+    "blurb": "the Ashen Pokemon, is the split evolution of Ursaring.",
+    "types": [
+      "Fire",
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 140,
+      "attack": 130,
+      "defense": 100,
+      "special-attack": 55,
+      "special-defense": 70,
+      "speed": 55
+    },
+    "abilities": [
+      {
+        "name": "fiery-touch",
+        "hidden": true
+      },
+      {
+        "name": "anger-point",
+        "hidden": false
+      },
+      {
+        "name": "bulletproof",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418937948275085463/1418937948677607444/ursasola.gif?ex=68d7d971&is=68d687f1&hm=65761183a70033201c23c47f72e22df72097035b907cc5fbf09d77aaaa1bcd20&"
+  },
+  {
+    "id": "ursasola-solarflare",
+    "name": "Ursasola-Solarflare",
+    "blurb": "the Ashen Pokemon, is a rare form of Ursasola.",
+    "types": [
+      "Fire",
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 126,
+      "attack": 65,
+      "defense": 110,
+      "special-attack": 130,
+      "special-defense": 62,
+      "speed": 62
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1418939499144286218/1418939499622305873/ursasola_solarflare.gif?ex=68d7dae3&is=68d68963&hm=b94934a7822c09eb08570bcf91e6799862410809c02c8c7bc60001434606b430&"
+  },
+  {
+    "id": "uxie-delta",
+    "name": "Uxie-Delta",
+    "blurb": "the Sloth Pokemon, is the possessed variant of Uxie.",
+    "types": [
+      "Poison",
+      "Dark"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 95,
+      "defense": 115,
+      "special-attack": 95,
+      "special-defense": 115,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "truant",
+        "hidden": true
+      },
+      {
+        "name": "levitate",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1292363200125472818/1292363200439783465/uxie_delta.gif?ex=68d823c5&is=68d6d245&hm=a036cb6302f9491658ebb57553360b338b4ce029fa4e9c17dc25a5870e8b907d&"
+  },
+  {
+    "id": "valiant-time",
+    "name": "Valiant Time",
+    "blurb": "the Time Guardian Pokemon, is the fusion between Iron Valiant and Dialga.",
+    "types": [
+      "Steel",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 140,
+      "defense": 68,
+      "special-attack": 104,
+      "special-defense": 100,
+      "speed": 108
+    },
+    "abilities": [
+      {
+        "name": "transience",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1334179939708309516/1412254327049031772/valianttime.gif?ex=68d7ec95&is=68d69b15&hm=123f8ba9e447d766bc98a00fa6516354ea932fe8bbf3ba10e8c5f825e4c03c3a&"
+  },
+  {
+    "id": "veneon",
+    "name": "Veneon",
+    "blurb": "the VenomPokemon, is the Poison-type Eeveelution of Eevee.",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "attack": 60,
+      "defense": 130,
+      "special-attack": 95,
+      "special-defense": 110,
+      "speed": 65
+    },
+    "abilities": [
+      {
+        "name": "corrosion",
+        "hidden": true
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1101453817008099449/1412252876562239600/veneon.gif?ex=68d7eb3c&is=68d699bc&hm=1eae64d676273678b9e9d33467ee8e82f253ac3e230be416c45fa3f31ce3606a&"
+  },
+  {
+    "id": "vibrava-delta",
+    "name": "Vibrava-Delta",
+    "blurb": "the Vibration Pokemon, is the delta variant of Vibrava.",
+    "types": [
+      "Bug",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 50,
+      "defense": 50,
+      "special-attack": 70,
+      "special-defense": 50,
+      "speed": 70
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1171044020156387470/1356618183674691655/vibrava_delta.gif?ex=68d7e3a3&is=68d69223&hm=e68b21489d7325264766d31ebfc25d0bb4d7a0d3497921a3bc271f537d727328&"
+  },
+  {
+    "id": "vibrava-ultra",
+    "name": "Vibrava-Ultra",
+    "blurb": "the Enduring Pokemon, is the ultra variant of Vibrava.",
+    "types": [
+      "Steel",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "attack": 65,
+      "defense": 75,
+      "special-attack": 45,
+      "special-defense": 60,
+      "speed": 45
+    },
+    "abilities": [
+      {
+        "name": "tinted-lens",
+        "hidden": true
+      },
+      {
+        "name": "overcoat",
+        "hidden": false
+      },
+      {
+        "name": "weak-armor",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1246937426694242445/1246937427168202846/vibrava_ultra.gif?ex=68d7ad39&is=68d65bb9&hm=5725aa0a45d42e02943f36c717636dcd923e66d9fc0afb8c86a6b5389d421e9f&"
+  },
+  {
+    "id": "victini-delta",
+    "name": "Victini-Delta",
+    "blurb": "the Valor Pokemon, is the delta variant of Victini.",
+    "types": [
+      "Electric",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 100,
+      "defense": 100,
+      "special-attack": 100,
+      "special-defense": 100,
+      "speed": 100
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1374124663281680495/1374124992295469056/victini_delta.gif?ex=68d7a360&is=68d651e0&hm=0fe7a66e8b32a994d5b4c94420560c697a33beab5d84165e823be7ff77509837&"
+  },
+  {
+    "id": "volcarona-delta",
+    "name": "Volcarona-Delta",
+    "blurb": "the Moon Pokemon, is the evolution of Larvesta-Delta",
+    "types": [
+      "Bug",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "attack": 60,
+      "defense": 65,
+      "special-attack": 135,
+      "special-defense": 105,
+      "speed": 100
+    },
+    "abilities": [
+      {
+        "name": "swarm",
+        "hidden": true
+      },
+      {
+        "name": "crescent-form",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1123019005498753185/1346426797427920941/volcarona_delta.gif?ex=68d7ba2b&is=68d668ab&hm=c145f86f2f01b7f0dc842d703f44f23930ee6cf1bb8aa41b17bd0d1408d02e8e&"
+  },
+  {
+    "id": "weight-1-4-kg",
+    "name": "Weight: 1.4 kg",
+    "blurb": null,
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "attack": 130,
+      "defense": 120,
+      "special-attack": 130,
+      "special-defense": 120,
+      "speed": 100
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1346447401660977162/1346447401858367520/mega_manaphy.gif?ex=68d7cd5c&is=68d67bdc&hm=8424db6784a84122b7c0f0329253bfd387e8e31521946f3ce4633c19168adb29&"
+  },
+  {
+    "id": "weight-50-kg",
+    "name": "Weight: 50 kg",
+    "blurb": null,
+    "types": [
+      "Ground",
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "attack": 115,
+      "defense": 80,
+      "special-attack": 115,
+      "special-defense": 80,
+      "speed": 150
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1226108622619152384/1366040835854176296/flygon_mega.gif?ex=68d7e42b&is=68d692ab&hm=fa2d29341ac34276fc026cf302b57232f0f4d92eefb76b09b3a78b9fd8b0fa6e&"
+  },
+  {
+    "id": "weight-90-5-kg",
+    "name": "Weight: 90.5 kg",
+    "blurb": null,
+    "types": [
+      "Normal",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 130,
+      "defense": 70,
+      "special-attack": 155,
+      "special-defense": 70,
+      "speed": 130
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1210772897346363433/1210772897866584154/zoroark_hisuian_mega.gif?ex=68d7f261&is=68d6a0e1&hm=5623943e4b982ad21de22091a6079894e823c6d4428035307be24cd513c4505c&"
+  },
+  {
+    "id": "whirling-abyss",
+    "name": "Whirling Abyss",
+    "blurb": "the Paradox Pokemon, is the past Paradox variant of Lugia.",
+    "types": [
+      "Psychic",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "attack": 110,
+      "defense": 140,
+      "special-attack": 110,
+      "special-defense": 115,
+      "speed": 90
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1221613231148105759/1366042247476416542/whirlingabyss.gif?ex=68d7e57b&is=68d693fb&hm=5816eae00a928e52aaab1a1e8ead42c895ac392fc0d76a697795b7aa8f7242a5&"
+  },
+  {
+    "id": "wisphir",
+    "name": "Wisphir",
+    "blurb": "the Silent Pokemon, is a newly introduced Ultra Beast. Codename: UB-Cumulus",
+    "types": [
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 79,
+      "attack": 101,
+      "defense": 41,
+      "special-attack": 109,
+      "special-defense": 83,
+      "speed": 157
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1377691618114666596/1377691618320191630/wisphir.gif?ex=68d816ce&is=68d6c54e&hm=0e24903e6bcedfe191749ca65c903af4364e0d0447b980d7f707e3b7c2001c83&"
+  },
+  {
+    "id": "wooper-delta",
+    "name": "Wooper-Delta",
+    "blurb": "the Fairy Fish Pokemon, is the Delta variant of Wooper.",
+    "types": [
+      "Water",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "attack": 20,
+      "defense": 35,
+      "special-attack": 55,
+      "special-defense": 45,
+      "speed": 10
+    },
+    "abilities": [
+      {
+        "name": "sheer-force",
+        "hidden": true
+      },
+      {
+        "name": "cute-charm",
+        "hidden": false
+      },
+      {
+        "name": "water-absorb",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1091773373291429908/1091773373723451563/delta_wooper.gif?ex=68d81c30&is=68d6cab0&hm=93d03b55b33e055ffc027e9fb6bddc21e386bdf360254b6703329acc9224c5dd&"
+  },
+  {
+    "id": "wooper-omega",
+    "name": "Wooper-Omega",
+    "blurb": "the Toxic Slug Pokemon, is the Omega variant of Wooper.",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "attack": 25,
+      "defense": 50,
+      "special-attack": 40,
+      "special-defense": 25,
+      "speed": 15
+    },
+    "abilities": [
+      {
+        "name": "run-away",
+        "hidden": true
+      },
+      {
+        "name": "liquid-ooze",
+        "hidden": false
+      },
+      {
+        "name": "aftermath",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1356571627009347714/1356571627307012146/wooper_omega.gif?ex=68d7b847&is=68d666c7&hm=60df70bd7fdfa0aa671b40ed59d409348ac014060cc3299d3ca25cf68547e340&"
+  },
+  {
+    "id": "yamask-delta",
+    "name": "Yamask-Delta",
+    "blurb": "the Spirit Pokemon, is the delta variant of Yamask.",
+    "types": [
+      "Psychic",
+      "Ghost"
+    ],
+    "baseStats": {
+      "hp": 38,
+      "attack": 55,
+      "defense": 65,
+      "special-attack": 30,
+      "special-defense": 85,
+      "speed": 30
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1117738071224488006/1117738071589404733/yamask_delta.gif?ex=68d7a5b2&is=68d65432&hm=8a5bc914b041371b4a34d726358b1ac136557826ed5a957bf98558d4431fa356&"
+  },
+  {
+    "id": "yanfern",
+    "name": "Yanfern",
+    "blurb": "is the convergent form of Yanma",
+    "types": [
+      "Grass",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "attack": 45,
+      "defense": 35,
+      "special-attack": 65,
+      "special-defense": 75,
+      "speed": 105
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1093245128321290290/1349600838720426259/yanfern.gif?ex=68d8117a&is=68d6bffa&hm=9fe1e437be5988725c988dd20bfe88a2623cf43c46e6b9d4dd86022827ea93e2&"
+  },
+  {
+    "id": "yanmellia",
+    "name": "Yanmellia",
+    "blurb": "is the convergent form of Yanmega",
+    "types": [
+      "Grass",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 98,
+      "attack": 91,
+      "defense": 71,
+      "special-attack": 70,
+      "special-defense": 110,
+      "speed": 75
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1093246220056670228/1349601006216020049/yanmellia.gif?ex=68d811a2&is=68d6c022&hm=6bb0a030f29bd5bbd6d612aead723ccf0069f96f9aca61df57756e2e32caf0ee&"
+  },
+  {
+    "id": "zapeon",
+    "name": "Zapeon",
+    "blurb": "the Lightning Legs Pokemon, is the fusion between Zapdos and Jolteon.",
+    "types": [
+      "Electric",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 84,
+      "attack": 116,
+      "defense": 72,
+      "special-attack": 92,
+      "special-defense": 104,
+      "speed": 132
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1334194023312916551/1334194023606259783/zapeon.gif?ex=68d80c83&is=68d6bb03&hm=d48f999c85ba4bc3d3791e88a802ad434f9ebb3fc9b1ab1c40d9171e0e92c367&"
+  },
+  {
+    "id": "zephior",
+    "name": "Zephior",
+    "blurb": "the Breeze Pokemon, is the convergent species of Minior.",
+    "types": [
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "attack": 60,
+      "defense": 80,
+      "special-attack": 100,
+      "special-defense": 80,
+      "speed": 120
+    },
+    "abilities": [
+      {
+        "name": "tempest-veil",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1418958318524694539/1418958318831140895/zephior.gif?ex=68d7ec6a&is=68d69aea&hm=2b16d96eee23861c62752fbaa0490369fc13fdbba4ea90947e5fd3c461edf70c&"
+  },
+  {
+    "id": "zeraora-delta",
+    "name": "Zeraora-Delta",
+    "blurb": "the Firefist Pokemon, is the delta variant of Zeraora",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 88,
+      "attack": 123,
+      "defense": 81,
+      "special-attack": 96,
+      "special-defense": 91,
+      "speed": 121
+    },
+    "abilities": [],
+    "sprite": "https://cdn.discordapp.com/attachments/1397638285618057346/1397638285941276765/zeraora_delta.gif?ex=68d82516&is=68d6d396&hm=ed14be56b49471ae1b35312684942efd058a06fb8223d052ff0f4bc0f760237e&"
+  },
+  {
+    "id": "zorotales",
+    "name": "Zorotales",
+    "blurb": "the Baneful Fox Pokemon, is the fusion between Zoroark-Hisui and Ninetales-Alola.",
+    "types": [
+      "Normal",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 72,
+      "attack": 80,
+      "defense": 88,
+      "special-attack": 108,
+      "special-defense": 108,
+      "speed": 104
+    },
+    "abilities": [
+      {
+        "name": "marvel",
+        "hidden": true
+      },
+      {
+        "name": "snow-cloak",
+        "hidden": false
+      },
+      {
+        "name": "illusion",
+        "hidden": false
+      }
+    ],
+    "sprite": "https://cdn.discordapp.com/attachments/1338945812947927042/1338945813971472394/zorotales.gif?ex=68d83276&is=68d6e0f6&hm=408ac6612fd421f4ef87d8f31609183bed0e117ca8599a5f515bdc7b4289799e&"
+  }
+]

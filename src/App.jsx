@@ -91,51 +91,50 @@ const ABILITY_EFFECTS = {
   "huge-power": { flatOffense: 1.5 },
   "adaptability": { stabBoost: 1.33 },
 
-"sheer-force": { flatOffense: 1.3 },
-"tough-claws": { flatOffense: 1.3 },
-"sharpness":   { flatOffense: 1.5 },
-"supreme-overlord": { flatOffense: 1.2 },
-"gorilla-tactics":  { flatOffense: 1.4 },
+  "sheer-force": { flatOffense: 1.3 },
+  "tough-claws": { flatOffense: 1.3 },
+  "sharpness":   { flatOffense: 1.5 },
+  "supreme-overlord": { flatOffense: 1.2 },
+  "gorilla-tactics":  { flatOffense: 1.4 },
 
-// Type/flag-biased offense boosters (heuristic by type)
-"strong-jaw":   { atkByType: { Dark: 1.5, Ice: 1.5, Electric: 1.5, Fire: 1.5, Poison: 1.5 } },
-"mega-launcher":{ atkByType: { Water: 1.5, Dark: 1.5, Dragon: 1.5 } },
-"iron-fist":    { atkByType: { Fighting: 1.2, Fire: 1.2, Ice: 1.2, Electric: 1.2 } },
-"aerilate":     { atkByType: { Flying: 1.2 } },
-"pixilate":     { atkByType: { Fairy: 1.2 } },
-"refrigerate":  { atkByType: { Ice: 1.2 } },
-"galvanize":    { atkByType: { Electric: 1.2 } },
+  // Type/flag-biased offense boosters (heuristic by type)
+  "strong-jaw":   { atkByType: { Dark: 1.5, Ice: 1.5, Electric: 1.5, Fire: 1.5, Poison: 1.5 } },
+  "mega-launcher":{ atkByType: { Water: 1.5, Dark: 1.5, Dragon: 1.5 } },
+  "iron-fist":    { atkByType: { Fighting: 1.2, Fire: 1.2, Ice: 1.2, Electric: 1.2 } },
+  "aerilate":     { atkByType: { Flying: 1.2 } },
+  "pixilate":     { atkByType: { Fairy: 1.2 } },
+  "refrigerate":  { atkByType: { Ice: 1.2 } },
+  "galvanize":    { atkByType: { Electric: 1.2 } },
 
-// Terrain setters
-"electric-surge": { terrain: "electric", atkByType: { Electric: 1.3 } },
-"grassy-surge":   { terrain: "grassy",   atkByType: { Grass: 1.3 } },
-"psychic-surge":  { terrain: "psychic",  atkByType: { Psychic: 1.3 } },
-"misty-surge":    { terrain: "misty",    atkByType: { Fairy: 1.3 } },
+  // Terrain setters
+  "electric-surge": { terrain: "electric", atkByType: { Electric: 1.3 } },
+  "grassy-surge":   { terrain: "grassy",   atkByType: { Grass: 1.3 } },
+  "psychic-surge":  { terrain: "psychic",  atkByType: { Psychic: 1.3 } },
+  "misty-surge":    { terrain: "misty",    atkByType: { Fairy: 1.3 } },
 
-// Engines (conservative flat bump when their field is active)
-"quark-drive":     { flatOffense: 1.2 },
-"protosynthesis":  { flatOffense: 1.2 },
+  // Engines (conservative flat bump when their field is active)
+  "quark-drive":     { flatOffense: 1.2 },
+  "protosynthesis":  { flatOffense: 1.2 },
 
-// Defensive dampeners / immunities (target side)
-"filter":        { reduceSE: 0.75 },
-"solid-rock":    { reduceSE: 0.75 },
-"thick-fat":     { typeDampen: { Fire: 0.5, Ice: 0.5 } },
-"fur-coat":      { furCoat: true },
-"water-absorb":  { immuneTypes: ["Water"] },
-"storm-drain":   { immuneTypes: ["Water"] },
-"volt-absorb":   { immuneTypes: ["Electric"] },
-"lightning-rod": { immuneTypes: ["Electric"] },
-"motor-drive":   { immuneTypes: ["Electric"] },
-"flash-fire":    { immuneTypes: ["Fire"] },
-"sap-sipper":    { immuneTypes: ["Grass"] },
-"levitate":      { immuneTypes: ["Ground"] },
+  // Defensive dampeners / immunities (target side)
+  "filter":        { reduceSE: 0.75 },
+  "solid-rock":    { reduceSE: 0.75 },
+  "thick-fat":     { typeDampen: { Fire: 0.5, Ice: 0.5 } },
+  "fur-coat":      { furCoat: true },
+  "water-absorb":  { immuneTypes: ["Water"] },
+  "storm-drain":   { immuneTypes: ["Water"] },
+  "volt-absorb":   { immuneTypes: ["Electric"] },
+  "lightning-rod": { immuneTypes: ["Electric"] },
+  "motor-drive":   { immuneTypes: ["Electric"] },
+  "flash-fire":    { immuneTypes: ["Fire"] },
+  "sap-sipper":    { immuneTypes: ["Grass"] },
+  "levitate":      { immuneTypes: ["Ground"] },
 
-// Ruin quartet (target side heuristics)
-"sword-of-ruin":  { vsPhysicalBoost: 1.15 },
-"beads-of-ruin":  { vsSpecialBoost:  1.15 },
-"tablets-of-ruin":{ vsPhysicalDampen: 0.9 },
-"vessel-of-ruin": { vsSpecialDampen:  0.9 },
-
+  // Ruin quartet (target side heuristics)
+  "sword-of-ruin":  { vsPhysicalBoost: 1.15 },
+  "beads-of-ruin":  { vsSpecialBoost:  1.15 },
+  "tablets-of-ruin":{ vsPhysicalDampen: 0.9 },
+  "vessel-of-ruin": { vsSpecialDampen:  0.9 },
 };
 
 function applyAbilityToOffense(offense, hitType, mult, attackerTag) {
@@ -175,8 +174,6 @@ function cancelIfOpposingWeathers(attackerTag, targetTag, hitType) {
 }
 
 // --- Attacker pool for demo scoring --- //
-// Goal: cover ALL attacking types with at least one strong STAB user
-// (so any target weakness at x2 || x4 can surface a relevant counter).
 const POKEDEX = [
   // Electric / Flying / Fairy / Psychic / Ghost / Dark / Ice / Dragon / Fire / Normal / Ground
   { name: "Regieleki", types: ["Electric"], power: 95, strong: ["Electric"], gen: 8, restricted: false },
@@ -195,7 +192,7 @@ const POKEDEX = [
   { name: "Staraptor", types: ["Normal","Flying"], power: 86, strong: ["Flying"], gen: 4, restricted: false },
   { name: "Garchomp", types: ["Dragon","Ground"], power: 91, strong: ["Ground","Dragon"], gen: 4, restricted: false },
 
-  // ROCK (x4 vs Fire/Flying, Ice/Bug, etc.)
+  // ROCK
   { name: "Tyranitar", types: ["Rock","Dark"], power: 92, strong: ["Rock","Dark"], gen: 2, restricted: false, abilityTag: "sand-stream" },
   { name: "Tyranitar (Mega)", apiSlug: "tyranitar-mega", isMega: true, types: ["Rock","Dark"], power: 99, strong: ["Rock","Dark"], gen: 6, restricted: false, abilityTag: "sand-stream" },
   { name: "Rhyperior", types: ["Ground","Rock"], power: 90, strong: ["Rock","Ground"], gen: 4, restricted: false },
@@ -325,24 +322,23 @@ function rankCounters(targetTypes, { allowRestricted = true, showMega = true, ta
             offense *= 0.6; // your attack is heavily dampened
             riskVal *= 1.2;  // slightly riskier to stay in
 
-if (mult >= 2 && defEff.reduceSE) {
-  offense *= defEff.reduceSE;
-}
-if (defEff.typeDampen && defEff.typeDampen[strongMatch]) {
-  offense *= defEff.typeDampen[strongMatch];
-}
-if (defEff.furCoat && isPhysicalType(strongMatch)) {
-  offense *= 0.5;
-}
-// Ruin quartet (target side): boosts help attacker, dampens hurt attacker
-if (isPhysicalType(strongMatch)) {
-  if (defEff.vsPhysicalDampen) offense *= defEff.vsPhysicalDampen;
-  if (defEff.vsPhysicalBoost)  offense *= defEff.vsPhysicalBoost;
-} else {
-  if (defEff.vsSpecialDampen) offense *= defEff.vsSpecialDampen;
-  if (defEff.vsSpecialBoost)  offense *= defEff.vsSpecialBoost;
-}
-
+            if (mult >= 2 && defEff.reduceSE) {
+              offense *= defEff.reduceSE;
+            }
+            if (defEff.typeDampen && defEff.typeDampen[strongMatch]) {
+              offense *= defEff.typeDampen[strongMatch];
+            }
+            if (defEff.furCoat && isPhysicalType(strongMatch)) {
+              offense *= 0.5;
+            }
+            // Ruin quartet (target side): boosts help attacker, dampens hurt attacker
+            if (isPhysicalType(strongMatch)) {
+              if (defEff.vsPhysicalDampen) offense *= defEff.vsPhysicalDampen;
+              if (defEff.vsPhysicalBoost)  offense *= defEff.vsPhysicalBoost;
+            } else {
+              if (defEff.vsSpecialDampen) offense *= defEff.vsSpecialDampen;
+              if (defEff.vsSpecialBoost)  offense *= defEff.vsSpecialBoost;
+            }
           }
         }
         // Risk reduction (e.g., rain vs Fire target)
@@ -367,9 +363,7 @@ if (isPhysicalType(strongMatch)) {
     damagePotential: Math.round(100 * (p.rawOffense || 0) / maxOffense)
   }));
 
-  // Sort by score (default)
   const sorted = picksWithDP.sort((a,b)=> b.score - a.score);
-
   return { weaknesses: Object.fromEntries(weakTypes), picks: sorted };
 }
 
@@ -394,10 +388,13 @@ export default function App() {
   const [showResists, setShowResists] = useState(false);
   const [showAbility, setShowAbility] = useState(false);
   const [abilityInfo, setAbilityInfo] = useState({});
-  const useAbilities = true; // NEW: default on
+  const useAbilities = true;
 
-  
-// Target from PokeAPI
+  // NEW: Delta toggle + data
+  const [showDelta, setShowDelta] = useState(false);
+  const [customDex, setCustomDex] = useState([]);
+
+  // Target from PokeAPI or custom
   const [target, setTarget] = useState({ name: "", types: [], sprite: null, abilities: [], stats: {} });
   const displayName = mode==='pokemon' ? (target.name ? prettyName(target.name) : query) : (pickedTypes.length ? pickedTypes.join(' / ') : '');
 
@@ -405,8 +402,9 @@ export default function App() {
   const [nameList, setNameList] = useState(POKEDEX.map(p => p.name));
   const [showSug, setShowSug] = useState(false);
   const [hi, setHi] = useState(0);
+
   useEffect(() => {
-    // Try loading our local compiled dex (if present). This reduces API calls and powers full coverage.
+    // Try loading our local compiled dex (if present).
     fetch('/data/index.json')
       .then(r => r.ok ? r.json() : Promise.reject('no local index'))
       .then(j => {
@@ -415,6 +413,7 @@ export default function App() {
       })
       .catch(() => {});
 
+    // Fetch complete species list for autocomplete fallback
     fetch('https://pokeapi.co/api/v2/pokemon-species?limit=2000')
       .then(r => r.ok ? r.json() : Promise.reject(new Error('species fetch failed')))
       .then(d => {
@@ -423,9 +422,41 @@ export default function App() {
       })
       .catch(() => {});
   }, []);
+
+  // Load custom dex + custom ability blurbs (once)
+  useEffect(() => {
+    fetch('/data/custom-dex.json')
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(j => { if (Array.isArray(j)) setCustomDex(j); })
+      .catch(() => {});
+
+    fetch('/data/custom-ability-info.json')
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(m => {
+        if (m && typeof m === 'object') {
+          const merged = { ...Object.fromEntries(Object.entries(m).map(([k,v]) => [k, { short: v?.short, long: v?.long }])) };
+          setAbilityInfo(prev => ({ ...merged, ...prev }));
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const customBySlug = useMemo(() => {
+    const map = new Map();
+    for (const e of customDex) map.set(nameToSlug(e.name), e);
+    return map;
+  }, [customDex]);
+
+  // Combine names for autocomplete when Delta is enabled
+  const combinedNames = useMemo(() => {
+    if (!showDelta) return nameList;
+    const deltaNames = customDex.map(e => e.name);
+    return Array.from(new Set([...nameList, ...deltaNames]));
+  }, [nameList, customDex, showDelta]);
+
   const suggestions = useMemo(() => {
     const q = (query || "").toLowerCase();
-    const res = nameList
+    const res = combinedNames
       .filter(n => !q || n.toLowerCase().startsWith(q) || n.toLowerCase().includes(q))
       .sort((a,b) => {
         const A = a.toLowerCase(), B = b.toLowerCase();
@@ -435,14 +466,59 @@ export default function App() {
       })
       .slice(0, 8);
     return res;
-  }, [nameList, query]);
+  }, [combinedNames, query]);
 
-  // Fetch target info (debounced + latest-request-wins)
+  // Convert a custom entry to attacker shape for ranking
+  const customPool = useMemo(() => {
+    return customDex.map(e => {
+      const atk = e?.baseStats?.attack ?? 80;
+      const spa = e?.baseStats?.['special-attack'] ?? 80;
+      const power = Math.max(atk, spa);
+      const strong = Array.isArray(e.types) ? e.types : [];
+      const abilityTag = (e?.abilities || []).map(a => a.name).find(n => ABILITY_EFFECTS[n]);
+      return {
+        name: e.name,
+        types: strong,
+        power,
+        strong,
+        gen: 0,
+        restricted: false,
+        isMega: false,
+        abilityTag: abilityTag || null,
+        artUrl: e.sprite || null,
+      };
+    });
+  }, [customDex]);
+
+  const basePool = fullDex ?? POKEDEX;
+  const pool = useMemo(() => showDelta ? [...basePool, ...customPool] : basePool, [basePool, customPool, showDelta]);
+
+  // Fetch target info (or use custom) (debounced + latest-request-wins)
   const fetchIdRef = useRef(0);
   useEffect(() => {
     if (mode !== 'pokemon') return; // only fetch when in Pokemon mode
     const slug = nameToSlug(query);
     if (!slug) return;
+
+    // If Delta is enabled and a custom mon matches, use it directly
+    if (showDelta && customBySlug.has(slug)) {
+      const e = customBySlug.get(slug);
+      setTarget({
+        name: e.name,
+        types: e.types || [],
+        sprite: e.sprite || null,
+        abilities: (e.abilities || []).map(a => ({ name: (a?.name||"").toLowerCase(), url: "", hidden: !!a?.hidden })),
+        stats: {
+          hp: e?.baseStats?.hp ?? null,
+          attack: e?.baseStats?.attack ?? null,
+          defense: e?.baseStats?.defense ?? null,
+          'special-attack': e?.baseStats?.['special-attack'] ?? null,
+          'special-defense': e?.baseStats?.['special-defense'] ?? null,
+          speed: e?.baseStats?.speed ?? null,
+        },
+      });
+      return; // do not hit PokeAPI
+    }
 
     const id = ++fetchIdRef.current; // tag this request
     const controller = new AbortController();
@@ -468,45 +544,55 @@ export default function App() {
       clearTimeout(timer);
       controller.abort();
     };
-  }, [query, mode]);
+  }, [query, mode, showDelta, customBySlug]);
 
-  
-// Fetch short effect text for target abilities (on demand)
-useEffect(() => {
-  const list = target?.abilities || {};
-  const arr = Array.isArray(list) ? list : [];
-  if (!arr.length) return;
-  const toFetch = arr.filter(a => a.url && !abilityInfo[a.name]);
-  if (!toFetch.length) return;
-  let cancelled = false;
-  Promise.allSettled(toFetch.map(a => fetch(a.url).then(r=> r.ok ? r.json() : Promise.reject()).then(j => ({ name: a.name, data: j }))))
-    .then(res => {
-      if (cancelled) return;
-      const next = { ...abilityInfo };
-      for (const r of res) {
-        if (r.status !== "fulfilled") continue;
-        const entry = (r.value.data?.effect_entries || []).find(e => (e.language?.name||"") === "en");
-        const short = entry?.short_effect || entry?.effect || "";
-        next[r.value.name] = { short };
-      }
-      setAbilityInfo(next);
-    })
-    .catch(() => {});
-  return () => { cancelled = true; };
-}, [target?.abilities]);
-// Lookup target ability tag from compiled dex (if available)
+  // Fetch short effect text for target abilities (on demand)
+  useEffect(() => {
+    const list = target?.abilities || {};
+    const arr = Array.isArray(list) ? list : [];
+    if (!arr.length) return;
+    const toFetch = arr.filter(a => a.url && !abilityInfo[a.name]);
+    if (!toFetch.length) return;
+    let cancelled = false;
+    Promise.allSettled(toFetch.map(a => fetch(a.url).then(r=> r.ok ? r.json() : Promise.reject()).then(j => ({ name: a.name, data: j }))))
+      .then(res => {
+        if (cancelled) return;
+        const next = { ...abilityInfo };
+        for (const r of res) {
+          if (r.status !== "fulfilled") continue;
+          const entry = (r.value.data?.effect_entries || []).find(e => (e.language?.name||"") === "en");
+          const short = entry?.short_effect || entry?.effect || "";
+          next[r.value.name] = { short };
+        }
+        setAbilityInfo(next);
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
+  }, [target?.abilities, abilityInfo]);
+
+  // Lookup target ability tag from compiled dex OR custom dex
   const targetAbilityTag = useMemo(() => {
-    if (!fullDex || !target?.name) return null;
-    const t = (target.name || '').toLowerCase();
-    const hit = fullDex.find(p => (p.name || '').toLowerCase() === t);
-    return hit?.abilityTag || null;
-  }, [fullDex, target?.name]);
+    const tname = (target?.name || '').toLowerCase();
+    let tag = null;
 
-  const pool = fullDex ?? POKEDEX;
+    if (showDelta) {
+      const slug = nameToSlug(tname);
+      if (customBySlug.has(slug)) {
+        const e = customBySlug.get(slug);
+        tag = (e?.abilities || []).map(a => a.name).find(n => ABILITY_EFFECTS[n]) || null;
+      }
+    }
+    if (!tag && fullDex && tname) {
+      const hit = fullDex.find(p => (p.name || '').toLowerCase() === tname);
+      tag = hit?.abilityTag || null;
+    }
+    return tag;
+  }, [fullDex, target?.name, showDelta, customBySlug]);
+
   const activeTypes = mode==='pokemon' ? target.types : pickedTypes;
   const { weaknesses, picks } = useMemo(
     () => rankCounters(activeTypes, { allowRestricted, showMega, useAbilities: useAbilities && mode==='pokemon', targetAbilityTag }, pool),
-    [activeTypes, allowRestricted, showMega, fullDex, useAbilities, mode, targetAbilityTag]
+    [activeTypes, allowRestricted, showMega, pool, useAbilities, mode, targetAbilityTag]
   );
   const fullMap = useMemo(() => weaknessesOf(activeTypes), [activeTypes]);
   const [w4, w2, w1, r05, r0] = useMemo(() => {
@@ -523,12 +609,13 @@ useEffect(() => {
 
   // Show-more control for counters
   const [visibleCount, setVisibleCount] = useState(10);
-  useEffect(() => { setVisibleCount(10); }, [query, allowRestricted, showMega, mode, pickedTypes, useAbilities]);
+  useEffect(() => { setVisibleCount(10); }, [query, allowRestricted, showMega, mode, pickedTypes, useAbilities, showDelta]);
 
-  // Counter sprites cache
+  // Counter sprites cache (skip if custom art is supplied)
   const [sprites, setSprites] = useState({});
   useEffect(() => {
     picks.forEach(({ attacker }) => {
+      if (attacker.artUrl) return; // custom art already provided
       const slug = attacker.apiSlug || nameToSlug(attacker.name);
       if (!sprites[slug]) {
         fetch(`https://pokeapi.co/api/v2/pokemon/${slug}`)
@@ -540,7 +627,7 @@ useEffect(() => {
           .catch(() => {});
       }
     });
-  }, [picks]);
+  }, [picks, sprites]);
 
   const commitSuggestion = (pick) => {
     if (!pick) return;
@@ -557,7 +644,20 @@ useEffect(() => {
         </header>
 
         {/* Input with autocomplete */}
-        <Card title="Enter a Pokemon">
+        <Card
+          title="Enter a Pokemon"
+          right={(
+            <label className="flex items-center gap-2 cursor-pointer select-none text-sm">
+              <input
+                type="checkbox"
+                className="accent-indigo-500"
+                checked={showDelta}
+                onChange={e => setShowDelta(e.target.checked)}
+              />
+              Show Delta
+            </label>
+          )}
+        >
           <div className="mb-3">
             <div className={`inline-flex rounded-lg border border-white/10 bg-slate-900/40`}>
               <button onClick={()=>setMode('pokemon')} className={`px-3 py-1.5 text-sm rounded-l-lg ${mode==='pokemon' ? 'bg-slate-700 text-white' : 'opacity-80'}`}>Pokemon</button>
@@ -652,30 +752,30 @@ useEffect(() => {
               </label>
             </div>
 
-{/* Stats (L100, IV31, EV0) */}
-<div className="hidden md:block absolute right-0 top-12 w-[260px] text-xs text-slate-300">
-  <div className="uppercase tracking-wide text-[11px] opacity-70 mb-1">Stats (L100, IV31, EV0)</div>
-  {(() => {
-    const s = computeLevel100StatsFromBase(target?.stats);
-    if (!s) return null;
-    const Row = ({ label, value }) => (
-      <div className="flex items-center justify-between">
-        <span className="opacity-75">{label}</span>
-        <span className="font-semibold text-white">{value}</span>
-      </div>
-    );
-    return (
-      <div className="grid grid-cols-2 gap-x-5 gap-y-1">
-        <Row label="HP" value={s.hp} />
-        <Row label="Atk" value={s.attack} />
-        <Row label="Def" value={s.defense} />
-        <Row label="SpAtk" value={s['special-attack']} />
-        <Row label="SpDef" value={s['special-defense']} />
-        <Row label="Speed" value={s.speed} />
-      </div>
-    );
-  })()}
-</div>
+            {/* Stats (L100, IV31, EV0) */}
+            <div className="hidden md:block absolute right-0 top-12 w-[260px] text-xs text-slate-300">
+              <div className="uppercase tracking-wide text-[11px] opacity-70 mb-1">Stats (L100, IV31, EV0)</div>
+              {(() => {
+                const s = computeLevel100StatsFromBase(target?.stats);
+                if (!s) return null;
+                const Row = ({ label, value }) => (
+                  <div className="flex items-center justify-between">
+                    <span className="opacity-75">{label}</span>
+                    <span className="font-semibold text-white">{value}</span>
+                  </div>
+                );
+                return (
+                  <div className="grid grid-cols-2 gap-x-5 gap-y-1">
+                    <Row label="HP" value={s.hp} />
+                    <Row label="Atk" value={s.attack} />
+                    <Row label="Def" value={s.defense} />
+                    <Row label="SpAtk" value={s['special-attack']} />
+                    <Row label="SpDef" value={s['special-defense']} />
+                    <Row label="Speed" value={s.speed} />
+                  </div>
+                );
+              })()}
+            </div>
 
           </div>
           {/* Bottom row: weaknesses */}
@@ -749,7 +849,6 @@ useEffect(() => {
                         <div
                           key={a.name}
                           className="group relative flex items-center gap-2 rounded-xl px-3 py-1 ring-1 ring-white/10 bg-slate-800 text-slate-200"
-                         
                         >
                           <span className="text-xs font-medium">{label}{a.hidden ? " (Hidden)" : ""}</span>
                           <div className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 hidden w-72 -translate-x-1/2 rounded-md bg-slate-900/95 px-3 py-2 text-xs leading-snug text-slate-100 shadow-xl ring-1 ring-white/10 group-hover:block">
@@ -780,7 +879,7 @@ useEffect(() => {
                 <input type="checkbox" className="accent-indigo-500" checked={allowRestricted} onChange={e=>setAllowRestricted(e.target.checked)} />
                 Allow restricted legendaries
               </label>
-              </div>
+            </div>
           )}
         >
           {picks.length ? (
@@ -788,7 +887,7 @@ useEffect(() => {
               <ul className="grid gap-3">
                 {picks.slice(0, visibleCount).map(({ attacker, hitType, mult, score, damagePotential, risk }) => {
                   const slug = attacker.apiSlug || nameToSlug(attacker.name);
-                  const url = attacker.id ? artFromId(attacker.id) : sprites[slug];
+                  const url = attacker.artUrl || (attacker.id ? artFromId(attacker.id) : sprites[slug]);
                   return (
                     <li key={attacker.name} className="bg-slate-800 rounded-xl p-4 ring-1 ring-white/10 flex items-center justify-between">
                       <div className="flex items-center gap-3">
@@ -873,4 +972,3 @@ function computeLevel100StatsFromBase(baseStats) {
     speed: calc(speB),
   };
 }
-

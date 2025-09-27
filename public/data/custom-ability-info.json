@@ -1,0 +1,257 @@
+{
+  "blazing-swap": {
+    "name": "Blazing Swap",
+    "short": "The use of an offensive move swaps Aegislash from Shield Forme to Sword Forme. The use of Infernal Shield returns it back to its Shield F…",
+    "long": "The use of an offensive move swaps Aegislash from Shield Forme to Sword Forme. The use of Infernal Shield returns it back to its Shield Forme. The user is also immune to Fire-type moves."
+  },
+  "proweler": {
+    "name": "Proweler",
+    "short": "Defeating a Pokemon heals the user by 33% of its maximum HP.",
+    "long": "Defeating a Pokemon heals the user by 33% of its maximum HP."
+  },
+  "draconic": {
+    "name": "Draconic",
+    "short": "When a Pokémon with Draconic uses a Dragon-type move, the move's power will be increased by 50% if the user has less than or equal to ⅓ o…",
+    "long": "When a Pokémon with Draconic uses a Dragon-type move, the move's power will be increased by 50% if the user has less than or equal to ⅓ of its maximum HP remaining."
+  },
+  "surge": {
+    "name": "Surge",
+    "short": "Boost the Pokemon's Attack or Special Attack by 50% when using Electric-type moves when the user has 1/3 of its maximum HP or less remaining",
+    "long": "Boost the Pokemon's Attack or Special Attack by 50% when using Electric-type moves when the user has 1/3 of its maximum HP or less remaining"
+  },
+  "helix-nebula": {
+    "name": "Helix Nebula",
+    "short": "The user copies the opponent's type upon switch-in. Additionally, should the user receive a fatal direct attack from an opponent, it will…",
+    "long": "The user copies the opponent's type upon switch-in. Additionally, should the user receive a fatal direct attack from an opponent, it will use Wish before fainting."
+  },
+  "sacred-body": {
+    "name": "Sacred Body",
+    "short": "When the Pokémon with Sacred Body is hit with a contact move, both the attacker and the Pokémon with Sacred Body will be fully healed in …",
+    "long": "When the Pokémon with Sacred Body is hit with a contact move, both the attacker and the Pokémon with Sacred Body will be fully healed in three turns. Should a Pokemon under the effect of Sacred Body switch out, the effect is cancelled for that Pokemon"
+  },
+  "diamond-grove": {
+    "name": "Diamond Grove",
+    "short": "While Grassy Terrain is active, all super-effective hits received deal neutral damage.",
+    "long": "While Grassy Terrain is active, all super-effective hits received deal neutral damage."
+  },
+  "grim-sigil": {
+    "name": "Grim Sigil",
+    "short": "When a Pokémon with Grim Sigil enters the field with full HP, it disables the last move used by the opponent.",
+    "long": "When a Pokémon with Grim Sigil enters the field with full HP, it disables the last move used by the opponent."
+  },
+  "tide-sigil": {
+    "name": "Tide Sigil",
+    "short": "When a Pokémon with Tide Sigil enters the field with full HP, it encores the last move used by the opponent.",
+    "long": "When a Pokémon with Tide Sigil enters the field with full HP, it encores the last move used by the opponent."
+  },
+  "pure-guise": {
+    "name": "Pure Guise",
+    "short": "At 100% HP, your attacks deal 30% more damage",
+    "long": "At 100% HP, your attacks deal 30% more damage"
+  },
+  "surge-deluge": {
+    "name": "Surge Deluge",
+    "short": "In Electric Terrain, this Pokemon gains the \"Charge\" effect. Its Special Defense rises by one stage when gaining the Charge effect. Addit…",
+    "long": "In Electric Terrain, this Pokemon gains the \"Charge\" effect. Its Special Defense rises by one stage when gaining the Charge effect. Additionally, you gain immunity to Ground-type moves in Electric Terrain"
+  },
+  "geyser": {
+    "name": "Geyser",
+    "short": "Any offensive move that has a chance to burn, has that chance doubled. Additionally, the Pokemon is immune to Water-type moves.",
+    "long": "Any offensive move that has a chance to burn, has that chance doubled. Additionally, the Pokemon is immune to Water-type moves."
+  },
+  "twinkle-boosts-the-pok-mon-s-attack-or-special-attack-by-50-during-damage-calculation-if-a-fairy": {
+    "name": "Twinkle boosts the Pokémon's Attack or Special Attack by 50% during damage calculation if a Fairy",
+    "short": "type move is being used if the user's HP is under 1/3rd of its maximum.",
+    "long": "type move is being used if the user's HP is under 1/3rd of its maximum."
+  },
+  "chromatic-scales": {
+    "name": "Chromatic Scales",
+    "short": "As long as this Pokemon is above 50% HP, the type of this Pokemon will change into the first two moves in its moveslots. Losing HP will t…",
+    "long": "As long as this Pokemon is above 50% HP, the type of this Pokemon will change into the first two moves in its moveslots. Losing HP will turn it back into its regular type. When this ability activates, the type it changes to is announced in the battle log."
+  },
+  "flurry": {
+    "name": "Flurry",
+    "short": "When a Pokémon with Flurry uses an Ice-type move, the move's power will be increased by 50% if the user has less than or equal to ⅓ of it…",
+    "long": "When a Pokémon with Flurry uses an Ice-type move, the move's power will be increased by 50% if the user has less than or equal to ⅓ of its maximum HP remaining."
+  },
+  "covenant": {
+    "name": "Covenant",
+    "short": "This Pokemon's Attack and Speed are halved. When the user's HP reaches 50% of its maximum HP,  the ability switches to Huge Power",
+    "long": "This Pokemon's Attack and Speed are halved. When the user's HP reaches 50% of its maximum HP,  the ability switches to Huge Power"
+  },
+  "monarch": {
+    "name": "Monarch",
+    "short": "At the end of the turn, if Goolossal is at 100% HP, it will heal its status condition.",
+    "long": "At the end of the turn, if Goolossal is at 100% HP, it will heal its status condition."
+  },
+  "exalt": {
+    "name": "Exalt",
+    "short": "Switching into the field with this abiity gives the opponent an additional Dragon typing. In addition, using an offensive move against a …",
+    "long": "Switching into the field with this abiity gives the opponent an additional Dragon typing. In addition, using an offensive move against a Pokemon will also add the Dragon type to it."
+  },
+  "precedence": {
+    "name": "Precedence",
+    "short": "Priority moves used by this Pokemon deal 30% more Damage",
+    "long": "Priority moves used by this Pokemon deal 30% more Damage"
+  },
+  "winter-arbiter": {
+    "name": "Winter Arbiter",
+    "short": "Entering the field with Winter Arbiter while Snow is present raises the user's Attack by one stage.",
+    "long": "Entering the field with Winter Arbiter while Snow is present raises the user's Attack by one stage."
+  },
+  "steamforged": {
+    "name": "Steamforged",
+    "short": "When a Pokémon with this Ability is hit by a move that makes contact, there is a 30% chance that the attacking Pokémon will become burned…",
+    "long": "When a Pokémon with this Ability is hit by a move that makes contact, there is a 30% chance that the attacking Pokémon will become burned. Addtionally, Water-type moves deal 50% less damage."
+  },
+  "mirage": {
+    "name": "Mirage",
+    "short": "If the user switches in on the field while Sand is active, 25% HP is lost and a substitute is created. If the user has 25% HP or less, a …",
+    "long": "If the user switches in on the field while Sand is active, 25% HP is lost and a substitute is created. If the user has 25% HP or less, a substitute won't be created. This ability activates once per battle."
+  },
+  "breach": {
+    "name": "Breach",
+    "short": "Switching into the field, the user clears hazards on the user's side of the field. Additionally, you are unaffected by hazards.",
+    "long": "Switching into the field, the user clears hazards on the user's side of the field. Additionally, you are unaffected by hazards."
+  },
+  "chronostasis": {
+    "name": "Chronostasis",
+    "short": "While this Pokemon is on the field, all other Pokemon have their speed lowered by 25%",
+    "long": "While this Pokemon is on the field, all other Pokemon have their speed lowered by 25%"
+  },
+  "orichalcum-scale": {
+    "name": "Orichalcum Scale",
+    "short": "Under the effect of harsh sunlight, the user's offensive moves deal roughly 33% (5461/4096) more damage.",
+    "long": "Under the effect of harsh sunlight, the user's offensive moves deal roughly 33% (5461/4096) more damage."
+  },
+  "boundless": {
+    "name": "Boundless",
+    "short": "When Kyurem-Original uses an Electric, Fire, or Ice move, it turns into a Dragon / Electric, Dragon / Fire, or Dragon / Ice type respecti…",
+    "long": "When Kyurem-Original uses an Electric, Fire, or Ice move, it turns into a Dragon / Electric, Dragon / Fire, or Dragon / Ice type respectively. Additionally, When a Pokémon with Boundless uses a move, the effects of all Pokémon's ignorable Abilities are ignored for the execution of that move."
+  },
+  "fatalize": {
+    "name": "Fatalize",
+    "short": "Causes all Normal-type moves used by the Pokémon to become Dark-type and receive a 20% power",
+    "long": "Causes all Normal-type moves used by the Pokémon to become Dark-type and receive a 20% power"
+  },
+  "conductor": {
+    "name": "Conductor",
+    "short": "User is immune to Sound Moves; Gain priority when using Instruct, Encore, and Tailwind (+1 Priority)",
+    "long": "User is immune to Sound Moves; Gain priority when using Instruct, Encore, and Tailwind (+1 Priority)"
+  },
+  "hocus-pocus": {
+    "name": "Hocus Pocus",
+    "short": "Upon switch-in, if a Pokemon using this ability holds the Illusory Sword, it will set-up Trick Room or remove it if Trick Room is already…",
+    "long": "Upon switch-in, if a Pokemon using this ability holds the Illusory Sword, it will set-up Trick Room or remove it if Trick Room is already up. This ability activates once per battle."
+  },
+  "pyroclastic": {
+    "name": "Pyroclastic",
+    "short": "On switch-in, the user recovers 1/3rd of its maximum HP. Additionally, the user's accuracy cannot be dropped.",
+    "long": "On switch-in, the user recovers 1/3rd of its maximum HP. Additionally, the user's accuracy cannot be dropped."
+  },
+  "quick-wit": {
+    "name": "Quick Wit",
+    "short": "Offensive moves used by this Pokemon that are 60 BP or below have +1 Priority",
+    "long": "Offensive moves used by this Pokemon that are 60 BP or below have +1 Priority"
+  },
+  "evil-s-bane": {
+    "name": "Evil's Bane",
+    "short": "This Pokemon is immune to Dark type moves and status moves affected by Prankster.",
+    "long": "This Pokemon is immune to Dark type moves and status moves affected by Prankster."
+  },
+  "feast-or-famine": {
+    "name": "Feast Or Famine",
+    "short": "Should the opponent raise its stats, the user steals any increases in stat changes.",
+    "long": "Should the opponent raise its stats, the user steals any increases in stat changes."
+  },
+  "hadron-cell": {
+    "name": "Hadron Cell",
+    "short": "Under the effect of Electric Terrain, the user's offensive moves deal roughly 33% (5461/4096) more damage.",
+    "long": "Under the effect of Electric Terrain, the user's offensive moves deal roughly 33% (5461/4096) more damage."
+  },
+  "igneous": {
+    "name": "Igneous",
+    "short": "The user takes 1/2 damage from Fire and Water type moves.",
+    "long": "The user takes 1/2 damage from Fire and Water type moves."
+  },
+  "performer": {
+    "name": "Performer",
+    "short": "User is immune to sound moves; Dance moves have priority; Sounds moves have increased crit ratio (1 stage)",
+    "long": "User is immune to sound moves; Dance moves have priority; Sounds moves have increased crit ratio (1 stage)"
+  },
+  "sheltered-slumber": {
+    "name": "Sheltered Slumber",
+    "short": "While this Pokemon in asleep, its Defense is boosted by 50%. Additionally, it changes type from Water / Ghost to Steel / Ghost.",
+    "long": "While this Pokemon in asleep, its Defense is boosted by 50%. Additionally, it changes type from Water / Ghost to Steel / Ghost."
+  },
+  "brilliance": {
+    "name": "Brilliance",
+    "short": "When a Pokémon with Brilliance enters the battle, it lowers the Special Attack stat of all adjacent opponents by one stage.",
+    "long": "When a Pokémon with Brilliance enters the battle, it lowers the Special Attack stat of all adjacent opponents by one stage."
+  },
+  "sand-dweller": {
+    "name": "Sand Dweller",
+    "short": "At the end of every turn, the user heals 1/16th of its maximum HP if sandstorm is active on the field.",
+    "long": "At the end of every turn, the user heals 1/16th of its maximum HP if sandstorm is active on the field."
+  },
+  "swordmaster": {
+    "name": "Swordmaster",
+    "short": "The user combines both of its other abilities, Chlorophyll and Sharpness. The user however loses 10% of its max HP upon using an offensiv…",
+    "long": "The user combines both of its other abilities, Chlorophyll and Sharpness. The user however loses 10% of its max HP upon using an offensive moves."
+  },
+  "fabled": {
+    "name": "Fabled",
+    "short": "When a Pokémon with Fabled directly causes another Pokémon (including allies) to faint by using a damaging move, all of its stats are inc…",
+    "long": "When a Pokémon with Fabled directly causes another Pokémon (including allies) to faint by using a damaging move, all of its stats are increased by one stage."
+  },
+  "altruistic": {
+    "name": "Altruistic",
+    "short": "The user is immune to Fighting-type moves. Getting hit by a Fighting-type move heals it for 25% of its maximum HP. Additionally, at the e…",
+    "long": "The user is immune to Fighting-type moves. Getting hit by a Fighting-type move heals it for 25% of its maximum HP. Additionally, at the end of the turn, if the user's ally has no item, the user gives its item to its ally. If the user has no item, this ability does not activate."
+  },
+  "surge-deludge": {
+    "name": "Surge Deludge",
+    "short": "In Electric Terrain, this Pokemon gains the \"Charge\" effect. Additionally, its Special Defense rises by one stage when gaining the Charge…",
+    "long": "In Electric Terrain, this Pokemon gains the \"Charge\" effect. Additionally, its Special Defense rises by one stage when gaining the Charge effect."
+  },
+  "usurped": {
+    "name": "Usurped",
+    "short": "The user is immune to Poison status. If the user is full HP, it taunts the opponent for 3 turns upon switch-in.",
+    "long": "The user is immune to Poison status. If the user is full HP, it taunts the opponent for 3 turns upon switch-in."
+  },
+  "spectre-onslaught": {
+    "name": "Spectre Onslaught",
+    "short": "Causes most damaging moves used by the Pokemon to become 4-strike moves. The three strikes following the first strike deal 10% the origin…",
+    "long": "Causes most damaging moves used by the Pokemon to become 4-strike moves. The three strikes following the first strike deal 10% the original damage; Night Shade is not affected by this ability. Secondary Effects used by the user are ignored."
+  },
+  "welkin-torch": {
+    "name": "Welkin Torch",
+    "short": "This Pokemon does not take indirect damage",
+    "long": "This Pokemon does not take indirect damage"
+  },
+  "fiery-touch": {
+    "name": "Fiery Touch",
+    "short": "If a Pokemon with this Ability uses a move that makes contact, there is a 30% chance the target will become burnt.",
+    "long": "If a Pokemon with this Ability uses a move that makes contact, there is a 30% chance the target will become burnt."
+  },
+  "transience": {
+    "name": "Transience",
+    "short": "The user regenerates 1/4th of the damage dealt to the opponent.",
+    "long": "The user regenerates 1/4th of the damage dealt to the opponent."
+  },
+  "crescent-form": {
+    "name": "Crescent Form",
+    "short": "This Pokemon takes 50% less damage from Beam, Pulse and Light moves. It also deals 30% extra damage when using these moves.",
+    "long": "This Pokemon takes 50% less damage from Beam, Pulse and Light moves. It also deals 30% extra damage when using these moves."
+  },
+  "tempest-veil": {
+    "name": "Tempest Veil",
+    "short": "Moves that do not make contact deal 0.5x damage.",
+    "long": "Moves that do not make contact deal 0.5x damage."
+  },
+  "marvel": {
+    "name": "Marvel",
+    "short": "On the first turn the user is sent out, the user's offensive moves are guaranteed to critically hit.",
+    "long": "On the first turn the user is sent out, the user's offensive moves are guaranteed to critically hit."
+  }
+}
